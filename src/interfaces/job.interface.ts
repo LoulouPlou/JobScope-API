@@ -1,8 +1,5 @@
-import { Types } from "mongoose";
 
 export interface IJob {
-    _id?: Types.ObjectId;
-
     title: string;
     company: string;
     location: string;
@@ -23,7 +20,4 @@ export interface IJob {
     postedOn?: string;
     publishedTime?: string;
 
-
-    createdAt: Date;
-    updatedAt: Date;
 }
