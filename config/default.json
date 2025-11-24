@@ -1,0 +1,46 @@
+{
+  "app": {
+    "name": "JobScope API",
+    "version": "1.0.0",
+    "basePath": "/api"
+  },
+  "server": {
+    "http": {
+      "enabled": true,
+      "port": 3000
+    },
+    "https": {
+      "enabled": false,
+      "port": 3443,
+      "keyPath": "./ssl/key.pem",
+      "certPath": "./ssl/cert.pem",
+      "redirectAllHttpToHttps": false
+    }
+  },
+  "db": {
+    "uri": "mongodb://localhost:27017/jobscope_dev"
+  },
+  "security": {
+    "jwt": {
+      "secret": "dev-secret",
+      "expiresIn": "1h"
+    },
+    "cors": {
+      "origin": ["*"],
+      "methods": ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+      "allowedHeaders": ["Content-Type", "Authorization"],
+      "exposedHeaders": ["Content-Length", "X-Custom-Header"],
+      "credentials": true
+    },
+    "rateLimit": {
+      "windowMs": 900000,
+      "max": 1000,
+      "message": "Too many requests. Try again later.",
+      "standardHeaders": true,
+      "legacyHeaders": false
+    },
+    "bcrypt": {
+      "saltRounds": 10
+    }
+  }
+}
