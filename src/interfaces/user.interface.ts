@@ -10,5 +10,7 @@ export interface IUser {
     profilePicture?: string;
     biography?: string;
     interest?: string;
-   
+    
+    createdAt?: Date;
+    updatedAt?: Date;
 }

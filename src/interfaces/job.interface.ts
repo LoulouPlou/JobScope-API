@@ -20,4 +20,6 @@ export interface IJob {
     postedOn?: string;
     publishedTime?: string;
 
+    createdAt?: Date;
+    updatedAt?: Date;
 }

@@ -57,10 +57,7 @@ const userSchema = new Schema<IUser>(
         },
     },
     {
-        timestamps: {
-            createdAt: "created_at",
-            updatedAt: "updated_at",
-        }
+        timestamps: true
     }
 );
 
