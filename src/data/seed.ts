@@ -41,8 +41,8 @@ export async function seedDatabase() {
       description: "We are looking for a Full-Stack Web Developer to join our Marketing team...",
       skills: ["JavaScript", "React", "Node.js", "PHP", "MySQL", "WordPress", "Git", "REST", "HTML", "CSS"],
       tags: ["JavaScript", "React", "Node.js"],
-      postedOn: "5 days ago",
-      publishedTime: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000)
+      postedOn: "LinkedIn",
+      publishedTime: "5 days ago"
     },
     {
       title: "Senior DevOps Engineer",
@@ -57,8 +57,8 @@ export async function seedDatabase() {
       skills: ["Kubernetes", "Terraform", "AWS", "Azure", "Docker", "CI/CD", "Python", "Linux", "Prometheus", "Grafana"],
       tags: ["Kubernetes", "Terraform", "AWS"],
       salary: "$69,000 - $114,000",
-      postedOn: "18 days ago",
-      publishedTime: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000)
+      postedOn: "Indeed",
+      publishedTime: "18 days ago"
     }, {
       title: "Junior Web Developer Co-Op",
       company: "Osler, Hoskin & Harcourt LLP",
@@ -71,8 +71,8 @@ export async function seedDatabase() {
       description: "This Junior Web Developer position requires a good base of software...",
       skills: ["SharePoint", "SQL", "ASP.NET", "C#", "JavaScript", "React", "Node.js", "HTML", "CSS", "PowerShell"],
       tags: ["SharePoint", "SQL", "JavaScript"],
-      postedOn: "4 days ago",
-      publishedTime: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000)
+      postedOn: "Indeed",
+      publishedTime: "4 days ago"
     }]);
 
     // add favorites
