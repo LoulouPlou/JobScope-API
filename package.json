@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/LoulouPlou/JobScope-API#readme",
   "dependencies": {
+    "@types/bcrypt": "^6.0.0",
     "axios": "^1.13.2",
     "bcryptjs": "^3.0.3",
     "config": "^4.1.1",
