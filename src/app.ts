@@ -2,6 +2,7 @@ import express from "express";
 import cors, { CorsOptions } from "cors";
 import helmet from "helmet";
 import config from "config";
+import jobRoutes from "./routes/job.routes";
 
 const app = express();
 
@@ -17,5 +18,8 @@ app.use(cors(corsOptions));
 app.get("/", (_req, res) => {
     res.send("Welcome to the JobScope API");
 });
+
+app.use("/api/jobs", jobRoutes);
+
 
 export default app;

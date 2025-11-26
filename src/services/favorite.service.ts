@@ -1,7 +1,6 @@
 import { FavoriteModel } from "../models/favorite.model";
 import { JobModel } from "../models/job.model";
 import { IFavorite } from "../interfaces/favorite.interface";
-import mongoose from "mongoose";
 
 export class FavoriteService {
     static async getUserFavorites(userId: string): Promise<IFavorite[]> {

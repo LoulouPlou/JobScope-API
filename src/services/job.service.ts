@@ -50,7 +50,7 @@ export class JobService {
             limit,
         };
     }
-    
+
     static async getRecentJobs(): Promise<IJob[]> {
         return JobModel.find().sort({ createdAt: -1 }).limit(3);
     }
