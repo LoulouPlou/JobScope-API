@@ -10,7 +10,8 @@ from dotenv import load_dotenv
 
 load_dotenv(".env.development")
 
-KEYWORDS_TEST = ["Web developer", "DevOps Engineer", "Cloud Engineer",]
+# KEYWORDS_TEST = ["Web developer", "DevOps Engineer", "Cloud Engineer",]
+KEYWORDS_TEST = ["Mobile Developer"]
 
 # KEYWORDS_50 = [
 #     # Web (12)
@@ -52,12 +53,12 @@ KEYWORDS_TEST = ["Web developer", "DevOps Engineer", "Cloud Engineer",]
 # Step 1 : Job Scraper
 api_key = api_key= os.getenv("SCRAPING_API_KEY")
 url = "https://api.scrapingdog.com/google_jobs"
-MAX_PAGES = 3
+MAX_PAGES = 2
 
 todays_jobs = []
 
 for keyword in KEYWORDS_TEST:
-    print(f"Recherche: {keyword}")
+    print(f"Searching for: {keyword}")
     next_token = None
     
     for page in range(MAX_PAGES):
@@ -80,14 +81,14 @@ for keyword in KEYWORDS_TEST:
             jobs = data.get("jobs_results", [])
             
             todays_jobs.extend(jobs)
-            print(f"  Page {page+1}: {len(jobs)} emplois")
+            print(f"  Page {page+1}: {len(jobs)} jobs")
             
             # next page token
             next_token = data.get("scrapingdog_pagination", {}).get("next_page_token")
             if not next_token:
                 break
         else:
-            print(f"  Erreur: {response.status_code}")
+            print(f"  Error: {response.status_code}")
             break
     
     time.sleep(3)
@@ -120,6 +121,6 @@ date_str = datetime.now().strftime("%Y%m%d_%H%M%S")
 filename = f"data-scraper/jobs_{date_str}.json"
 
 with open(filename, 'w', encoding='utf-8') as f:
-    json.dump(todays_jobs, f, ensure_ascii=False, indent=2)
+    json.dump(cleaned_jobs, f, ensure_ascii=False, indent=2)
 
 print(f"Job Scraper Daily Job Done! See file {filename}")
