@@ -5,6 +5,7 @@ import express from "express";
 import config from "config";
 import app from "./app";
 import { connectDB } from "./utils/database";
+import { seedDatabase } from "./data/seed";
 import { logger } from "./utils/logger";
 
 dotenv.config();
@@ -12,6 +13,11 @@ dotenv.config();
 async function startServer() {
   try {
     await connectDB();
+
+    if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test") {
+      await seedDatabase();
+      console.log(`Database in env ${process.env.NODE_ENV} seeded`)
+    }
 
     // HTTP and HTTPS Configuration
     const httpEnabled = config.get<boolean>("server.http.enabled");

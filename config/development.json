@@ -21,5 +21,8 @@
       "windowMs": 900000,
       "max": 1000
     }
+  },
+  "bcrypt": {
+    "saltRounds": 10
   }
 }
