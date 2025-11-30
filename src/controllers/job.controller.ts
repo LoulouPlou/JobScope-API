@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { JobService } from "../services/job.service";
+import { AuthRequest } from "../middleware/auth.middleware";
 
 export class JobController {
 
@@ -35,6 +36,16 @@ export class JobController {
 
             const job = await JobService.getJobById(id);
             res.json(job);
+        } catch (err) {
+            next(err);
+        }
+    }
+
+    async getJobPersonnalized(req: AuthRequest , res: Response, next: NextFunction): Promise<void> {
+        try {
+            const userId = req.user?._id;
+            const jobs = await JobService.getPersonalizedJobs(String(userId));
+            res.json(jobs);
         } catch (err) {
             next(err);
         }
