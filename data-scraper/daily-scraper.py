@@ -7,86 +7,26 @@ import random
 import re
 import os
 from dotenv import load_dotenv
+# from keywords import JOB_TITLES
 
 load_dotenv(".env.development")
 
-# KEYWORDS_TEST = ["Web developer", "DevOps Engineer", "Cloud Engineer",]
-KEYWORDS_TEST = ["AWS Engineer", "Java Developer", "Data Scientist"]
+MAX_PAGES = 1
+JOB_TITLES = ["Web developer"]
 
-# KEYWORDS_50 = [
-#     # Web (12)
-#     "Web developer", "Full Stack Developer", "Frontend Developer",
-#     "Backend Developer", "React Developer", "Node.js Developer",
-#     "Python Developer", "JavaScript Developer", "PHP Developer",
-#     "Java Developer", "WordPress Developer", ".NET Developer",
-    
-#     # Mobile (4)
-#     "Mobile Developer", "iOS Developer", "Android Developer",
-#     "React Native Developer",
-    
-#     # DevOps (8)
-#     "DevOps Engineer", "Cloud Engineer", "System Administrator",
-#     "Site Reliability Engineer", "AWS Engineer", "Kubernetes Engineer",
-#     "Infrastructure Engineer", "Network Engineer",
-    
-#     # Data (8)
-#     "Data Analyst", "Data Scientist", "Data Engineer",
-#     "Machine Learning Engineer", "Business Intelligence Analyst",
-#     "SQL Developer", "AI Engineer", "Analytics Engineer",
-    
-#     # QA & Security (5)
-#     "QA Engineer", "Test Automation Engineer", "Cybersecurity Analyst",
-#     "Security Engineer", "Software Tester",
-    
-#     # Design (4)
-#     "UI/UX Designer", "Product Designer", "Web Designer", "UX Designer",
-    
-#     # Management (5)
-#     "Product Manager", "Project Manager", "Scrum Master",
-#     "Technical Lead", "Engineering Manager",
-    
-#     # Entry Level (4)
-#     "Junior Developer", "Entry Level Developer",
-#     "IT Support Specialist", "Technical Support"
-# ]
+def create_scraping_tasks(keywords, max_pages):
+    tasks = []
+    for keyword in keywords:
+        for page in range(max_pages):
+            tasks.append({
+                "keyword": keyword,
+                "page": page
+            })
+    random.shuffle(tasks)
+    return tasks
 
-# Step 1 : Job Scraper
-api_key = api_key= os.getenv("SCRAPING_API_KEY")
-url = "https://api.scrapingdog.com/google_jobs"
-MAX_PAGES = 2
-
-# 1.1 Prepare tasks, randomizes everydays to avoid issues
-tasks = []
-for keyword in KEYWORDS_TEST:
-    for page in range(MAX_PAGES):
-        tasks.append({
-            "keyword": keyword,
-            "page": page
-        })
-
-random.shuffle(tasks)
-
-todays_jobs = []
-tokens = {}
-keyword_counters = {}
-
-for i, task in enumerate(tasks, 1):
-    keyword = task["keyword"]
-    page = task["page"]
-
-    if keyword not in keyword_counters:
-        keyword_counters[keyword] = 0
-    keyword_counters[keyword] += 1
-
-    current = keyword_counters[keyword]
-    
-    print(f"[{i}/{len(tasks)}] {keyword} - page [{current}/{MAX_PAGES}]")
-    
-    # Random pauses
-    if i > 1:
-        time.sleep(random.uniform(3, 7))
-    
-    next_token = tokens.get(keyword)
+def fetch_jobs_page(api_key, keyword, next_token=None):
+    url = "https://api.scrapingdog.com/google_jobs"
     
     params = {
         "api_key": api_key,
@@ -96,26 +36,59 @@ for i, task in enumerate(tasks, 1):
     if next_token:
         params["next_page_token"] = next_token
     
-    response = requests.get("https://api.scrapingdog.com/google_jobs", params=params)
-    
-    if response.status_code == 200:
-        data = response.json()
-        jobs = data.get("jobs_results", [])
+    try:
+        response = requests.get(url, params=params)
         
-        for job in jobs:
-            job["search_keyword"] = keyword
-            job["scrape_date"] = datetime.now().isoformat()
-        
-        todays_jobs.extend(jobs)
-        
-        new_token = data.get("scrapingdog_pagination", {}).get("next_page_token")
-        if new_token:
-            tokens[keyword] = new_token
-        
-    else:
-        print(f"Error: {response.status_code} with keyword: {keyword}")
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print(f"Error: {response.status_code} with keyword: {keyword}")
+            return None
+    except Exception as e:
+        print(f"Exception occurred for keyword {keyword}: {e}")
+        return None
 
-# Step 2 : Clean Data
+def add_metadata(jobs, keyword):
+    scrape_date = datetime.now().isoformat()
+    for job in jobs:
+        job["search_keyword"] = keyword
+        job["scrape_date"] = scrape_date
+    return jobs
+
+def scrape_jobs(api_key, keywords, max_pages):
+    tasks = create_scraping_tasks(keywords, max_pages)
+    
+    all_jobs = []
+    tokens = {}
+    keyword_counters = {}
+    
+    for i, task in enumerate(tasks, 1):
+        keyword = task["keyword"]
+        
+        if keyword not in keyword_counters:
+            keyword_counters[keyword] = 0
+        keyword_counters[keyword] += 1
+        current_page = keyword_counters[keyword]
+        
+        print(f"[{i}/{len(tasks)}] {keyword} - page [{current_page}/{max_pages}]")
+        
+        if i > 1:
+            time.sleep(random.uniform(3, 7))
+        
+        next_token = tokens.get(keyword)
+        data = fetch_jobs_page(api_key, keyword, next_token)
+        
+        if data:
+            jobs = data.get("jobs_results", [])
+            enriched_jobs = add_metadata(jobs, keyword)
+            all_jobs.extend(enriched_jobs)
+            
+            new_token = data.get("scrapingdog_pagination", {}).get("next_page_token")
+            if new_token:
+                tokens[keyword] = new_token
+    
+    return all_jobs
+
 def clean_text(text):
     if not text:
         return ""
@@ -123,26 +96,50 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
-cleaned_jobs = []
+def clean_jobs(raw_jobs):
+    cleaned_jobs = []
+    
+    for job in raw_jobs:
+        cleaned = {
+            "job_id": job.get("job_id", ""),
+            "title": clean_text(job.get("title", "")),
+            "company_name": clean_text(job.get("company_name", "")),
+            "location": clean_text(job.get("location", "")),
+            "description": clean_text(job.get("description", "")),
+            "via": job.get("via", ""),
+            "share_link": job.get("share_link", ""),
+            "extensions": job.get("extensions", []),
+            "search_keyword": job.get("search_keyword"),
+            "scrape_date": job.get("scrape_date")
+        }
+        cleaned_jobs.append(cleaned)
+    
+    return cleaned_jobs
 
-for job in todays_jobs:
-    cleaned = {
-        "job_id": job.get("job_id", ""),
-        "title": clean_text(job.get("title", "")),
-        "company_name": clean_text(job.get("company_name", "")),
-        "location": clean_text(job.get("location", "")),
-        "description": clean_text(job.get("description", "")),
-        "via": job.get("via", ""),
-        "share_link": job.get("share_link", ""),
-        "extensions": job.get("extensions", []),
-    }
-    cleaned_jobs.append(cleaned)
+def save_jobs(jobs, output_dir="data-scraper", prefix="jobs"):
+    os.makedirs(output_dir, exist_ok=True)
+    date_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{output_dir}/{prefix}_{date_str}.json"
+    
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(jobs, f, ensure_ascii=False, indent=2)
+    
+    return filename
 
-# Step 3 : Save Data
-date_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-filename = f"data-scraper/jobs_{date_str}.json"
+def main():
+    api_key = os.getenv("SCRAPING_API_KEY")
+    
+    raw_jobs = scrape_jobs(api_key, JOB_TITLES, MAX_PAGES)
+    
+    raw_filename = save_jobs(raw_jobs, prefix="jobs_raw")
+    print(f"See raw data in file {raw_filename}")
+    
+    cleaned_jobs = clean_jobs(raw_jobs)
+    
+    cleaned_filename = save_jobs(cleaned_jobs, prefix="jobs_cleaned")
+    print(f"See cleaned data in file {cleaned_filename}")
+    
+    print(f"Job Scraper Job Complete! ({len(cleaned_jobs)} jobs saved)")
 
-with open(filename, 'w', encoding='utf-8') as f:
-    json.dump(cleaned_jobs, f, ensure_ascii=False, indent=2)
-
-print(f"Job Scraper Daily Job Done! See file {filename}")
+if __name__ == "__main__":
+    main()
