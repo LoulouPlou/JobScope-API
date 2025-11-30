@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv(".env.development")
 
 # KEYWORDS_TEST = ["Web developer", "DevOps Engineer", "Cloud Engineer",]
-KEYWORDS_TEST = ["Mobile Developer"]
+KEYWORDS_TEST = ["AWS Engineer", "Java Developer", "Data Scientist"]
 
 # KEYWORDS_50 = [
 #     # Web (12)
@@ -55,43 +55,65 @@ api_key = api_key= os.getenv("SCRAPING_API_KEY")
 url = "https://api.scrapingdog.com/google_jobs"
 MAX_PAGES = 2
 
-todays_jobs = []
-
+# 1.1 Prepare tasks, randomizes everydays to avoid issues
+tasks = []
 for keyword in KEYWORDS_TEST:
-    print(f"Searching for: {keyword}")
-    next_token = None
-    
     for page in range(MAX_PAGES):
-        # pause time between queries to avoid problems
-        if len(todays_jobs) > 0:
-            time.sleep(random.uniform(2, 5))
-        
-        params = {
-            "api_key": api_key,
-            "query": keyword,
-            "country": "ca"
-        }
-        if next_token:
-            params["next_page_token"] = next_token
-        
-        response = requests.get("https://api.scrapingdog.com/google_jobs", params=params)
-        
-        if response.status_code == 200:
-            data = response.json()
-            jobs = data.get("jobs_results", [])
-            
-            todays_jobs.extend(jobs)
-            print(f"  Page {page+1}: {len(jobs)} jobs")
-            
-            # next page token
-            next_token = data.get("scrapingdog_pagination", {}).get("next_page_token")
-            if not next_token:
-                break
-        else:
-            print(f"  Error: {response.status_code}")
-            break
+        tasks.append({
+            "keyword": keyword,
+            "page": page
+        })
+
+random.shuffle(tasks)
+
+todays_jobs = []
+tokens = {}
+keyword_counters = {}
+
+for i, task in enumerate(tasks, 1):
+    keyword = task["keyword"]
+    page = task["page"]
+
+    if keyword not in keyword_counters:
+        keyword_counters[keyword] = 0
+    keyword_counters[keyword] += 1
+
+    current = keyword_counters[keyword]
     
-    time.sleep(3)
+    print(f"[{i}/{len(tasks)}] {keyword} - page [{current}/{MAX_PAGES}]")
+    
+    # Random pauses
+    if i > 1:
+        time.sleep(random.uniform(3, 7))
+    
+    next_token = tokens.get(keyword)
+    
+    params = {
+        "api_key": api_key,
+        "query": keyword,
+        "country": "ca"
+    }
+    if next_token:
+        params["next_page_token"] = next_token
+    
+    response = requests.get("https://api.scrapingdog.com/google_jobs", params=params)
+    
+    if response.status_code == 200:
+        data = response.json()
+        jobs = data.get("jobs_results", [])
+        
+        for job in jobs:
+            job["search_keyword"] = keyword
+            job["scrape_date"] = datetime.now().isoformat()
+        
+        todays_jobs.extend(jobs)
+        
+        new_token = data.get("scrapingdog_pagination", {}).get("next_page_token")
+        if new_token:
+            tokens[keyword] = new_token
+        
+    else:
+        print(f"Error: {response.status_code} with keyword: {keyword}")
 
 # Step 2 : Clean Data
 def clean_text(text):
