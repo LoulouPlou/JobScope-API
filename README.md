@@ -125,6 +125,23 @@ config/
 
 ---
 
+## Testing & CI Policy
+
+- All new backend features must include tests (at least integration tests).
+- We use Jest + Supertest for testing.
+- The target global test coverage is **70% or higher**.
+- Locally, Jest enforces a 70% global coverage threshold. If coverage is below 70%, `npm test` fails.
+- In CI (GitHub Actions), the pipeline **does not fail** on low coverage, but logs a warning and marks the build as **UNSTABLE** if coverage is below 70%.
+- The CI workflow (`.github/workflows/ci.yml`) runs on:
+  - every push to `main` or `dev`
+  - every Pull Request targeting `main` or `dev`.
+- All Pull Requests must:
+  - have a green CI result (tests passing),
+  - be reviewed and approved by at least one teammate before merging,
+  - prefer “Squash and merge” for a clean history.
+
+---
+
 ## Collaborators
 
 - **Kristina Hristova Beneva**

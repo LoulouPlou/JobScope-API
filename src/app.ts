@@ -1,9 +1,9 @@
-import express from "express";
+import express, { Application } from "express";
 import cors, { CorsOptions } from "cors";
 import helmet from "helmet";
 import config from "config";
 
-const app = express();
+const app: Application = express();
 
 // Middleware
 app.use(express.json());
