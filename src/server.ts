@@ -8,7 +8,9 @@ import { connectDB } from "./utils/database";
 import { seedDatabase } from "./data/seed";
 import { logger } from "./utils/logger";
 
-dotenv.config();
+const envFile = process.env.NODE_ENV === "test" ? ".env.test" : ".env";
+dotenv.config({ path: envFile });
+
 
 async function startServer() {
   try {
