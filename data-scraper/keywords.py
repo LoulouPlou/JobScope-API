@@ -20,7 +20,7 @@ JOBS = [
     {"title": "iOS Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
     {"title": "Android Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
     {"title": "React Native Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
-    
+
     # ===== DEVOPS & INFRASTRUCTURE =====
     {"title": "DevOps Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
     {"title": "Cloud Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
