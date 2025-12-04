@@ -163,6 +163,45 @@ def save_jobs(jobs, output_dir="data-scraper", prefix="jobs"):
     
     return filename
 
+def append_to_master(new_jobs, output_dir="data-scraper"):
+    os.makedirs(output_dir, exist_ok=True)
+    master_file = f"{output_dir}/jobs_master.json"
+    
+    if os.path.exists(master_file):
+        try:
+            with open(master_file, 'r', encoding='utf-8') as f:
+                master_jobs = json.load(f)
+        except json.JSONDecodeError:
+            print(f"Warning: Could not load master file, starting new")
+            master_jobs = []
+    else:
+        master_jobs = []
+    
+    master_dict = {job.get("job_id"): job for job in master_jobs if job.get("job_id")}
+    
+    new_count = 0
+    updated_count = 0
+    
+    for job in new_jobs:
+        job_id = job.get("job_id")
+        if not job_id:
+            continue
+            
+        # if exists -> update, else new
+        if job_id in master_dict:
+            master_dict[job_id] = job
+            updated_count += 1
+        else:
+            master_dict[job_id] = job
+            new_count += 1
+    
+    master_jobs = list(master_dict.values())
+    
+    with open(master_file, 'w', encoding='utf-8') as f:
+        json.dump(master_jobs, f, ensure_ascii=False, indent=2)
+    
+    return master_file, new_count, updated_count, len(master_jobs)
+
 def main():
     api_key = os.getenv("SCRAPING_API_KEY")
     
@@ -173,11 +212,16 @@ def main():
         print(f"See raw data in file {raw_filename}")
         
         cleaned_jobs = clean_jobs(raw_jobs)
+        master_file, new_count, updated_count, total_count = append_to_master(cleaned_jobs)
+        print(f"Master file: {master_file}")
+        print(f"New jobs: {new_count}")
+        print(f"Updated jobs: {updated_count}")
+        print(f"Total in database: {total_count}")
         
         cleaned_filename = save_jobs(cleaned_jobs, prefix="jobs_cleaned")
-        print(f"See cleaned data in file {cleaned_filename}")
+        print(f"See today's cleaned data in file {cleaned_filename}")
         
-        print(f"Job Scraper Job Complete! ({len(cleaned_jobs)} jobs saved)")
+        print(f"Job Scraper Job Complete!")
         
     except Exception as e:
         print(f"Fatal error in main: {e}")
