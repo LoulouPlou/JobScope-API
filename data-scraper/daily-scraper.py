@@ -6,8 +6,9 @@ import pandas as pd
 import random
 import re
 import os
+from collections import Counter
 from dotenv import load_dotenv
-from keywords import JOB_TITLES
+from keywords import JOB_TITLES, BUZZWORDS_TECH
 
 load_dotenv(".env.development")
 
@@ -84,7 +85,7 @@ def scrape_jobs(api_key, keywords, max_pages):
             keyword_counters[keyword] += 1
             current_page = keyword_counters[keyword]
             
-            print(f"[{i}/{len(tasks)}] {keyword} - page [{current_page}/{max_pages}]")
+            print(f"\t[{i}/{len(tasks)}] {keyword} - page [{current_page}/{max_pages}]")
             
             if i > 1:
                 time.sleep(random.uniform(3, 7))
@@ -134,6 +135,12 @@ def clean_jobs(raw_jobs):
     
     for job in raw_jobs:
         try:
+            highlights_text = ""
+            highlights = job.get("job_highlights", [])
+            for section in highlights:
+                if isinstance(section, dict):
+                    highlights_text += " ".join(section.get("items", []))
+            
             cleaned = {
                 "job_id": job.get("job_id", ""),
                 "title": clean_text(job.get("title", "")),
@@ -143,6 +150,7 @@ def clean_jobs(raw_jobs):
                 "via": job.get("via", ""),
                 "share_link": job.get("share_link", ""),
                 "extensions": job.get("extensions", []),
+                "highlights": clean_text(highlights_text),
                 "search_keyword": job.get("search_keyword"),
                 "scrape_date": job.get("scrape_date")
             }
@@ -163,7 +171,7 @@ def save_jobs(jobs, output_dir="data-scraper", prefix="jobs"):
     
     return filename
 
-def append_to_master(new_jobs, output_dir="data-scraper"):
+def append_new_jobs_to_master(new_jobs, output_dir="data-scraper"):
     os.makedirs(output_dir, exist_ok=True)
     master_file = f"{output_dir}/jobs_master.json"
     
@@ -202,26 +210,95 @@ def append_to_master(new_jobs, output_dir="data-scraper"):
     
     return master_file, new_count, updated_count, len(master_jobs)
 
+def normalize_text(text):
+    if not text:
+        return ""
+    return text.lower()
+
+def find_buzzwords_in_text(text, buzzwords):
+    text_normalized = normalize_text(text)
+    found_buzzwords = []
+    
+    for buzzword in buzzwords:
+        term = buzzword["term"].lower()
+        pattern = r'\b' + re.escape(term) + r'\b'
+        matches = re.findall(pattern, text_normalized)
+        
+        if matches:
+            found_buzzwords.extend([buzzword["term"]] * len(matches))
+    
+    return Counter(found_buzzwords)
+
+def analyze_job(job, buzzwords):
+    full_text = f"{job.get('title', '')} {job.get('description', '')} {job.get('highlights', '')}"
+    
+    buzzwords_found = find_buzzwords_in_text(full_text, buzzwords)
+    
+    return {
+        "job_id": job.get("job_id", ""),
+        "title": job.get("title", ""),
+        "company_name": job.get("company_name", ""),
+        "location": job.get("location", ""),
+        "search_keyword": job.get("search_keyword", ""),
+        "buzzwords_found": dict(buzzwords_found),
+        "total_buzzwords": sum(buzzwords_found.values()),
+        "unique_buzzwords": len(buzzwords_found)
+    }
+    
+def save_analysis(analysis_results, output_dir="data-scraper"):
+    filename = f"{output_dir}/jobs_analysis.json"
+    
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(analysis_results, f, ensure_ascii=False, indent=2)
+    
+    return filename
+
+
+def analyze_all_jobs(jobs, buzzwords):
+    results = []
+    for job in jobs:
+        result = analyze_job(job, buzzwords)
+        results.append(result)
+    return results
+
+
 def main():
     api_key = os.getenv("SCRAPING_API_KEY")
+
+    print("STARTING JOB SCRAPER...")
     
     try:
+        # STEP 1 - Scrape
+        print("\n[1/4] Scraping jobs...")
         raw_jobs = scrape_jobs(api_key, JOB_TITLES, MAX_PAGES)
-        
         raw_filename = save_jobs(raw_jobs, prefix="jobs_raw")
         print(f"See raw data in file {raw_filename}")
         
+        # STEP 2 - Clean
+        print("\n[2/4] Cleaning jobs...")
         cleaned_jobs = clean_jobs(raw_jobs)
-        master_file, new_count, updated_count, total_count = append_to_master(cleaned_jobs)
+        cleaned_filename = save_jobs(cleaned_jobs, prefix="jobs_cleaned")
+        print(f"See today's cleaned data in file {cleaned_filename}")
+        
+        # STEP 3 - Update master
+        print("\n[3/4] Updating master database...")
+        master_file, new_count, updated_count, total_count = append_new_jobs_to_master(cleaned_jobs)
         print(f"Master file: {master_file}")
         print(f"New jobs: {new_count}")
         print(f"Updated jobs: {updated_count}")
         print(f"Total in database: {total_count}")
+    
+        # STEP 4: Analyze buzzwords
+        # master_file = 'data-scraper/jobs_master.json' # for re-running step 4 purposes
+        print("\n[4/4] Analyzing buzzwords...")
+        with open(master_file, 'r', encoding='utf-8') as f:
+            all_jobs = json.load(f)
         
-        cleaned_filename = save_jobs(cleaned_jobs, prefix="jobs_cleaned")
-        print(f"See today's cleaned data in file {cleaned_filename}")
+        analysis_results = analyze_all_jobs(all_jobs, BUZZWORDS_TECH)
+        analysis_file = save_analysis(analysis_results)
+        print(f"See updated buzzwords analysis {analysis_file}")
         
-        print(f"Job Scraper Job Complete!")
+        print(f"\nJOB SCRAPER COMPLETE!")
         
     except Exception as e:
         print(f"Fatal error in main: {e}")
