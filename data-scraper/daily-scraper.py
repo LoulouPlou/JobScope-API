@@ -88,7 +88,7 @@ def scrape_jobs(api_key, keywords, max_pages):
             print(f"\t[{i}/{len(tasks)}] {keyword} - page [{current_page}/{max_pages}]")
             
             if i > 1:
-                time.sleep(random.uniform(3, 7))
+                time.sleep(random.uniform(5, 14))
             
             next_token = tokens.get(keyword)
             data = fetch_jobs_page(api_key, keyword, next_token)
@@ -229,10 +229,59 @@ def find_buzzwords_in_text(text, buzzwords):
     
     return Counter(found_buzzwords)
 
+def extract_experience_level(job):
+    title = job.get("title", "").lower()
+    highlights = job.get("highlights", "").lower()
+    description = job.get("description", "").lower()
+    
+    full_text = f"{title} {highlights} {description}"
+    
+    year_patterns = [
+        r'(\d+)\+\s*(?:years?|yrs?)',       # 5+ years
+        r'(\d+)-(\d+)\s*(?:years?|yrs?)',   # 3-5 years
+    ]
+    
+    years_found = []
+    
+    for pattern in year_patterns:
+        matches = re.findall(pattern, full_text)
+        for match in matches:
+            if isinstance(match, tuple):
+                years_found.extend([int(y) for y in match if y])
+            else:
+                years_found.append(int(match))
+    
+    if "junior" in title:
+        return "Junior"
+    
+    if "senior" in title:
+        return "Senior"
+    
+    if years_found:
+        max_years = max(years_found)
+        
+        if max_years >= 10:
+            return "Lead"
+        elif max_years >= 5:
+            return "Senior"
+        elif max_years >= 2:
+            return "Mid"
+        else:
+            return "Junior"
+    
+    if "junior" in full_text:
+        return "Junior"
+    
+    if "senior" in full_text:
+        return "Senior"
+    
+    return "Mid"
+
 def analyze_job(job, buzzwords):
     full_text = f"{job.get('title', '')} {job.get('description', '')} {job.get('highlights', '')}"
     
     buzzwords_found = find_buzzwords_in_text(full_text, buzzwords)
+    experience_level = extract_experience_level(job)
     
     return {
         "job_id": job.get("job_id", ""),
@@ -240,6 +289,7 @@ def analyze_job(job, buzzwords):
         "company_name": job.get("company_name", ""),
         "location": job.get("location", ""),
         "search_keyword": job.get("search_keyword", ""),
+        "experience_level": experience_level,
         "buzzwords_found": dict(buzzwords_found),
         "total_buzzwords": sum(buzzwords_found.values()),
         "unique_buzzwords": len(buzzwords_found)

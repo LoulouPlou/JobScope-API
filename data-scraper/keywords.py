@@ -2,70 +2,70 @@
 
 JOBS = [
     # ===== WEB DEVELOPMENT =====
-    # {"title": "Web Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Full Stack Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Frontend Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Web Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Full Stack Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Frontend Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
     {"title": "Backend Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "React Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Node.js Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Python Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "JavaScript Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "PHP Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Java Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "WordPress Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
-    # {"title": ".NET Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "React Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Node.js Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Python Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "JavaScript Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "PHP Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Java Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": "WordPress Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
+    {"title": ".NET Developer", "category": "Web", "seniority": "Mid", "focus": "Technical"},
     
-    # # ===== MOBILE DEVELOPMENT =====
-    # {"title": "Mobile Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
+    # ===== MOBILE DEVELOPMENT =====
+    {"title": "Mobile Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
     {"title": "iOS Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Android Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "React Native Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Android Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
+    {"title": "React Native Developer", "category": "Mobile", "seniority": "Mid", "focus": "Technical"},
 
-    # # ===== DEVOPS & INFRASTRUCTURE =====
-    # {"title": "DevOps Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Cloud Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "System Administrator", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Site Reliability Engineer", "category": "DevOps", "seniority": "Senior", "focus": "Technical"},
-    # {"title": "AWS Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Kubernetes Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Infrastructure Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Network Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
+    # ===== DEVOPS & INFRASTRUCTURE =====
+    {"title": "DevOps Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Cloud Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
+    {"title": "System Administrator", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Site Reliability Engineer", "category": "DevOps", "seniority": "Senior", "focus": "Technical"},
+    {"title": "AWS Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Kubernetes Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Infrastructure Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Network Engineer", "category": "DevOps", "seniority": "Mid", "focus": "Technical"},
     
-    # # ===== DATA & ANALYTICS =====
-    # {"title": "Data Analyst", "category": "Data", "seniority": "Mid", "focus": "Analytical"},
-    # {"title": "Data Scientist", "category": "Data", "seniority": "Senior", "focus": "Analytical"},
-    # {"title": "Data Engineer", "category": "Data", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Machine Learning Engineer", "category": "Data", "seniority": "Senior", "focus": "Technical"},
-    # {"title": "Business Intelligence Analyst", "category": "Data", "seniority": "Mid", "focus": "Analytical"},
-    # {"title": "SQL Developer", "category": "Data", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "AI Engineer", "category": "Data", "seniority": "Senior", "focus": "Technical"},
-    # {"title": "Analytics Engineer", "category": "Data", "seniority": "Mid", "focus": "Analytical"},
+    # ===== DATA & ANALYTICS =====
+    {"title": "Data Analyst", "category": "Data", "seniority": "Mid", "focus": "Analytical"},
+    {"title": "Data Scientist", "category": "Data", "seniority": "Senior", "focus": "Analytical"},
+    {"title": "Data Engineer", "category": "Data", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Machine Learning Engineer", "category": "Data", "seniority": "Senior", "focus": "Technical"},
+    {"title": "Business Intelligence Analyst", "category": "Data", "seniority": "Mid", "focus": "Analytical"},
+    {"title": "SQL Developer", "category": "Data", "seniority": "Mid", "focus": "Technical"},
+    {"title": "AI Engineer", "category": "Data", "seniority": "Senior", "focus": "Technical"},
+    {"title": "Analytics Engineer", "category": "Data", "seniority": "Mid", "focus": "Analytical"},
     
-    # # ===== QA & SECURITY =====
-    # {"title": "QA Engineer", "category": "QA & Security", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Test Automation Engineer", "category": "QA & Security", "seniority": "Mid", "focus": "Technical"},
-    # {"title": "Cybersecurity Analyst", "category": "QA & Security", "seniority": "Senior", "focus": "Technical"},
-    # {"title": "Security Engineer", "category": "QA & Security", "seniority": "Senior", "focus": "Technical"},
-    # {"title": "Software Tester", "category": "QA & Security", "seniority": "Junior", "focus": "Technical"},
+    # ===== QA & SECURITY =====
+    {"title": "QA Engineer", "category": "QA & Security", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Test Automation Engineer", "category": "QA & Security", "seniority": "Mid", "focus": "Technical"},
+    {"title": "Cybersecurity Analyst", "category": "QA & Security", "seniority": "Senior", "focus": "Technical"},
+    {"title": "Security Engineer", "category": "QA & Security", "seniority": "Senior", "focus": "Technical"},
+    {"title": "Software Tester", "category": "QA & Security", "seniority": "Junior", "focus": "Technical"},
     
-    # # ===== DESIGN & UX =====
-    # {"title": "UI/UX Designer", "category": "Design", "seniority": "Mid", "focus": "Creative"},
-    # {"title": "Product Designer", "category": "Design", "seniority": "Senior", "focus": "Creative"},
-    # {"title": "Web Designer", "category": "Design", "seniority": "Mid", "focus": "Creative"},
-    # {"title": "UX Designer", "category": "Design", "seniority": "Mid", "focus": "Creative"},
+    # ===== DESIGN & UX =====
+    {"title": "UI/UX Designer", "category": "Design", "seniority": "Mid", "focus": "Creative"},
+    {"title": "Product Designer", "category": "Design", "seniority": "Senior", "focus": "Creative"},
+    {"title": "Web Designer", "category": "Design", "seniority": "Mid", "focus": "Creative"},
+    {"title": "UX Designer", "category": "Design", "seniority": "Mid", "focus": "Creative"},
     
-    # # ===== MANAGEMENT & LEADERSHIP =====
-    # {"title": "Product Manager", "category": "Management", "seniority": "Senior", "focus": "Leadership"},
-    # {"title": "Project Manager", "category": "Management", "seniority": "Senior", "focus": "Leadership"},
-    # {"title": "Scrum Master", "category": "Management", "seniority": "Mid", "focus": "Leadership"},
-    # {"title": "Technical Lead", "category": "Management", "seniority": "Senior", "focus": "Leadership"},
-    # {"title": "Engineering Manager", "category": "Management", "seniority": "Senior", "focus": "Leadership"},
+    # ===== MANAGEMENT & LEADERSHIP =====
+    {"title": "Product Manager", "category": "Management", "seniority": "Senior", "focus": "Leadership"},
+    {"title": "Project Manager", "category": "Management", "seniority": "Senior", "focus": "Leadership"},
+    {"title": "Scrum Master", "category": "Management", "seniority": "Mid", "focus": "Leadership"},
+    {"title": "Technical Lead", "category": "Management", "seniority": "Senior", "focus": "Leadership"},
+    {"title": "Engineering Manager", "category": "Management", "seniority": "Senior", "focus": "Leadership"},
     
-    # # ===== ENTRY LEVEL =====
-    # {"title": "Junior Developer", "category": "Entry Level", "seniority": "Junior", "focus": "Technical"},
-    # {"title": "Entry Level Developer", "category": "Entry Level", "seniority": "Junior", "focus": "Technical"},
-    # {"title": "IT Support Specialist", "category": "Entry Level", "seniority": "Junior", "focus": "Support"},
-    # {"title": "Technical Support", "category": "Entry Level", "seniority": "Junior", "focus": "Support"},
+    # ===== ENTRY LEVEL =====
+    {"title": "Junior Developer", "category": "Entry Level", "seniority": "Junior", "focus": "Technical"},
+    {"title": "Entry Level Developer", "category": "Entry Level", "seniority": "Junior", "focus": "Technical"},
+    {"title": "IT Support Specialist", "category": "Entry Level", "seniority": "Junior", "focus": "Support"},
+    {"title": "Technical Support", "category": "Entry Level", "seniority": "Junior", "focus": "Support"},
 ]
 
 JOB_TITLES = [job["title"] for job in JOBS]
