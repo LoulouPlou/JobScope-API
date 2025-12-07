@@ -295,7 +295,7 @@ def analyze_job(job, buzzwords):
         "unique_buzzwords": len(buzzwords_found)
     }
     
-def save_analysis(analysis_results, output_dir="data-scraper"):
+def save_analysis(analysis_results, output_dir="data-scraper/data"):
     filename = f"{output_dir}/jobs_analysis.json"
     
     with open(filename, 'w', encoding='utf-8') as f:
