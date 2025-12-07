@@ -51,6 +51,7 @@ const userSchema = new Schema<IUser>(
 
             }
         },
+        
         interest: {
             type: String,
             trim: true,

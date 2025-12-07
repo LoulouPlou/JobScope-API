@@ -43,6 +43,7 @@ export class UserService {
             error.code = "USER_NOT_FOUND";
             throw error;
         }
+        
         return {
             email: user.email,
             password: "",

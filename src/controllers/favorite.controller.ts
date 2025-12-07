@@ -3,7 +3,6 @@ import { AuthRequest } from "../middleware/auth.middleware";
 import { FavoriteService } from "../services/favorite.service";
 
 export class FavoriteController {
-
     async getUserFavorites(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
         try {
             const userId = req.user?._id;

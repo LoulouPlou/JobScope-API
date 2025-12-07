@@ -3,7 +3,6 @@ import { JobService } from "../services/job.service";
 import { AuthRequest } from "../middleware/auth.middleware";
 
 export class JobController {
-
     //GET /api/jobs/search + Search jobs with filters + pagination
     async searchJobs(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
@@ -50,5 +49,4 @@ export class JobController {
             next(err);
         }
     }
-
 }

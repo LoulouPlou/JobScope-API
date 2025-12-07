@@ -38,7 +38,6 @@ export class FavoriteService {
         return favorite;
     }
 
-
     static async removeFavorite(userId: string, jobId: string): Promise<void> {
         const result = await FavoriteModel.findOneAndDelete({ userId, jobId });
         if (!result) {

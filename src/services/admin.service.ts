@@ -10,7 +10,6 @@ interface PaginatedResponse<T> {
 }
 
 export class adminService {
-
     static async getAllUsers(page: number = 1,limit: number = 5): Promise<PaginatedResponse<IUser>> {
         const skip = (page - 1) * limit;
         const [users, total] = await Promise.all([

@@ -2,8 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { AnalyticsService } from "../services/analytics.service";
 
 export class AnalyticsController {
-
-    async getTopPaying(req: Request, res: Response, next: NextFunction): Promise<void> {
+    async getTopPaying(_req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             const topPayingJobs = await AnalyticsService.getTopPayingJobs();
             res.status(200).json(topPayingJobs);
@@ -12,7 +11,7 @@ export class AnalyticsController {
         }
     }
 
-    async getMostDemanded(req: Request, res: Response, next: NextFunction): Promise<void> {
+    async getMostDemanded(_req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             const mostDemandedJobs = await AnalyticsService.getMostDemandedJobs();
             res.status(200).json(mostDemandedJobs);
@@ -21,7 +20,7 @@ export class AnalyticsController {
         }
     }
 
-    async getMostCommonSkills(req: Request, res: Response, next: NextFunction): Promise<void> {
+    async getMostCommonSkills(_req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             const mostCommonSkills = await AnalyticsService.getMostCommonSkills();
             res.status(200).json(mostCommonSkills);
@@ -30,7 +29,7 @@ export class AnalyticsController {
         }
     }
 
-    async getJobsByLocation(req: Request, res: Response, next: NextFunction): Promise<void> {
+    async getJobsByLocation(_req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             const jobsByLocation = await AnalyticsService.getJobsByLocation();
             res.status(200).json(jobsByLocation);

@@ -1,8 +1,8 @@
 import { Response, NextFunction } from "express";
 import { AuthRequest } from "../middleware/auth.middleware";
 import { AuthService } from "../services/auth.service";
+
 export class AuthController {
-    
     async register(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
         try {
             const user = await AuthService.register(req.body);

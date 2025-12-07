@@ -56,7 +56,6 @@ export class AnalyticsService {
         return jobs;
     }
 
-
     static async getMostCommonSkills(): Promise<TopSkill[]> {
         const result = await JobModel.aggregate([
             { $unwind: "$skills" },
@@ -75,7 +74,6 @@ export class AnalyticsService {
             count: item.count
         }));
     }
-
 
     static async getJobsByLocation(): Promise<JobsByLocation[]> {
         const result = await JobModel.aggregate([

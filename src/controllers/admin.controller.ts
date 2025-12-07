@@ -3,7 +3,6 @@ import { adminService } from "../services/admin.service";
 import { AuthRequest } from "../middleware/auth.middleware";
 
 export class AdminController {
-
     async getAllUsers(req: AuthRequest , res: Response, next: NextFunction): Promise<void> {
         try {
             const page = parseInt(req.query.page as string) || 1;
@@ -14,6 +13,7 @@ export class AdminController {
             next(error);
         }
     }  
+
     async getUserInfo(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
         try {
             const userId = req.params.id;
@@ -23,6 +23,7 @@ export class AdminController {
             next(error);
         }
     }
+
     async updateUser(req: AuthRequest , res: Response, next: NextFunction): Promise<void> {
         try {
             const userId = req.params.id;
@@ -33,6 +34,7 @@ export class AdminController {
             next(error);
         }
     }
+    
     async deleteUser(req: AuthRequest , res: Response, next: NextFunction): Promise<void> {
         try {
             const userId = req.params.id;
