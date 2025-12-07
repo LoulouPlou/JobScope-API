@@ -7,37 +7,34 @@ const jobSchema = new Schema<IJob>(
             type: String,
             required: true,
             trim: true
-
         },
+
         company: {
             type: String,
             required: true,
             trim: true
-
         },
+
         location: {
             type: String,
             required: true,
             trim: true
-
         },
 
         jobType: {
             type: String,
             trim: true
-
         },
+
         experience: {
             type: String,
             trim: true
-
         },
 
         education: {
             type: String,
             required: true,
             trim: true
-
         },
 
         languages: [{ type: String }],
@@ -73,15 +70,14 @@ const jobSchema = new Schema<IJob>(
 
         salary: {
             type: String, trim: true
-
         },
+
         postedOn: {
             type: String, trim: true
-
         },
+
         publishedTime: {
             type: String, trim: true
-
         },
     },
     {

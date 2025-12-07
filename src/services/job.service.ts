@@ -9,6 +9,7 @@ interface PaginatedRespond<T> {
     pages: number;
     limit: number;
 }
+
 export class JobService {
     static async searchJobs(query: any): Promise<PaginatedRespond<IJob>> {
         const page = query.page || 1;
@@ -50,11 +51,10 @@ export class JobService {
             limit,
         };
     }
-    
+
     static async getRecentJobs(): Promise<IJob[]> {
         return JobModel.find().sort({ createdAt: -1 }).limit(3);
     }
-
 
     static async getJobById(id: string): Promise<IJob> {
         const job = await JobModel.findById(id);
@@ -68,7 +68,6 @@ export class JobService {
 
         return job;
     }
-
 
     static async getPersonalizedJobs(userId: string): Promise<IJob[]> {
         const user = await UserModel.findById(userId);
