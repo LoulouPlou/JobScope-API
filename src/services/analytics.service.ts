@@ -12,7 +12,9 @@ interface JobsByLocation {
 }
 
 export class AnalyticsService {
-    static async getTopPayingJobs(): Promise<IJob[]> {
+    // check-up the code with Leia 
+    static async getTopPayingJobs(): Promise<any> {
+        /*
         const jobs = await JobModel.aggregate([
             {
                 $match: {
@@ -31,8 +33,9 @@ export class AnalyticsService {
             { $sort: { numericSalary: -1 } },
             { $limit: 5 }
         ]);
+        */
 
-        return jobs;
+        return null;
     }
 
     static async getMostDemandedJobs(): Promise<IJob[]> {

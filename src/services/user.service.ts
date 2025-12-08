@@ -28,6 +28,7 @@ export class UserService {
 
     }
 
+    //corrected code - check-up with someone
     static async putUserByProfile(userId: string, data: Partial<IUser> ): Promise<IUser> {
         //prevent the modification of sensitive attributes
         delete (data as any).email;
@@ -43,7 +44,7 @@ export class UserService {
             error.code = "USER_NOT_FOUND";
             throw error;
         }
-        
+
         return {
             email: user.email,
             password: "",

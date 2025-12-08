@@ -1,8 +1,8 @@
 import { z } from "zod";
 
 export const userSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
+  email: z.string().email().optional(),
+  password: z.string().min(8).optional(),
   role: z.enum(["user", "admin"]).optional(),
   firstName: z.string().optional(),
   lastName: z.string().optional(),
@@ -10,6 +10,7 @@ export const userSchema = z.object({
   biography: z.string().optional(),
   interest: z.string().optional(),
 });
+export const userUpdateSchema = userSchema.partial();
 
 export const jobSchema = z.object({
   title: z.string(),
