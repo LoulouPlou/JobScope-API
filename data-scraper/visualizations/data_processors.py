@@ -6,6 +6,18 @@ import json
 from collections import Counter
 from keywords import BUZZWORDS_TECH, JOBS
 
+
+DOMAINS = ["Web", "Mobile", "DevOps", "Data", "QA & Security", "Design", "Management"]
+
+CATEGORY_GROUPS = {
+    "Programming & Frameworks": [ "Programming Language", "Web Framework", ],
+    "DevOps & Cloud": [ "DevOps", "Cloud Platform", "Operating System", "Networking", "Storage", "Monitoring", ],
+    "Data & Databases": [ "Database", "AI/ML", "Big Data", "Data & Analytics", ],
+    "Design & UX": [ "Design Tool", "Design & UX", ],
+    "Communication & Leadership": [ "Communication", "Leadership", "Project Management", "Business & PM", ],
+    "Problem Solving & Teamwork": [ "Problem Solving", "Personal Attributes", "Interpersonal", ], }
+
+
 def load_master_jobs():
     """Load master jobs from JSON file."""
     with open("data-scraper/data/jobs_master.json", 'r', encoding='utf-8') as f:
@@ -139,4 +151,122 @@ def get_top_5_technologies_by_domain(domain=None):
         "domain": domain or "All",
         "total_jobs": len(filtered_analysis),
         "total_mentions": sum(tech_counter.values())
+    }
+
+def get_top_soft_skills(top_n=10):
+    analysis = load_jobs_analysis()
+    
+    buzzword_lookup = {b["term"]: b for b in BUZZWORDS_TECH}
+    soft_skills_counter = Counter()
+    
+    for result in analysis:
+        buzzwords = result.get("buzzwords_found", {})
+        for buzzword in buzzwords.keys():
+            if buzzword in buzzword_lookup:
+                info = buzzword_lookup[buzzword]
+                if info.get("type") == "Soft Skill":
+                    soft_skills_counter[buzzword] += 1
+    
+    top_soft_skills = soft_skills_counter.most_common(top_n)
+    
+    data = []
+    for skill, count in top_soft_skills:
+        info = buzzword_lookup.get(skill, {})
+        data.append({
+            "skill": skill,
+            "mentions": count,
+            "category": info.get("category", "Other")
+        })
+    
+    return {
+        "data": data,
+        "total_soft_skills": len(soft_skills_counter),
+        "total_mentions": sum(soft_skills_counter.values())
+    }
+
+
+def get_top_hard_skills_no_languages(top_n=10):
+    analysis = load_jobs_analysis()
+    
+    buzzword_lookup = {b["term"]: b for b in BUZZWORDS_TECH}
+    hard_skills_counter = Counter()
+    
+    for result in analysis:
+        buzzwords = result.get("buzzwords_found", {})
+        for buzzword in buzzwords.keys():
+            if buzzword in buzzword_lookup:
+                info = buzzword_lookup[buzzword]
+                if info.get("type") == "Hard Skill" and info.get("category") != "Programming Language":
+                    hard_skills_counter[buzzword] += 1
+    
+    top_hard_skills = hard_skills_counter.most_common(top_n)
+    
+    data = []
+    for skill, count in top_hard_skills:
+        info = buzzword_lookup.get(skill, {})
+        data.append({
+            "skill": skill,
+            "mentions": count,
+            "category": info.get("category", "Other")
+        })
+    
+    return {
+        "data": data,
+        "total_hard_skills_no_languages": len(hard_skills_counter),
+        "total_mentions": sum(hard_skills_counter.values())
+    }
+    
+def get_skills_by_category_for_domain(domain_name):
+    """
+    Returns aggregated skill mentions for specified job domain.
+    The buzzword are grouped in categories (see group cat. at top of the file)
+    """
+    analysis = load_jobs_analysis()
+    
+    job_domain_map = {job["title"]: job["category"] for job in JOBS}
+    
+    buzzword_lookup = {b["term"]: b for b in BUZZWORDS_TECH}
+    
+    group_counter = Counter()
+    
+    for result in analysis:
+        job_title = result.get("search_keyword", "")
+        job_domain = job_domain_map.get(job_title, "Other")
+        
+        if job_domain != domain_name:
+            continue
+        
+        buzzwords = result.get("buzzwords_found", {})
+        
+        for buzzword in buzzwords.keys():
+            if buzzword in buzzword_lookup:
+                category = buzzword_lookup[buzzword].get("category", "Other")
+                
+                # find which grouped category the cat belongs to
+                for group_name, categories in CATEGORY_GROUPS.items():
+                    if category in categories:
+                        group_counter[group_name] += 1
+                        break
+    
+    total_mentions = sum(group_counter.values())
+    
+    # always same order
+    ordered_groups = [ "Programming & Frameworks", "DevOps & Cloud", "Data & Databases", "Design & UX", "Communication & Leadership", "Problem Solving & Teamwork" ]
+    
+    data = []
+    for group in ordered_groups:
+        mentions = group_counter.get(group, 0)
+        data.append({
+            "category": group,
+            "mentions": mentions,
+            "percentage": round((mentions / total_mentions * 100), 1) if total_mentions > 0 else 0,
+            "type": "Soft Skill" if "Communication" in group or "Problem Solving" in group else "Hard Skill"
+        })
+    
+    return {
+        "domain": domain_name,
+        "data": data,
+        "total_categories": len(data),
+        "total_mentions": total_mentions,
+        "category_groups": CATEGORY_GROUPS
     }

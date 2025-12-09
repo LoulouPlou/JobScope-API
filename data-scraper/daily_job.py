@@ -44,12 +44,12 @@ def main():
         # STEP 1: SCRAPING
         print_header("STEP 1/4: SCRAPING JOBS", logger)
         
-        scrape_stats = run_scraper()
+        # scrape_stats = run_scraper()
 
-        logger.info(f"Scraping complete!")
-        logger.info(f"- New jobs: {scrape_stats['new_jobs']}")
-        logger.info(f"- Updated jobs: {scrape_stats['updated_jobs']}")
-        logger.info(f"- Total in database: {scrape_stats['total_jobs']}")
+        # logger.info(f"Scraping complete!")
+        # logger.info(f"- New jobs: {scrape_stats['new_jobs']}")
+        # logger.info(f"- Updated jobs: {scrape_stats['updated_jobs']}")
+        # logger.info(f"- Total in database: {scrape_stats['total_jobs']}")
         
         # STEP 2: ANALYSIS
         print_header("STEP 2/4: ANALYZING BUZZWORDS & EXPERIENCE", logger)

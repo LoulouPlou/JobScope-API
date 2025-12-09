@@ -3,6 +3,15 @@ import json
 from pymongo import MongoClient
 from datetime import datetime
 from dotenv import load_dotenv
+from visualizations.data_processors import (
+    get_job_types_data,
+    get_top_cities_data,
+    get_top_10_languages,
+    get_top_5_technologies_by_domain,
+    get_top_soft_skills,
+    get_top_hard_skills_no_languages,
+    get_skills_by_category_for_domain
+)
 
 load_dotenv(".env.development")
 
@@ -145,13 +154,6 @@ def upload_jobs():
 # ANALYTICS SYNC
 def upload_analytics():
     """Upload all analytics to MongoDB."""
-    from visualizations.data_processors import (
-        get_job_types_data,
-        get_top_cities_data,
-        get_top_10_languages,
-        get_top_5_technologies_by_domain
-    )
-    
     print("\n[ANALYTICS] Uploading analytics to MongoDB...")
     
     client, db = get_mongodb_connection()
@@ -211,8 +213,42 @@ def upload_analytics():
         upsert=True
     )
     
+    print("  [4/?] Top soft skills...")
+    softskills_result = get_top_soft_skills()
+    analytics_collection.update_one(
+        {"type": "top_soft_skills"},
+        {"$set": {
+            "type": "top_programming_languages",
+            "title": "Top 10 Soft Skills",
+            "chart_type": "horizontal_bar",
+            "data": softskills_result["data"],
+            "metadata": {
+                "total_mentions": softskills_result["total_mentions"],
+                "last_updated": datetime.now()
+            }
+        }},
+        upsert=True
+    )
+    
+    print("  [5/?] Top hard skills no languages...")
+    hardskills_result = get_top_hard_skills_no_languages()
+    analytics_collection.update_one(
+        {"type": "top_hard_skills_no_lang"},
+        {"$set": {
+            "type": "top_programming_languages",
+            "title": "Top 10 Hard Skills (Excluding Languages)",
+            "chart_type": "horizontal_bar",
+            "data": hardskills_result["data"],
+            "metadata": {
+                "total_mentions": hardskills_result["total_mentions"],
+                "last_updated": datetime.now()
+            }
+        }},
+        upsert=True
+    )
+    
     # Top Technologies by IT Domain
-    print("  [4/?] Top technologies by domain...")
+    print("  [6/?] Top technologies by domain...")
     for domain in DOMAINS:
         result = get_top_5_technologies_by_domain(domain)
         analytics_collection.update_one(
@@ -225,6 +261,27 @@ def upload_analytics():
                 "data": result["data"],
                 "metadata": {
                     "total_jobs": result["total_jobs"],
+                    "total_mentions": result["total_mentions"],
+                    "last_updated": datetime.now()
+                }
+            }},
+            upsert=True
+        )
+        
+    print("  [7/?] Skills Radar by domain...")
+    for domain in DOMAINS:
+        result = get_skills_by_category_for_domain(domain)
+        
+        domain_key = domain.lower().replace(' ', '_').replace('&', 'and')
+        
+        analytics_collection.update_one(
+            {"type": f"radar_domain_{domain_key}"},
+            {"$set": {
+                "type": f"radar_domain_{domain_key}",
+                "domain": domain,
+                "data": result["data"],
+                "metadata": {
+                    "total_categories": result["total_categories"],
                     "total_mentions": result["total_mentions"],
                     "last_updated": datetime.now()
                 }

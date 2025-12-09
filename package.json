@@ -13,7 +13,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "scrape": "python data-scraper/daily-job.py"
+    "scrape": "python data-scraper/daily_job.py"
   },
   "repository": {
     "type": "git",

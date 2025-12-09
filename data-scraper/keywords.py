@@ -284,6 +284,14 @@ BUZZWORDS_TECH = [
     {"term": "Interface design", "type": "Hard Skill", "category": "Design & UX"},
     {"term": "Product prototyping", "type": "Hard Skill", "category": "Design & UX"},
     {"term": "User feedback analysis", "type": "Hard Skill", "category": "Design & UX"},
+    {"term": "User-friendly", "type": "Soft Skill", "category": "Design & UX"},
+    
+    # DESIGN TOOLS
+    {"term": "Photoshop", "type": "Hard Skill", "category": "Design Tool"},
+    {"term": "Adobe Creative Suite", "type": "Hard Skill", "category": "Design Tool"},
+    {"term": "Adobe XD", "type": "Hard Skill", "category": "Design Tool"},
+    {"term": "Framer", "type": "Hard Skill", "category": "Design Tool"},
+    {"term": "Sketch", "type": "Hard Skill", "category": "Design Tool"},
     
     # METHODOLOGIES
     {"term": "Agile", "type": "Methodology", "category": "Project Management"},

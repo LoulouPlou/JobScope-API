@@ -82,13 +82,14 @@
       "GCP": 2,
       "Cypress": 2,
       "Version control": 2,
+      "User-friendly": 1,
       "Agile": 2,
       "Team collaboration": 2,
       "Coaching": 2,
       "Collaboration": 4
     },
-    "total_buzzwords": 30,
-    "unique_buzzwords": 14
+    "total_buzzwords": 31,
+    "unique_buzzwords": 15
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGV2ZWxvcGVyOyBJbmRlcGVuZGVudCBDb250cmFjdG9ycyIsImNvbXBhbnlfbmFtZSI6Ildvb2RHcmVlbiIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiI5WnFMYUx1SU5SZWVVNzFyQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -155,12 +156,14 @@
       "MongoDB": 2,
       "Git": 2,
       "Version control": 2,
+      "User-friendly": 2,
+      "Photoshop": 2,
       "Communication": 2,
       "Problem-solving": 2,
       "Attention to detail": 2
     },
-    "total_buzzwords": 22,
-    "unique_buzzwords": 11
+    "total_buzzwords": 26,
+    "unique_buzzwords": 13
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJKdW5pb3IgV2ViIERldmVsb3BlciAtIENoZWlsIENhbmFkYSIsImNvbXBhbnlfbmFtZSI6IkNoZWlsIERhbGxhcyIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiYmd4VC1mOThBMUhPMWhUX0FBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -173,11 +176,12 @@
       "JavaScript": 1,
       "Git": 1,
       "Version control": 1,
+      "Photoshop": 1,
       "Communication": 1,
       "Attention to detail": 1
     },
-    "total_buzzwords": 5,
-    "unique_buzzwords": 5
+    "total_buzzwords": 6,
+    "unique_buzzwords": 6
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJGdWxsIFN0YWNrIERldmVsb3BlciAoSHlicmlkKSIsImNvbXBhbnlfbmFtZSI6IkFuYW50IFNhdHlhIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6InhTOW5PTVNhVkRBa19vdGdBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -204,16 +208,21 @@
     "search_keyword": "Full Stack Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
+      "Java": 4,
+      "JavaScript": 2,
+      "Spring Boot": 2,
       "React": 2,
-      "ASP.NET Core": 3,
-      "Redis": 2,
-      "Docker": 2,
-      "Azure": 12,
-      "Leadership": 1,
-      "Mentoring": 1
+      "Azure": 2,
+      "Linux": 2,
+      "Continuous integration": 2,
+      "Communication": 2,
+      "Written communication": 2,
+      "Problem-solving": 2,
+      "Decision-making": 2,
+      "Negotiation": 2
     },
-    "total_buzzwords": 23,
-    "unique_buzzwords": 7
+    "total_buzzwords": 26,
+    "unique_buzzwords": 12
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgRnVsbHN0YWNrIERldmVsb3BlciAoVHlwZXNjcmlwdC9Ob2RlSlMpIiwiY29tcGFueV9uYW1lIjoiUmVzb25haXRlIiwiYWRkcmVzc19jaXR5IjoiTWFya2hhbSwgT04iLCJodGlkb2NpZCI6ImplY29tMzdxd1JHVG9QUklBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -273,11 +282,12 @@
     "buzzwords_found": {
       "JavaScript": 1,
       "Laravel": 2,
+      "User-friendly": 1,
       "Communication": 3,
       "Curiosity": 1
     },
-    "total_buzzwords": 7,
-    "unique_buzzwords": 4
+    "total_buzzwords": 8,
+    "unique_buzzwords": 5
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJFbnRyeSBGdWxsLVN0YWNrIEphdmEgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiTm9ydGhlcm4gQ29tbWVyY2UiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoieC1BLXBlb2ZuMUE4TWdIeUFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -418,13 +428,14 @@
       "CI/CD": 1,
       "Cypress": 1,
       "Front-end development": 1,
+      "User-friendly": 1,
       "Communication": 1,
       "Problem-solving": 1,
       "Continuous learning": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 14,
-    "unique_buzzwords": 9
+    "total_buzzwords": 15,
+    "unique_buzzwords": 10
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgRnJvbnRlbmQgRW5naW5lZXIsIEdyb3d0aCAmIEFnZW50cyBUZWFtIiwiY29tcGFueV9uYW1lIjoiRXZlblVwIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IjU2eGo3clFnRW1KRE04TkJBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -824,7 +835,7 @@
     "title": "BackEnd Developer (Python, C#/.NET), Global Deloitte Technology",
     "company_name": "Deloitte",
     "location": "Toronto, ON",
-    "search_keyword": "Backend Developer",
+    "search_keyword": "Python Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
       "Python": 3,
@@ -1048,10 +1059,11 @@
       "JavaScript": 4,
       "Angular": 2,
       "React": 2,
+      "Photoshop": 2,
       "Continuous improvement": 2
     },
-    "total_buzzwords": 10,
-    "unique_buzzwords": 4
+    "total_buzzwords": 12,
+    "unique_buzzwords": 5
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVSS9VWCArIEZyb250LUVuZCBEZXZlbG9wZXIgKFNob3BpZnkgLyBlQ29tbWVyY2UpIiwiY29tcGFueV9uYW1lIjoiUGFydHMgRW5naW5lIENhbmFkYSIsImFkZHJlc3NfY2l0eSI6IlJpY2htb25kIEhpbGwsIE9OIiwiaHRpZG9jaWQiOiJnUUdGZUV3UG1tZ2ptNUVoQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -1065,13 +1077,15 @@
       "TypeScript": 2,
       "React": 2,
       "Front-end development": 4,
+      "User-friendly": 1,
+      "Framer": 1,
       "Communication": 1,
       "Leadership": 1,
       "Attention to detail": 1,
       "Collaboration": 2
     },
-    "total_buzzwords": 15,
-    "unique_buzzwords": 8
+    "total_buzzwords": 17,
+    "unique_buzzwords": 10
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXZWJzaXRlIERldmVsb3BlciIsImNvbXBhbnlfbmFtZSI6IkJSQU5EQk9PU1RZIElOQyIsImFkZHJlc3NfY2l0eSI6Ik1hcmtoYW0sIE9OIiwiaHRpZG9jaWQiOiJ6RTBWRDZFc0xuR1BrUEV2QUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -1095,10 +1109,11 @@
     "experience_level": "Mid",
     "buzzwords_found": {
       "PHP": 1,
+      "Photoshop": 1,
       "Networking": 1
     },
-    "total_buzzwords": 2,
-    "unique_buzzwords": 2
+    "total_buzzwords": 3,
+    "unique_buzzwords": 3
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJBU1AgV2ViIERldmVsb3BlciAoSnVuaW9yIHRvIEludGVybWVkaWF0ZSkgLSBHcm93ICYgQnVpbGQiLCJjb21wYW55X25hbWUiOiJST1NTIiwiYWRkcmVzc19jaXR5IjoiUmljaG1vbmQgSGlsbCwgT04iLCJodGlkb2NpZCI6Im1BV21EN0dhSXN4SDU2YlFBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -1705,12 +1720,13 @@
       "React": 4,
       "Azure": 5,
       "Front-end development": 1,
+      "User-friendly": 1,
       "Agile": 2,
       "Problem-solving": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 17,
-    "unique_buzzwords": 9
+    "total_buzzwords": 18,
+    "unique_buzzwords": 10
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJGdWxsIFN0YWNrIERldmVsb3BlciAtIEdlbiBBSSBKYXZhU2NyaXB0IPCfj4YiLCJjb21wYW55X25hbWUiOiJEaXJlY3QgSVQgUmVjcnVpdGluZyBJbmMuIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IkFqR3JLaUF3SWcwSTRsMTlBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -1955,12 +1971,13 @@
       "CI/CD": 2,
       "Cypress": 2,
       "Front-end development": 2,
+      "User-friendly": 2,
       "Communication": 2,
       "Problem-solving": 2,
       "Continuous learning": 2
     },
-    "total_buzzwords": 22,
-    "unique_buzzwords": 8
+    "total_buzzwords": 24,
+    "unique_buzzwords": 9
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBEZXZlbG9wZXIgKC5OZXQvUmVhY3QpLCBXZWIgQXBwbGljYXRpb25zIiwiY29tcGFueV9uYW1lIjoiU3VydmFsZW50IiwiYWRkcmVzc19jaXR5IjoiQnJhbXB0b24sIE9OIiwiaHRpZG9jaWQiOiJiaUY1T0xycEdxOFNacnJhQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -1990,7 +2007,7 @@
     "title": "Senior React Developer",
     "company_name": "Echelon 56",
     "location": "Vaughan, ON",
-    "search_keyword": "React Native Developer",
+    "search_keyword": "React Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
       "C": 1,
@@ -2024,11 +2041,12 @@
       "React": 7,
       "PostgreSQL": 2,
       "Version control": 2,
+      "User-friendly": 3,
       "Communication": 2,
       "Collaboration": 2
     },
-    "total_buzzwords": 31,
-    "unique_buzzwords": 8
+    "total_buzzwords": 34,
+    "unique_buzzwords": 9
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgUmVhY3QgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiSWduaXRlIFRhbGVudCBTb2x1dGlvbnMiLCJhZGRyZXNzX2NpdHkiOiJNaXNzaXNzYXVnYSwgT04iLCJodGlkb2NpZCI6IllxXzJEV3lNNjVJRUJSajFBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -2234,22 +2252,21 @@
     "search_keyword": "PHP Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
-      "TypeScript": 5,
-      "PHP": 3,
-      "React": 5,
-      "Laravel": 3,
+      "TypeScript": 3,
+      "PHP": 2,
+      "React": 3,
+      "Laravel": 2,
       "MySQL": 2,
       "Redis": 2,
       "BigQuery": 2,
-      "GCP": 5,
+      "GCP": 4,
       "Data analysis": 2,
       "Communication": 4,
-      "Leadership": 1,
       "Delegation": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 36,
-    "unique_buzzwords": 13
+    "total_buzzwords": 28,
+    "unique_buzzwords": 12
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgZnVsbC1zdGFjayBQSFAtTGFyYXZlbCBkZXZlbG9wZXIiLCJjb21wYW55X25hbWUiOiJSYXBpZENlbnRzIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IjRzTktuQ3ItbzdoXzVhUUZBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -2338,12 +2355,13 @@
       "PHP": 2,
       "MySQL": 2,
       "Testing and debugging": 2,
+      "User-friendly": 2,
       "Problem-solving": 2,
       "Time management": 2,
       "Attention to detail": 2
     },
-    "total_buzzwords": 16,
-    "unique_buzzwords": 7
+    "total_buzzwords": 18,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXb3JkUHJlc3MgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiQmxhemVzb2Z0IiwiYWRkcmVzc19jaXR5IjoiVmF1Z2hhbiwgT04iLCJodGlkb2NpZCI6Im9zX1JsS1RubDhTQl91Y0FBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -2369,9 +2387,12 @@
     "location": "Toronto, ON",
     "search_keyword": "WordPress Developer",
     "experience_level": "Senior",
-    "buzzwords_found": {},
-    "total_buzzwords": 0,
-    "unique_buzzwords": 0
+    "buzzwords_found": {
+      "Photoshop": 2,
+      "Adobe Creative Suite": 3
+    },
+    "total_buzzwords": 5,
+    "unique_buzzwords": 2
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgUEhQIEphdmFzY3JpcHQgV29yZFByZXNzIERldmVsb3BlciDigJMgVG9yb250byxPTiIsImNvbXBhbnlfbmFtZSI6IktvdmFzeXMiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoieGttYzBTenc0b3FtR1A2Q0FBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -2405,9 +2426,12 @@
     "location": "Toronto, ON",
     "search_keyword": "WordPress Developer",
     "experience_level": "Mid",
-    "buzzwords_found": {},
-    "total_buzzwords": 0,
-    "unique_buzzwords": 0
+    "buzzwords_found": {
+      "Photoshop": 1,
+      "Adobe Creative Suite": 1
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 2
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXb3JkUHJlc3MgRnVsbC1TdGFjayIsImNvbXBhbnlfbmFtZSI6Ik1lYXN1cmUgTWFya2V0aW5nIiwiYWRkcmVzc19jaXR5IjoiT2FrdmlsbGUsIE9OIiwiaHRpZG9jaWQiOiJBcXhKWGc1VjR5NWduV0YzQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -2446,9 +2470,12 @@
     "location": "Toronto, ON",
     "search_keyword": "WordPress Developer",
     "experience_level": "Senior",
-    "buzzwords_found": {},
-    "total_buzzwords": 0,
-    "unique_buzzwords": 0
+    "buzzwords_found": {
+      "Photoshop": 1,
+      "Adobe Creative Suite": 2
+    },
+    "total_buzzwords": 3,
+    "unique_buzzwords": 2
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXb3JkUHJlc3MgRGV2ZWxvcGVyICgxIOKAkyAyIHllYXJzKSIsImNvbXBhbnlfbmFtZSI6IlBpeGVsS2FyZSBTb2x1dGlvbnMgUHZ0LiBMdGQuIiwiYWRkcmVzc19jaXR5IjoiQWpheCwgT04iLCJodGlkb2NpZCI6IlhnaDZmQlhadGIybi1Bc1FBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -2594,12 +2621,13 @@
       "MySQL": 2,
       "SQLite": 2,
       "Git": 2,
+      "Adobe Creative Suite": 1,
       "Agile": 2,
       "Communication": 2,
       "Attention to detail": 2
     },
-    "total_buzzwords": 24,
-    "unique_buzzwords": 11
+    "total_buzzwords": 25,
+    "unique_buzzwords": 12
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgQmFja2VuZCBKYXZhIERldmVsb3BlciIsImNvbXBhbnlfbmFtZSI6IkVhcmx5IENhcmVlciIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiS3QtM0g2Sm81NGhBdGNhR0FBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -4401,7 +4429,7 @@
     "title": "Android Mobile Application Developer",
     "company_name": "BVD Group",
     "location": "Brampton, ON",
-    "search_keyword": "Android Developer",
+    "search_keyword": "Mobile Developer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "Java": 1,
@@ -4530,11 +4558,12 @@
     "buzzwords_found": {
       "Swift": 2,
       "Kotlin": 2,
+      "User-friendly": 2,
       "Communication": 2,
       "Problem-solving": 2
     },
-    "total_buzzwords": 8,
-    "unique_buzzwords": 4
+    "total_buzzwords": 10,
+    "unique_buzzwords": 5
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJEZXZlbG9wbWVudCBMZWFkIC0gTW9iaWxlIiwiY29tcGFueV9uYW1lIjoiSGF5cyIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJBMXJPVEpNZnUzOUtDcVdRQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -6441,6 +6470,7 @@
     "experience_level": "Senior",
     "buzzwords_found": {
       "Data visualization": 2,
+      "User-friendly": 2,
       "Communication": 4,
       "Presentation skills": 2,
       "Leadership": 1,
@@ -6450,8 +6480,8 @@
       "Collaboration": 2,
       "Stakeholder management": 1
     },
-    "total_buzzwords": 16,
-    "unique_buzzwords": 9
+    "total_buzzwords": 18,
+    "unique_buzzwords": 10
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJGaW5hbmNlIEJJL0RhdGEgQW5hbHlzdCIsImNvbXBhbnlfbmFtZSI6IlJvYmVydCBIYWxmIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6InhSZ18zSXJXVm9oQVNIYWNBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -6906,11 +6936,14 @@
     "search_keyword": "UI/UX Designer",
     "experience_level": "Mid",
     "buzzwords_found": {
+      "User-friendly": 1,
+      "Adobe XD": 2,
+      "Sketch": 2,
       "Communication": 1,
       "Attention to detail": 1
     },
-    "total_buzzwords": 2,
-    "unique_buzzwords": 2
+    "total_buzzwords": 7,
+    "unique_buzzwords": 5
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVSSAvIFVYIERlc2lnbmVyIiwiY29tcGFueV9uYW1lIjoiUkVMUSBURUNITk9MT0dJRVMgTExDIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6InNfbXlKcnhuamlROU5Pdm5BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -6964,12 +6997,15 @@
     "buzzwords_found": {
       "JavaScript": 1,
       "User-centered design": 1,
+      "User-friendly": 1,
+      "Adobe XD": 1,
+      "Sketch": 1,
       "Communication": 1,
       "Problem-solving": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 5,
-    "unique_buzzwords": 5
+    "total_buzzwords": 8,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJKdW5pb3IgVUkvVVggRGVzaWduZXIiLCJjb21wYW55X25hbWUiOiJDaGFyZ2VyIExvZ2lzdGljcyBJbmMiLCJhZGRyZXNzX2NpdHkiOiJCcmFtcHRvbiwgT04iLCJodGlkb2NpZCI6Im5CZV9nTnN3eXZZTHhwek1BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -6983,10 +7019,14 @@
       "TypeScript": 1,
       "React": 3,
       "Git": 1,
-      "Version control": 1
+      "Version control": 1,
+      "User-friendly": 1,
+      "Adobe XD": 1,
+      "Framer": 1,
+      "Sketch": 1
     },
-    "total_buzzwords": 7,
-    "unique_buzzwords": 5
+    "total_buzzwords": 11,
+    "unique_buzzwords": 9
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVSSAvIFVYIERlc2lnbmVyIChGaWdtYSBGb2N1c2VkKSIsImNvbXBhbnlfbmFtZSI6IkZpZ21hIEpvYiIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiU0VBRGhLNUZuRGJTdVhuQUFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -7003,11 +7043,12 @@
       "Version control": 1,
       "Front-end development": 1,
       "Testing and debugging": 1,
+      "User-friendly": 1,
       "Problem-solving": 1,
       "Attention to detail": 1
     },
-    "total_buzzwords": 9,
-    "unique_buzzwords": 9
+    "total_buzzwords": 10,
+    "unique_buzzwords": 10
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVSeKAiy9VWCBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IkpheSBBbmFseXRpeCIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiItcGNhOVUwcjNwMHVVY2w0QUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -7031,12 +7072,13 @@
     "experience_level": "Senior",
     "buzzwords_found": {
       "User-centered design": 2,
+      "User-friendly": 4,
       "Communication": 2,
       "Verbal communication": 2,
       "Leadership": 2
     },
-    "total_buzzwords": 8,
-    "unique_buzzwords": 4
+    "total_buzzwords": 12,
+    "unique_buzzwords": 5
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJGaWdtYS1Ecml2ZW4gVUkgLyBVWCBEZXNpZ25lciDigJQgQ3JhZnQgRGVsaWdodGZ1bCBJbnRlcmZhY2VzIiwiY29tcGFueV9uYW1lIjoiRmlnbWEgSm9iIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlVPQlJjN1lEaVZYVjNZdFZBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -7308,6 +7350,9 @@
     "search_keyword": "Product Designer",
     "experience_level": "Senior",
     "buzzwords_found": {
+      "User-friendly": 1,
+      "Adobe Creative Suite": 1,
+      "Adobe XD": 1,
       "Continuous improvement": 1,
       "Communication": 2,
       "Leadership": 1,
@@ -7318,8 +7363,8 @@
       "Collaboration": 3,
       "Process improvement": 1
     },
-    "total_buzzwords": 12,
-    "unique_buzzwords": 9
+    "total_buzzwords": 15,
+    "unique_buzzwords": 12
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgUHJvZHVjdCBEZXNpZ25lciAoSHlicmlkKSIsImNvbXBhbnlfbmFtZSI6IkhvbWViYXNlIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlVEbTkxR2JjYk1JS2FfamxBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -7659,11 +7704,14 @@
     "experience_level": "Mid",
     "buzzwords_found": {
       "JavaScript": 2,
+      "Photoshop": 1,
+      "Adobe Creative Suite": 2,
+      "Sketch": 2,
       "Communication": 1,
       "Presentation skills": 1
     },
-    "total_buzzwords": 4,
-    "unique_buzzwords": 3
+    "total_buzzwords": 9,
+    "unique_buzzwords": 6
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGVzaWduZXIgSm9iIiwiY29tcGFueV9uYW1lIjoiTUFYIFdBVEVSLiAtIE1heCBBaXJmbG93IGx0ZC4iLCJhZGRyZXNzX2NpdHkiOiJWYXVnaGFuLCBPTiIsImh0aWRvY2lkIjoiRU1JQUpsQ21TbWZJSDBCQUFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -7703,13 +7751,16 @@
     "experience_level": "Mid",
     "buzzwords_found": {
       "JavaScript": 2,
+      "User-friendly": 4,
+      "Adobe Creative Suite": 1,
+      "Sketch": 1,
       "Continuous improvement": 2,
       "Communication": 1,
       "Problem-solving": 5,
       "Collaboration": 5
     },
-    "total_buzzwords": 15,
-    "unique_buzzwords": 5
+    "total_buzzwords": 21,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJncmFwaGljIGRlc2lnbmVyLCBXZWIiLCJjb21wYW55X25hbWUiOiJDYW5hZGEgU3RhcnR1cHMiLCJhZGRyZXNzX2NpdHkiOiJPbnRhcmlvIiwiaHRpZG9jaWQiOiJ4RlJSWUl4Tk5qQ1RyT25UQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -7974,12 +8025,15 @@
     "buzzwords_found": {
       "JavaScript": 1,
       "User-centered design": 1,
+      "User-friendly": 1,
+      "Adobe XD": 1,
+      "Sketch": 1,
       "Communication": 1,
       "Problem-solving": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 5,
-    "unique_buzzwords": 5
+    "total_buzzwords": 8,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJMZWFkIFVYIERlc2lnbmVyIiwiY29tcGFueV9uYW1lIjoiTGF1bmNoIFBvdGF0byIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiUFFxanR4S2Q5bDFfZE41MkFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -7989,11 +8043,12 @@
     "search_keyword": "UX Designer",
     "experience_level": "Senior",
     "buzzwords_found": {
+      "Adobe Creative Suite": 2,
       "Communication": 2,
       "Initiative": 2
     },
-    "total_buzzwords": 4,
-    "unique_buzzwords": 2
+    "total_buzzwords": 6,
+    "unique_buzzwords": 3
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVWCBSZXNlYXJjaGVyIiwiY29tcGFueV9uYW1lIjoiQ3JlYXRpdmUgQ2lyY2xlIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlN1SDlEMU5NMElqU3A1cTdBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -8417,12 +8472,13 @@
       "PHP": 1,
       "MySQL": 1,
       "Git": 1,
+      "Photoshop": 3,
       "Communication": 1,
       "Attention to detail": 1,
       "Initiative": 1
     },
-    "total_buzzwords": 7,
-    "unique_buzzwords": 7
+    "total_buzzwords": 10,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJKdW5pb3IgUHJvZ3JhbW1lciDigJMgQ29tbXVuaXR5IFN1cHBvcnQgU2VydmljZXMgKENhc3VhbCkiLCJjb21wYW55X25hbWUiOiJTdC4gSm9zZXBoJ3MgSGVhbHRoIENlbnRyZSBHdWVscGgiLCJhZGRyZXNzX2NpdHkiOiJHdWVscGgsIE9OIiwiaHRpZG9jaWQiOiJuUkY0N29JYWwzcmFZMWE4QUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -8734,11 +8790,12 @@
       "Kotlin": 1,
       "Version control": 1,
       "Continuous integration": 2,
+      "User-friendly": 1,
       "Coaching": 1,
       "Empathy": 2
     },
-    "total_buzzwords": 11,
-    "unique_buzzwords": 8
+    "total_buzzwords": 12,
+    "unique_buzzwords": 9
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBFbmdpbmVlciBJLCBFbnRyeS1MZXZlbCAoR3JhZHVhdGlvbiBEYXRlOiBGYWxsIDIwMjUtU3VtbWVyIDIwMjYpIiwiY29tcGFueV9uYW1lIjoiRG9vckRhc2ggQ2FuYWRhIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlJVY1pxQm1Pcl9XVTRYMWdBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -8754,11 +8811,12 @@
       "Kotlin": 1,
       "Version control": 1,
       "Continuous integration": 2,
+      "User-friendly": 1,
       "Coaching": 1,
       "Empathy": 2
     },
-    "total_buzzwords": 11,
-    "unique_buzzwords": 8
+    "total_buzzwords": 12,
+    "unique_buzzwords": 9
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJFbnRyeS1sZXZlbCBTb2Z0d2FyZSBFbmdpbmVlciAoQ2FuYWRhKSIsImNvbXBhbnlfbmFtZSI6IkNvZ25pemFudCIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiI4a0RFQTRiR2ZLWFlVTmRrQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -9754,12 +9812,13 @@
       "CI/CD": 2,
       "Cypress": 2,
       "Front-end development": 2,
+      "User-friendly": 2,
       "Communication": 2,
       "Problem-solving": 2,
       "Continuous learning": 2
     },
-    "total_buzzwords": 22,
-    "unique_buzzwords": 8
+    "total_buzzwords": 24,
+    "unique_buzzwords": 9
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJSZWFjdEpTIGRldmVsb3BlciIsImNvbXBhbnlfbmFtZSI6IkFra29kaXMiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoialpwWElBYXBPS2lTd3ZOUEFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -9797,11 +9856,12 @@
       "Linux": 2,
       "Version control": 2,
       "Data analysis": 2,
+      "User-friendly": 2,
       "Communication": 2,
       "Initiative": 1
     },
-    "total_buzzwords": 35,
-    "unique_buzzwords": 12
+    "total_buzzwords": 37,
+    "unique_buzzwords": 13
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgRnVsbCBTdGFjayBEZXZlbG9wZXIgTm9kZS5qcyAmIFJlYWN0LmpzIiwiY29tcGFueV9uYW1lIjoiQXJ0ZWNoIExMQyIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiI2SmNNbHBOeWZqTmxJY0FEQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -9900,7 +9960,7 @@
     "title": "Full-Stack Developer (React.js / Node.js)",
     "company_name": "N2P Systems",
     "location": "Toronto, ON",
-    "search_keyword": "Node.js Developer",
+    "search_keyword": "React Developer",
     "experience_level": "Lead",
     "buzzwords_found": {
       "JavaScript": 2,
@@ -10173,7 +10233,7 @@
     "title": "Back-End Developer - Python, GCP",
     "company_name": "Scotiabank",
     "location": "Toronto, ON",
-    "search_keyword": "Backend Developer",
+    "search_keyword": "Python Developer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "Python": 3,
@@ -10367,7 +10427,7 @@
     "title": "Lead Frontend Developer",
     "company_name": "Hays",
     "location": "Toronto, ON",
-    "search_keyword": "Frontend Developer",
+    "search_keyword": "Web Developer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "JavaScript": 2,
@@ -10462,7 +10522,7 @@
     "title": "AWS Software Engineer",
     "company_name": "Apex Systems",
     "location": "Toronto, ON",
-    "search_keyword": "AWS Engineer",
+    "search_keyword": "Junior Developer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "DynamoDB": 2,
@@ -10544,13 +10604,14 @@
       "Angular": 4,
       "React": 8,
       "Linux": 2,
+      "User-friendly": 1,
       "Continuous improvement": 2,
       "Communication": 2,
       "Problem-solving": 2,
       "Collaboration": 1
     },
-    "total_buzzwords": 32,
-    "unique_buzzwords": 10
+    "total_buzzwords": 33,
+    "unique_buzzwords": 11
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBEZXZlbG9wZXIgLSBGcm9udGVuZCIsImNvbXBhbnlfbmFtZSI6IlhhbmFkdSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiI1UVVvLW5uNWNVVHpnMVRXQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -10577,7 +10638,7 @@
     "title": "Frontend UI Web/App Developer",
     "company_name": "Jeavensoft",
     "location": "Toronto, ON",
-    "search_keyword": "Web Developer",
+    "search_keyword": "Frontend Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
       "JavaScript": 4,
@@ -10948,12 +11009,13 @@
       "Front-end development": 1,
       "Testing and debugging": 1,
       "Data visualization": 1,
+      "Adobe XD": 1,
       "Agile": 1,
       "Problem-solving": 1,
       "Continuous learning": 1
     },
-    "total_buzzwords": 31,
-    "unique_buzzwords": 28
+    "total_buzzwords": 32,
+    "unique_buzzwords": 29
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJBTkRST0lEIERFVkVMT1BFUiIsImNvbXBhbnlfbmFtZSI6IklUUyBHbG9iYWwiLCJhZGRyZXNzX2NpdHkiOiJBamF4LCBPTiIsImh0aWRvY2lkIjoicEh6TWVDMTJmTmFnM1RCYkFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -10999,7 +11061,7 @@
     "title": "Senior Mobile Engineer – React Native (iOS / Android)",
     "company_name": "Legend",
     "location": "Toronto, ON",
-    "search_keyword": "Mobile Developer",
+    "search_keyword": "React Native Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
       "React": 2,
@@ -11103,9 +11165,12 @@
     "location": "Toronto, ON",
     "search_keyword": "WordPress Developer",
     "experience_level": "Mid",
-    "buzzwords_found": {},
-    "total_buzzwords": 0,
-    "unique_buzzwords": 0
+    "buzzwords_found": {
+      "Photoshop": 1,
+      "Adobe Creative Suite": 1
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 2
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXb3JkUHJlc3MgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiYmVCZWVEZXZlbG9wZXIiLCJhZGRyZXNzX2NpdHkiOiJNaXNzaXNzYXVnYSwgT04iLCJodGlkb2NpZCI6ImhJMWFVZi1qVmk2eDJGcldBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -11133,12 +11198,13 @@
     "buzzwords_found": {
       "JavaScript": 2,
       "PHP": 2,
+      "User-friendly": 2,
       "Communication": 6,
       "Written communication": 2,
       "Attention to detail": 2
     },
-    "total_buzzwords": 14,
-    "unique_buzzwords": 5
+    "total_buzzwords": 16,
+    "unique_buzzwords": 6
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgSW5mcmFzdHJ1Y3R1cmUgRW5naW5lZXIg4oCTIERlZmVuY2UgKEh5YnJpZCBXb3JrKSIsImNvbXBhbnlfbmFtZSI6IkF0a2luc1LDqWFsaXMiLCJhZGRyZXNzX2NpdHkiOiJNaXNzaXNzYXVnYSwgT04iLCJodGlkb2NpZCI6Ik5nQkJkTkViZWd6NjZKN3BBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -11245,12 +11311,13 @@
       "AWS": 2,
       "Azure": 2,
       "Google Cloud": 2,
+      "User-friendly": 2,
       "Agile": 2,
       "Continuous improvement": 2,
       "Problem-solving": 2
     },
-    "total_buzzwords": 22,
-    "unique_buzzwords": 11
+    "total_buzzwords": 24,
+    "unique_buzzwords": 12
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJEZXZlbG9wZXIgLSBFbWVyZ2luZyB0ZWNobm9sb2dpZXM7IEJpZyBEYXRhLCBNb2JpbGUsIENsb3VkLCBSUEEiLCJjb21wYW55X25hbWUiOiJMYW5jZXNvZnQiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiX0tnUjYwbndxcnI1MGJFb0FBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -11372,6 +11439,7 @@
       "Version control": 2,
       "Front-end development": 1,
       "Testing and debugging": 1,
+      "User-friendly": 1,
       "Agile": 2,
       "Scrum": 1,
       "Communication": 1,
@@ -11379,8 +11447,8 @@
       "Continuous learning": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 38,
-    "unique_buzzwords": 25
+    "total_buzzwords": 39,
+    "unique_buzzwords": 26
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJJbnRlcm1lZGlhdGUgLk5FVCBkZXZlbG9wZXIiLCJjb21wYW55X25hbWUiOiJJbmZvdGVrIENvbnN1bHRpbmcgSW5jLiIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJrZUI2UndHZDVhem9WbFZBQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -11986,7 +12054,7 @@
     "title": "Staff QA Engineer (Global Security)",
     "company_name": "Royal Bank of Canada",
     "location": "Toronto, ON",
-    "search_keyword": "QA Engineer",
+    "search_keyword": "Security Engineer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "JMeter": 1,
@@ -12419,13 +12487,10 @@
     "buzzwords_found": {
       "User-centered design": 2,
       "Communication": 2,
-      "Written communication": 2,
-      "Team building": 2,
-      "Curiosity": 2,
-      "Empathy": 2
+      "Written communication": 2
     },
-    "total_buzzwords": 12,
-    "unique_buzzwords": 6
+    "total_buzzwords": 6,
+    "unique_buzzwords": 3
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgVVggVUkgRGVzaWduZXIiLCJjb21wYW55X25hbWUiOiJUYXRhIENvbnN1bHRhbmN5IFNlcnZpY2VzIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlpDclR3c3R5SkVQUW9WeTdBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -12436,10 +12501,11 @@
     "experience_level": "Senior",
     "buzzwords_found": {
       "User-centered design": 2,
+      "Sketch": 2,
       "Agile": 2
     },
-    "total_buzzwords": 4,
-    "unique_buzzwords": 2
+    "total_buzzwords": 6,
+    "unique_buzzwords": 3
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVSS9VWCBEZXNpZ25lciAoRmlnbWEgRm9jdXNlZCkiLCJjb21wYW55X25hbWUiOiJSTSBTdGFmZmluZyBCLlYuIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Im1IdXAwQm1Zdy1UTEp3b3NBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -12451,12 +12517,15 @@
     "buzzwords_found": {
       "JavaScript": 1,
       "User-centered design": 1,
+      "User-friendly": 1,
+      "Adobe XD": 1,
+      "Sketch": 1,
       "Communication": 1,
       "Problem-solving": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 5,
-    "unique_buzzwords": 5
+    "total_buzzwords": 8,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVWCBEZXNpZ25lci1JbnRlcm1lZGlhdGUiLCJjb21wYW55X25hbWUiOiJCZXZlcnRlYyIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJpN1lYR2pmdl9XMkp2WC1lQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -12466,10 +12535,13 @@
     "search_keyword": "UI/UX Designer",
     "experience_level": "Mid",
     "buzzwords_found": {
-      "User-centered design": 2
+      "User-centered design": 2,
+      "User-friendly": 2,
+      "Adobe XD": 2,
+      "Sketch": 2
     },
-    "total_buzzwords": 2,
-    "unique_buzzwords": 1
+    "total_buzzwords": 8,
+    "unique_buzzwords": 4
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVSS9VWCBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IlBsZWFzYW50IFNvbHV0aW9ucyBJbmMuIiwiYWRkcmVzc19jaXR5IjoiTWlzc2lzc2F1Z2EsIE9OIiwiaHRpZG9jaWQiOiJZQjhMd3JiNHZGWjhnVlZVQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -12533,10 +12605,11 @@
       "Vue.js": 1,
       "Version control": 1,
       "Front-end development": 1,
+      "User-friendly": 1,
       "Attention to detail": 1
     },
-    "total_buzzwords": 8,
-    "unique_buzzwords": 7
+    "total_buzzwords": 9,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJHcmFwaGljIChXZWIpIERlc2lnbmVyIChSZW1vdGUgQ0FOKSIsImNvbXBhbnlfbmFtZSI6Ik1heGltdXMgSGVhbHRoLCBJbmMuIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Il9KVjlDV3pBSC1ZRTctSF9BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -12547,6 +12620,7 @@
     "experience_level": "Mid",
     "buzzwords_found": {
       "Version control": 1,
+      "Adobe Creative Suite": 1,
       "Communication": 2,
       "Presentation skills": 1,
       "Leadership": 1,
@@ -12556,8 +12630,8 @@
       "Flexibility": 1,
       "Collaboration": 2
     },
-    "total_buzzwords": 12,
-    "unique_buzzwords": 9
+    "total_buzzwords": 13,
+    "unique_buzzwords": 10
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJHcmFwaGljIFdlYiBEZXNpZ25lclxyXG5HcmFwaGljIFdlYiBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IkVQSUMgLSBFZHVjYXRpb25hbCBQcm9ncmFtIElubm92YXRpb25zIENlbnRlciIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiQjFkT0hYdkNqa015M1o4c0FBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -12584,10 +12658,11 @@
     "buzzwords_found": {
       "JavaScript": 2,
       "PHP": 2,
+      "Adobe Creative Suite": 2,
       "Communication": 2
     },
-    "total_buzzwords": 6,
-    "unique_buzzwords": 3
+    "total_buzzwords": 8,
+    "unique_buzzwords": 4
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGVzaWduZXIgfCBVWC9VSSB8IEh5YnJpZCIsImNvbXBhbnlfbmFtZSI6IlJhbmRzdGFkIENhbmFkYSIsImFkZHJlc3NfY2l0eSI6Ik1hcmtoYW0sIE9OIiwiaHRpZG9jaWQiOiJqZFF3VC1JZXdDNWozMUxMQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -12598,13 +12673,16 @@
     "experience_level": "Mid",
     "buzzwords_found": {
       "JavaScript": 2,
+      "User-friendly": 4,
+      "Adobe Creative Suite": 1,
+      "Sketch": 1,
       "Continuous improvement": 2,
       "Communication": 1,
       "Problem-solving": 5,
       "Collaboration": 5
     },
-    "total_buzzwords": 15,
-    "unique_buzzwords": 5
+    "total_buzzwords": 21,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGVzaWduZXIg4oCTIFRvcm9udG8sT04iLCJjb21wYW55X25hbWUiOiJLb3Zhc3lzIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IjJHT0ZQSmFranc3em1BRlFBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -12614,10 +12692,11 @@
     "search_keyword": "Web Designer",
     "experience_level": "Senior",
     "buzzwords_found": {
-      "Java": 2
+      "Java": 2,
+      "Photoshop": 1
     },
-    "total_buzzwords": 2,
-    "unique_buzzwords": 1
+    "total_buzzwords": 3,
+    "unique_buzzwords": 2
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJEaXJlY3RvciBhbmQgUHJpbmNpcGFsIEVuZ2luZWVyIERhdGEgYW5kIE1MIHBsYXRmb3JtcywgR0ZUIiwiY29tcGFueV9uYW1lIjoiUm95YWwgQmFuayBvZiBDYW5hZGEiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiTjZub3pjU2tZQml1U0p1eUFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -13149,10 +13228,13 @@
     "search_keyword": "UX Designer",
     "experience_level": "Mid",
     "buzzwords_found": {
-      "User-centered design": 4
+      "User-centered design": 4,
+      "User-friendly": 2,
+      "Adobe XD": 2,
+      "Sketch": 2
     },
-    "total_buzzwords": 4,
-    "unique_buzzwords": 1
+    "total_buzzwords": 10,
+    "unique_buzzwords": 4
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgVVggRGVzaWduZXI6IEFJLURyaXZlbiBFeHBlcmllbmNlcyAmIEltcGFjdCIsImNvbXBhbnlfbmFtZSI6IkF1dG9kZXNrIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImxmSXNUclM5MDlPRDBCWHhBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -13176,11 +13258,12 @@
     "experience_level": "Mid",
     "buzzwords_found": {
       "Data visualization": 1,
+      "Sketch": 1,
       "Agile": 1,
       "Communication": 1
     },
-    "total_buzzwords": 3,
-    "unique_buzzwords": 3
+    "total_buzzwords": 4,
+    "unique_buzzwords": 4
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJMZWFkIFVYIERlc2lnbiBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IkNvbmZpZGVudGlhbCBDb21wYW55IiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IjhBNHhkLTNsa01DR2JPbk1BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -13192,12 +13275,13 @@
     "buzzwords_found": {
       "C": 1,
       "User experience design": 1,
+      "User-friendly": 1,
       "Agile": 1,
       "Communication": 1,
       "Presentation skills": 1
     },
-    "total_buzzwords": 5,
-    "unique_buzzwords": 5
+    "total_buzzwords": 6,
+    "unique_buzzwords": 6
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgVVggRGVzaWduZXIiLCJjb21wYW55X25hbWUiOiJoaXZlLmNvIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImZPWFJNbzlWdjMzMWlaTmZBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -13229,11 +13313,12 @@
       "Kotlin": 1,
       "Version control": 1,
       "Continuous integration": 2,
+      "User-friendly": 1,
       "Coaching": 1,
       "Empathy": 2
     },
-    "total_buzzwords": 11,
-    "unique_buzzwords": 8
+    "total_buzzwords": 12,
+    "unique_buzzwords": 9
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTYWxlc2ZvcmNlIERldmVsb3BlciAtIEVudHJ5IExldmVsIHdpdGggR3Jvd3RoIFBhdGgiLCJjb21wYW55X25hbWUiOiJQdXJvbGF0b3IgSW5jLiIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiaDRHZnNGZFI5V2NQWTdYd0FBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -13528,9 +13613,11 @@
     "location": "Toronto, ON",
     "search_keyword": "Product Designer",
     "experience_level": "Mid",
-    "buzzwords_found": {},
-    "total_buzzwords": 0,
-    "unique_buzzwords": 0
+    "buzzwords_found": {
+      "Photoshop": 2
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 1
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgUHJvZHVjdCBEZXNpZ25lciwgT3BlcmF0aW9ucyBFeGNlbGxlbmNlIiwiY29tcGFueV9uYW1lIjoiTmVvIEZpbmFuY2lhbCIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJPWWdtRkFCWEdfR2tOd1dUQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -13588,11 +13675,13 @@
       "Go": 2,
       "User-centered design": 2,
       "User experience design": 2,
+      "User-friendly": 4,
+      "Adobe Creative Suite": 2,
       "Communication": 2,
       "Written communication": 2
     },
-    "total_buzzwords": 10,
-    "unique_buzzwords": 5
+    "total_buzzwords": 16,
+    "unique_buzzwords": 7
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJEYXRhIEFuYWx5c3QiLCJjb21wYW55X25hbWUiOiJUaGUgQ2FuYWRhIExpZmUgQXNzdXJhbmNlIENvbXBhbnkiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiSjctREZYX0VwMzNKajZHekFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -14317,7 +14406,7 @@
     "title": "Mobile Developer (React Native)",
     "company_name": "BrainStation",
     "location": "Toronto, ON",
-    "search_keyword": "React Developer",
+    "search_keyword": "Mobile Developer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "Java": 1,
@@ -14338,7 +14427,7 @@
     "title": "Senior iOS Mobile Application Developer",
     "company_name": "beBeeiOSDeveloper",
     "location": "Toronto, ON",
-    "search_keyword": "iOS Developer",
+    "search_keyword": "Mobile Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
       "C": 2,
@@ -14502,7 +14591,7 @@
     "title": "Cloud Platform Engineer – AWS",
     "company_name": "Apex Systems",
     "location": "Toronto, ON",
-    "search_keyword": "DevOps Engineer",
+    "search_keyword": "AWS Engineer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "Python": 3,
@@ -14883,7 +14972,7 @@
     "title": "IOS Developer",
     "company_name": "TekFormix",
     "location": "Brampton, ON",
-    "search_keyword": "iOS Developer",
+    "search_keyword": "Mobile Developer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "C": 2,
@@ -14945,7 +15034,7 @@
     "title": "Sr. React Developer with PHP Exp (70% React and 30% PHP Exp )(Hybrid- Toronto, ON)",
     "company_name": "TestingXperts",
     "location": "Toronto, ON",
-    "search_keyword": "PHP Developer",
+    "search_keyword": "React Developer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "PHP": 6,
@@ -15042,7 +15131,7 @@
     "title": "(Java + Python) Full-Stack Developer (GenAI - AI Based Development)",
     "company_name": "Centraprise",
     "location": "Toronto, ON",
-    "search_keyword": "JavaScript Developer",
+    "search_keyword": "Python Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
       "Python": 4,
@@ -15060,7 +15149,7 @@
     "title": "Java Full Stack Developer (JSF, iBatis, React) - Senior",
     "company_name": "Dimensional Tech Inc",
     "location": "Toronto, ON",
-    "search_keyword": "JavaScript Developer",
+    "search_keyword": "Full Stack Developer",
     "experience_level": "Senior",
     "buzzwords_found": {
       "Java": 6,
@@ -15222,7 +15311,7 @@
     "title": "Cloud Engineer - Enterprise AI Services/Big Data",
     "company_name": "Thomson Reuters",
     "location": "Toronto, ON",
-    "search_keyword": "Cloud Engineer",
+    "search_keyword": "AI Engineer",
     "experience_level": "Senior",
     "buzzwords_found": {
       "Python": 2,
@@ -15475,7 +15564,7 @@
     "title": "React Web Developer",
     "company_name": "Venuiti",
     "location": "Toronto, ON",
-    "search_keyword": "Web Developer",
+    "search_keyword": "React Developer",
     "experience_level": "Mid",
     "buzzwords_found": {
       "JavaScript": 2,
@@ -15619,11 +15708,12 @@
       "Redis": 2,
       "Git": 2,
       "CI/CD": 2,
+      "User-friendly": 2,
       "Problem-solving": 2,
       "Flexibility": 2
     },
-    "total_buzzwords": 14,
-    "unique_buzzwords": 7
+    "total_buzzwords": 16,
+    "unique_buzzwords": 8
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXb3JkcHJlc3MgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiQmFzZW1lbnQgUmVub3ZhdGlvbnMgTmV3bWFya2V0IiwiYWRkcmVzc19jaXR5IjoiQWN0b24sIE9OIiwiaHRpZG9jaWQiOiJDU2tqVmZhQmJ5R2xENHFyQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -15654,12 +15744,14 @@
       "MySQL": 1,
       "Git": 1,
       "Version control": 1,
+      "User-friendly": 2,
+      "Adobe Creative Suite": 1,
       "Communication": 1,
       "Problem-solving": 1,
       "Collaboration": 2
     },
-    "total_buzzwords": 9,
-    "unique_buzzwords": 8
+    "total_buzzwords": 12,
+    "unique_buzzwords": 10
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJBV1MgTm9kZS5KUyBCYWNrZW5kIERldmVsb3BlciAoTGFtYmRhIGV4cGVyaWVuY2UpIiwiY29tcGFueV9uYW1lIjoiQXRsYW50aXMgSVQgZ3JvdXAiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiU21JaEFnNWhSSnpyNDZUakFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -16482,7 +16574,7 @@
     "title": "Data Analyst( SAS)",
     "company_name": "TekStaff IT Solutions",
     "location": "Toronto, ON",
-    "search_keyword": "Business Intelligence Analyst",
+    "search_keyword": "Data Analyst",
     "experience_level": "Senior",
     "buzzwords_found": {
       "Python": 1,
@@ -16610,10 +16702,13 @@
     "experience_level": "Mid",
     "buzzwords_found": {
       "User-centered design": 2,
+      "User-friendly": 2,
+      "Adobe XD": 2,
+      "Sketch": 2,
       "Collaboration": 2
     },
-    "total_buzzwords": 4,
-    "unique_buzzwords": 2
+    "total_buzzwords": 10,
+    "unique_buzzwords": 5
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJTci4gVUkvVVggRGVzaWduZXIiLCJjb21wYW55X25hbWUiOiJTcGFpdCBJbmZvdGVjaCBQcml2YXRlIExpbWl0ZWQiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiM1NDaENPSHVfc2YzZm91TEFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -16630,12 +16725,16 @@
       "Data analysis": 2,
       "Data visualization": 1,
       "User experience design": 1,
+      "Photoshop": 1,
+      "Adobe Creative Suite": 1,
+      "Adobe XD": 2,
+      "Sketch": 1,
       "Agile": 2,
       "Decision-making": 1,
       "Requirements gathering": 1
     },
-    "total_buzzwords": 16,
-    "unique_buzzwords": 10
+    "total_buzzwords": 21,
+    "unique_buzzwords": 14
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVc2VyIEV4cGVyaWVuY2UgKFVYKSBEZXNpZ24gU3BlY2lhbGlzdCIsImNvbXBhbnlfbmFtZSI6IldvcmtwbGFjZSBTYWZldHkgYW5kIEluc3VyYW5jZSBCb2FyZCIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJCU3JXUGdWclRDV2MwWk00QUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -16671,13 +16770,16 @@
       "AWS": 1,
       "Front-end development": 1,
       "Data visualization": 1,
+      "Photoshop": 1,
+      "Adobe Creative Suite": 1,
+      "Adobe XD": 1,
       "Agile": 2,
       "Scrum": 1,
       "Kanban": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 14,
-    "unique_buzzwords": 10
+    "total_buzzwords": 17,
+    "unique_buzzwords": 13
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVWC9VSSBEZXNpZ25lciB3aXRoIFVzZXIgRGVzaWduIEV4cGVyaWVuY2UiLCJjb21wYW55X25hbWUiOiJSYW5kc3RhZCIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJtTzk2R05hRmFpSXpUTlV0QUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -16687,17 +16789,20 @@
     "search_keyword": "UX Designer",
     "experience_level": "Mid",
     "buzzwords_found": {
-      "User-centered design": 2
+      "User-centered design": 2,
+      "User-friendly": 2,
+      "Adobe XD": 2,
+      "Sketch": 2
     },
-    "total_buzzwords": 2,
-    "unique_buzzwords": 1
+    "total_buzzwords": 8,
+    "unique_buzzwords": 4
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJVSS9VWCBEZXNpZ25lciBpbiBUb3JvbnRvIiwiY29tcGFueV9uYW1lIjoiQ29zbW9xdWljayIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJOMFUydmgwU2JXV0hoVmtpQUFBQUFBPT0iLCJobCI6ImVuIn0=",
     "title": "UI/UX Designer in Toronto",
     "company_name": "Cosmoquick",
     "location": "Toronto, ON",
-    "search_keyword": "UX Designer",
+    "search_keyword": "UI/UX Designer",
     "experience_level": "Mid",
     "buzzwords_found": {},
     "total_buzzwords": 0,
@@ -16712,13 +16817,15 @@
     "experience_level": "Senior",
     "buzzwords_found": {
       "User-centered design": 2,
+      "Adobe XD": 2,
+      "Sketch": 2,
       "Agile": 2,
       "Communication": 6,
       "Stakeholder communication": 2,
       "Collaboration": 4
     },
-    "total_buzzwords": 16,
-    "unique_buzzwords": 5
+    "total_buzzwords": 20,
+    "unique_buzzwords": 7
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJQcmluY2lwYWwgUHJvZHVjdCBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IlNoYWtlcGF5IiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Im4zX2h2WExYaGxLVU16TEdBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -16891,6 +16998,7 @@
       "scikit-learn": 1,
       "Version control": 1,
       "Data visualization": 1,
+      "User-friendly": 1,
       "Agile": 1,
       "Continuous improvement": 1,
       "Communication": 1,
@@ -16900,8 +17008,8 @@
       "Curiosity": 1,
       "Collaboration": 1
     },
-    "total_buzzwords": 19,
-    "unique_buzzwords": 19
+    "total_buzzwords": 20,
+    "unique_buzzwords": 20
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJBc3NvY2lhdGUsIERhdGEgU2NpZW50aXN0IE1vZGVsIEdvdmVybmFuY2UiLCJjb21wYW55X25hbWUiOiJCYW5rIG9mIE1vbnRyZWFsIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Im5kNUFKSEMyMGdNbG1qbnJBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
@@ -18004,7 +18112,7 @@
     "title": "Technical Services Specialist (L2)",
     "company_name": "MAD Elevator Inc",
     "location": "Mississauga, ON",
-    "search_keyword": "Technical Support",
+    "search_keyword": "IT Support Specialist",
     "experience_level": "Mid",
     "buzzwords_found": {
       "Continuous improvement": 2,
@@ -18026,14 +18134,15 @@
     "search_keyword": "Technical Support",
     "experience_level": "Mid",
     "buzzwords_found": {
+      "User-friendly": 2,
       "Communication": 2,
       "Problem-solving": 2,
       "Attention to detail": 2,
       "Collaboration": 2,
       "Networking": 2
     },
-    "total_buzzwords": 10,
-    "unique_buzzwords": 5
+    "total_buzzwords": 12,
+    "unique_buzzwords": 6
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJBcHBsaWNhdGlvbiBTdXBwb3J0IEFuYWx5c3QgLSBBc3Npc3RhbnQgVmljZSBQcmVzaWRlbnQiLCJjb21wYW55X25hbWUiOiJDaXRpIiwiYWRkcmVzc19jaXR5IjoiTWlzc2lzc2F1Z2EsIE9OIiwiaHRpZG9jaWQiOiJ0cjUwZ2NUTnBKS3BSYWIzQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -18303,11 +18412,13 @@
     "buzzwords_found": {
       "JavaScript": 1,
       "Front-end development": 1,
+      "User-friendly": 1,
+      "Adobe XD": 2,
       "Communication": 1,
       "Attention to detail": 1
     },
-    "total_buzzwords": 4,
-    "unique_buzzwords": 4
+    "total_buzzwords": 7,
+    "unique_buzzwords": 6
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgc2l0ZSBkZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IkdhbGF4eSBTZWN1cml0eSBDb3Jwb3JhdGlvbiIsImFkZHJlc3NfY2l0eSI6Ik1hcmtoYW0sIE9OIiwiaHRpZG9jaWQiOiItbl9paVNjNklMeDJTYkdTQUFBQUFBPT0iLCJobCI6ImVuIn0=",
@@ -18344,9 +18455,12 @@
     "location": "Ontario",
     "search_keyword": "Web Designer",
     "experience_level": "Mid",
-    "buzzwords_found": {},
-    "total_buzzwords": 0,
-    "unique_buzzwords": 0
+    "buzzwords_found": {
+      "Photoshop": 1,
+      "Sketch": 2
+    },
+    "total_buzzwords": 3,
+    "unique_buzzwords": 2
   },
   {
     "job_id": "eyJqb2JfdGl0bGUiOiJHcmFwaGljIFdlYiBEZXNpZ25lclxyXG5HcmFwaGljIFdlYiBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6Ik1heGltdXMiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiR3JJNVRpRC1keDl2YjJYcEFBQUFBQT09IiwiaGwiOiJlbiJ9",
@@ -18357,13 +18471,2343 @@
     "experience_level": "Mid",
     "buzzwords_found": {
       "Version control": 1,
+      "Adobe Creative Suite": 1,
       "Problem-solving": 1,
       "Creative problem-solving": 1,
       "Attention to detail": 2,
       "Flexibility": 1,
       "Collaboration": 2
     },
+    "total_buzzwords": 9,
+    "unique_buzzwords": 7
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgU2l0ZSBSZWxpYWJpbGl0eSBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6Ik1vcm5pbmdzdGFyIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlZHcG1IWVVGSDdMTkd5Uk5BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Senior Site Reliability Engineer",
+    "company_name": "Morningstar",
+    "location": "Toronto, ON",
+    "search_keyword": "Infrastructure Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Docker": 2,
+      "Terraform": 4,
+      "CI/CD": 4,
+      "AWS": 2,
+      "Agile": 2,
+      "Communication": 2,
+      "Mentoring": 2,
+      "Reliability": 7,
+      "Flexibility": 2,
+      "Collaboration": 2
+    },
+    "total_buzzwords": 29,
+    "unique_buzzwords": 10
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJFZGdlIEFJIFNSRSAtIDI0IC8gNyBSZWxpYWJpbGl0eSAmIEF1dG9tYXRpb24iLCJjb21wYW55X25hbWUiOiJNYW5ldmEiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiRmxRQko0WkFxR3hEbEdJSkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Edge AI SRE - 24 / 7 Reliability & Automation",
+    "company_name": "Maneva",
+    "location": "Toronto, ON",
+    "search_keyword": "Site Reliability Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 1,
+      "Linux": 1,
+      "Reliability": 4,
+      "Networking": 1
+    },
+    "total_buzzwords": 7,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiIuTkVULyBDIyBEZXZlbG9wZXIgLSBDYW5hZGEgUmVtb3RlIiwiY29tcGFueV9uYW1lIjoiUkVMUSBURUNITk9MT0dJRVMgTExDIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IkVvWUl1aEpBSmRSbmNCTE1BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": ".NET/ C# Developer - Canada Remote",
+    "company_name": "RELQ TECHNOLOGIES LLC",
+    "location": "Toronto, ON",
+    "search_keyword": ".NET Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "C": 6,
+      "JavaScript": 1,
+      "MySQL": 1,
+      "PostgreSQL": 1,
+      "Git": 1,
+      "Jenkins": 1,
+      "CI/CD": 1,
+      "AWS": 1,
+      "Azure": 2,
+      "Version control": 1,
+      "Agile": 1,
+      "Scrum": 1,
+      "Problem-solving": 1,
+      "Attention to detail": 1
+    },
+    "total_buzzwords": 20,
+    "unique_buzzwords": 14
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJGdWxseSByZW1vdGUgLSBpbnRlcm1lZGlhdGUgZnVsbCBzdGFjayAubmV0IGRldmVsb3BlciB0byB0cmFuc2Zvcm0gYW4gZXhjZWwtYmFzZWQgbG9nIHRyYWNraW5nIHN5c3RlbSBpbnRvIGEgd2ViIGFwcGxpY2F0aW9uIiwiY29tcGFueV9uYW1lIjoiUy5pLiBTeXN0ZW1zIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImpIQUozRHkzT3JNRnlIY1ZBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Fully remote - intermediate full stack .net developer to transform an excel-based log tracking system into a web application",
+    "company_name": "S.i. Systems",
+    "location": "Toronto, ON",
+    "search_keyword": ".NET Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "C": 4,
+      "Angular": 4,
+      "React": 2,
+      "Git": 2,
+      "CI/CD": 2,
+      "Azure": 2,
+      "API development": 2,
+      "User-friendly": 3,
+      "Agile": 2,
+      "Scrum": 2,
+      "Reliability": 2
+    },
+    "total_buzzwords": 27,
+    "unique_buzzwords": 11
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiIuTmV0IERldmVsb3BlciIsImNvbXBhbnlfbmFtZSI6IkNhcGdlbWluaSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJpZ2ZpUDBqR0JVenB0Y1FJQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": ".Net Developer",
+    "company_name": "Capgemini",
+    "location": "Toronto, ON",
+    "search_keyword": ".NET Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "C": 6,
+      "JavaScript": 3,
+      "Shell": 5,
+      "Docker": 5,
+      "Kubernetes": 5,
+      "Jenkins": 5,
+      "CI/CD": 5,
+      "AWS": 2,
+      "Azure": 14,
+      "Spark": 5,
+      "Kafka": 5,
+      "Selenium": 5,
+      "Postman": 5,
+      "Data governance": 2,
+      "Agile": 4,
+      "Communication": 2,
+      "Leadership": 2,
+      "Analytical thinking": 2,
+      "Initiative": 2,
+      "Collaboration": 4
+    },
+    "total_buzzwords": 88,
+    "unique_buzzwords": 20
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJLdWJlcm5ldGVzIFN1cHBvcnQgRW5naW5lZXIg4oCUIFJlbW90ZS1GaXJzdCwgSW1wYWN0IiwiY29tcGFueV9uYW1lIjoidkNsdXN0ZXIiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiX1ZaTk1BbHhMNTdiYVIyZkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Kubernetes Support Engineer — Remote-First, Impact",
+    "company_name": "vCluster",
+    "location": "Toronto, ON",
+    "search_keyword": "Kubernetes Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Kubernetes": 3,
+      "Communication": 1
+    },
+    "total_buzzwords": 4,
+    "unique_buzzwords": 2
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQcm9kdWN0aW9uIEVuZ2luZWVyIC0gQ2xvdWQgJiBLdWJlcm5ldGVzIEF1dG9tYXRpb24iLCJjb21wYW55X25hbWUiOiJRdWVlciBUZWNoIiwiYWRkcmVzc19jaXR5IjoiTWFya2hhbSwgT04iLCJodGlkb2NpZCI6InByVlhyYnppT0pteFRxQjhBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Production Engineer - Cloud & Kubernetes Automation",
+    "company_name": "Queer Tech",
+    "location": "Markham, ON",
+    "search_keyword": "Kubernetes Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Kubernetes": 2,
+      "Reliability": 1,
+      "Flexibility": 1
+    },
+    "total_buzzwords": 4,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJLdWJlcm5ldGVzIFN1cHBvcnQgRW5naW5lZXIg4oCUIFJlbW90ZS1GaXJzdCwgSW1wYWN0IiwiY29tcGFueV9uYW1lIjoidkNsdXN0ZXIiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiX21RUHExT2VNY29YTk9UQkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Kubernetes Support Engineer — Remote-First, Impact",
+    "company_name": "vCluster",
+    "location": "Toronto, ON",
+    "search_keyword": "Kubernetes Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Kubernetes": 4,
+      "Communication": 1
+    },
+    "total_buzzwords": 5,
+    "unique_buzzwords": 2
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJDbG91ZCBJbmZyYXN0cnVjdHVyZSAmIEt1YmVybmV0ZXMgUmVsaWFiaWxpdHkgRW5naW5lZXIiLCJjb21wYW55X25hbWUiOiJJQk0iLCJhZGRyZXNzX2NpdHkiOiJNYXJraGFtLCBPTiIsImh0aWRvY2lkIjoiY1NUWjZlemNuRXJmdFYzWEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Cloud Infrastructure & Kubernetes Reliability Engineer",
+    "company_name": "IBM",
+    "location": "Markham, ON",
+    "search_keyword": "Kubernetes Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Kubernetes": 3,
+      "Terraform": 1,
+      "Reliability": 2
+    },
+    "total_buzzwords": 6,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJNb2JpbGUgU0RLIEVuZ2luZWVyIChpT1MgLyBBbmRyb2lkKSDigJMgTWlk4oCRU2VuaW9yIiwiY29tcGFueV9uYW1lIjoiVEMgVHJhbnNjb250aW5lbnRhbCIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiRjQ3M2ZqTWxqbWRRRThiZEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Mobile SDK Engineer (iOS / Android) – Mid‑Senior",
+    "company_name": "TC Transcontinental",
+    "location": "Mississauga, ON",
+    "search_keyword": "Mobile Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {},
+    "total_buzzwords": 0,
+    "unique_buzzwords": 0
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgTW9iaWxlIEVuZ2luZWVyIiwiY29tcGFueV9uYW1lIjoiRmlubGluayBHcm91cCIsImFkZHJlc3NfY2l0eSI6IkJyYW1wdG9uLCBPTiIsImh0aWRvY2lkIjoic180WER5UFU2WXJDZ0xsdkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Senior Mobile Engineer",
+    "company_name": "Finlink Group",
+    "location": "Brampton, ON",
+    "search_keyword": "Mobile Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Java": 1,
+      "C": 1,
+      "Go": 1,
+      "JavaScript": 2,
+      "TypeScript": 2,
+      "Swift": 2,
+      "Kotlin": 2,
+      "React": 4,
+      "GitHub Actions": 1,
+      "Jenkins": 1,
+      "CI/CD": 1,
+      "AWS": 1,
+      "Azure": 1,
+      "GCP": 1,
+      "Problem-solving": 1
+    },
+    "total_buzzwords": 22,
+    "unique_buzzwords": 15
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJGdWxsLVN0YWNrIEphdmFTY3JpcHQgRW5naW5lZXIgLSBFbnRlcnByaXNlIEltcGFjdCIsImNvbXBhbnlfbmFtZSI6IlNjb3RpYWJhbmsiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiUEtwVDJPTEZ2Q0xaZHFoNEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Full-Stack JavaScript Engineer - Enterprise Impact",
+    "company_name": "Scotiabank",
+    "location": "Toronto, ON",
+    "search_keyword": "JavaScript Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "JavaScript": 2
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJGcm9udGVuZCBXZWIgSmF2YXNjcmlwdCBEZXZlbG9wZXIg4oCTIE9ha3ZpbGxlLE9OIiwiY29tcGFueV9uYW1lIjoiS292YXN5cyIsImFkZHJlc3NfY2l0eSI6Ik9ha3ZpbGxlLCBPTiIsImh0aWRvY2lkIjoiTThWM2w2Q3JTNGxXZmlNOEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Frontend Web Javascript Developer – Oakville,ON",
+    "company_name": "Kovasys",
+    "location": "Oakville, ON",
+    "search_keyword": "JavaScript Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "JavaScript": 3
+    },
+    "total_buzzwords": 3,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJDbG91ZCBFbmdpbmVlciAoQVdTKSAtIEp1bmlvci9JbnQiLCJjb21wYW55X25hbWUiOiJWaXNpb24gVGFsZW50IENvLiIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJNejZwd3NqRDhRUGFha1M0QUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Cloud Engineer (AWS) - Junior/Int",
+    "company_name": "Vision Talent Co.",
+    "location": "Toronto, ON",
+    "search_keyword": "AWS Engineer",
+    "experience_level": "Junior",
+    "buzzwords_found": {
+      "JavaScript": 2,
+      "TypeScript": 2,
+      "DynamoDB": 2,
+      "AWS": 8,
+      "Agile": 2,
+      "Continuous improvement": 2,
+      "Communication": 2
+    },
+    "total_buzzwords": 20,
+    "unique_buzzwords": 7
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJBV1MgRW5naW5lZXIiLCJjb21wYW55X25hbWUiOiJKJk0gR3JvdXAiLCJhZGRyZXNzX2NpdHkiOiJNaXNzaXNzYXVnYSwgT04iLCJodGlkb2NpZCI6Ii1EOTdsY3lMTXZsV01CeWVBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "AWS Engineer",
+    "company_name": "J&M Group",
+    "location": "Mississauga, ON",
+    "search_keyword": "AWS Engineer",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "Python": 1,
+      "Java": 2,
+      "DynamoDB": 1,
+      "AWS": 4,
+      "IAM": 1,
+      "Data analysis": 1,
+      "Communication": 1,
+      "Problem-solving": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 13,
+    "unique_buzzwords": 9
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJNb2JpbGUgRW5naW5lZXIgLSBBbmRyb2lkIChIeWJyaWQpIiwiY29tcGFueV9uYW1lIjoiSG9tZWJhc2UiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoibGRqS2FHY0ZZdTVVWExlWkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Mobile Engineer - Android (Hybrid)",
+    "company_name": "Homebase",
+    "location": "Toronto, ON",
+    "search_keyword": "Android Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Java": 1,
+      "C": 2,
+      "Kotlin": 2,
+      "Git": 1,
+      "CircleCI": 1,
+      "SAN": 2,
+      "Continuous improvement": 1,
+      "Communication": 2,
+      "Problem-solving": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 14,
+    "unique_buzzwords": 10
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJBbmRyb2lkIEVuZ2luZWVyIiwiY29tcGFueV9uYW1lIjoiRmluaXggUGF5bWVudHMiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiZW5UbzAxMDhmSEVYS0hUTUFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Android Engineer",
+    "company_name": "Finix Payments",
+    "location": "Toronto, ON",
+    "search_keyword": "Android Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Java": 1,
+      "C": 1,
+      "Kotlin": 1
+    },
+    "total_buzzwords": 3,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJBbmRyb2lkIEVuZ2luZWVyIiwiY29tcGFueV9uYW1lIjoiT3BlblRhYmxlIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Ijc1UFNuWVA3OU54QnRwVmRBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Android Engineer",
+    "company_name": "OpenTable",
+    "location": "Toronto, ON",
+    "search_keyword": "Android Developer",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "Go": 4,
+      "Kotlin": 2,
+      "Software architecture": 2,
+      "Agile": 2,
+      "Communication": 2,
+      "Leadership": 2,
+      "Attention to detail": 2,
+      "Flexibility": 2,
+      "Collaboration": 2
+    },
+    "total_buzzwords": 20,
+    "unique_buzzwords": 9
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJGdWxsIFN0YWNrIERldmVsb3BlciAoUmVtb3RlLCBQSFAvUmVhY3QpIC8gNyBob3VycyBhZ28iLCJjb21wYW55X25hbWUiOiJQaHAtSm9icyIsImFkZHJlc3NfY2l0eSI6Ikd1ZWxwaCwgT04iLCJodGlkb2NpZCI6IjVrbUxNUGdlZ1NoMUt6Q25BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Full Stack Developer (Remote, PHP/React) / 7 hours ago",
+    "company_name": "Php-Jobs",
+    "location": "Guelph, ON",
+    "search_keyword": "PHP Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "JavaScript": 1,
+      "PHP": 2,
+      "React": 1,
+      "Vue.js": 1,
+      "Laravel": 1,
+      "Docker": 1,
+      "CI/CD": 1,
+      "AWS": 3,
+      "Software architecture": 1,
+      "Front-end development": 1,
+      "Agile": 3,
+      "Communication": 1,
+      "Problem-solving": 1,
+      "Initiative": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 20,
+    "unique_buzzwords": 15
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJFdmVyUHJvIC0gUEhQIERldmVsb3BlciIsImNvbXBhbnlfbmFtZSI6IkV2ZXJjb21tZXJjZSIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiY3p4Q1ZzZmFGczliSWZWVUFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "EverPro - PHP Developer",
+    "company_name": "Evercommerce",
+    "location": "Mississauga, ON",
+    "search_keyword": "PHP Developer",
+    "experience_level": "Junior",
+    "buzzwords_found": {
+      "C": 2,
+      "PHP": 13,
+      "React": 2,
+      "Vue.js": 4,
+      "MySQL": 2,
+      "Docker": 4,
+      "Git": 2,
+      "Front-end development": 2,
+      "Leadership": 2,
+      "Flexibility": 2
+    },
+    "total_buzzwords": 35,
+    "unique_buzzwords": 10
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgUEhQIExhcmF2ZWwgQmFja2VuZCBFbmdpbmVlciAtIFJlbW90ZSIsImNvbXBhbnlfbmFtZSI6Ik5ld3JpY2ggTmV0d29yayIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJITU5kb1NzVzI3b0EyOVNGQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Senior PHP Laravel Backend Engineer - Remote",
+    "company_name": "Newrich Network",
+    "location": "Toronto, ON",
+    "search_keyword": "PHP Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "PHP": 2,
+      "React": 1,
+      "Laravel": 1
+    },
+    "total_buzzwords": 4,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJKYXZhIEZ1bGwgU3RhY2sgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiVmluU29mdCBDb3JwIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6InI2bUhPTkFhbl93MDVMZXFBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Java Full Stack Developer",
+    "company_name": "VinSoft Corp",
+    "location": "Toronto, ON",
+    "search_keyword": "Full Stack Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "Java": 3,
+      "C": 2,
+      "JavaScript": 2,
+      "TypeScript": 2,
+      "Ruby": 1,
+      "Angular": 2,
+      "React": 2,
+      "MySQL": 2,
+      "PostgreSQL": 2,
+      "MongoDB": 2,
+      "Docker": 1,
+      "Git": 2,
+      "CI/CD": 2,
+      "AWS": 3,
+      "Azure": 3,
+      "Version control": 1,
+      "Continuous integration": 1,
+      "Continuous deployment": 1,
+      "Back-end development": 1,
+      "Agile": 2,
+      "Continuous improvement": 1,
+      "Problem-solving": 1,
+      "Project planning": 1
+    },
+    "total_buzzwords": 42,
+    "unique_buzzwords": 24
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJPcmFjbGUgQ2VydGlmaWVkIEphdmEgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiRmVkY28gSW50ZXJuYXRpb25hbCIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiVWRUVkVQZ25oWndRcFAxY0FBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Oracle Certified Java Developer",
+    "company_name": "Fedco International",
+    "location": "Mississauga, ON",
+    "search_keyword": "Java Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Java": 7,
+      "JavaScript": 2,
+      "Spring Boot": 2,
+      "PostgreSQL": 2,
+      "CI/CD": 2,
+      "Agile": 2
+    },
+    "total_buzzwords": 17,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTci4gSmF2YSBEZXZlbG9wZXIiLCJjb21wYW55X25hbWUiOiJQcm9WaXNvIENvbnN1bHRpbmciLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoibjdPNm9xS1U4R09OcHpEc0FBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Sr. Java Developer",
+    "company_name": "ProViso Consulting",
+    "location": "Toronto, ON",
+    "search_keyword": "Java Developer",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "Java": 9,
+      "TypeScript": 2,
+      "Spring Boot": 2,
+      "React": 2,
+      "MongoDB": 2,
+      "Kubernetes": 2,
+      "SSO": 4,
+      "Kafka": 2,
+      "Agile": 2,
+      "Communication": 2,
+      "Flexibility": 2
+    },
+    "total_buzzwords": 31,
+    "unique_buzzwords": 11
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJKYXZhIERldmVsb3BlciAtIE9wZXJhdGUiLCJjb21wYW55X25hbWUiOiJEZWxvaXR0ZSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJ3NEZtSHhtV0oyNmNnSldVQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Java Developer - Operate",
+    "company_name": "Deloitte",
+    "location": "Toronto, ON",
+    "search_keyword": "Java Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 3,
+      "Java": 4,
+      "PowerShell": 2,
+      "Spring Boot": 4,
+      "Git": 3,
+      "Jenkins": 3,
+      "Azure": 3,
+      "Linux": 2,
+      "Continuous integration": 1,
+      "Quality assurance": 1,
+      "Agile": 2,
+      "Communication": 2,
+      "Mentoring": 1,
+      "Coaching": 1,
+      "Attention to detail": 2,
+      "Initiative": 2,
+      "Collaboration": 4,
+      "Change management": 1
+    },
+    "total_buzzwords": 41,
+    "unique_buzzwords": 18
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJDbG91ZCBQbGF0Zm9ybSBFbmdpbmVlciBMZWFkIiwiY29tcGFueV9uYW1lIjoiQWNjZW50dXJlIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Imk1THRFd2NEZjl5dHZyNG9BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Cloud Platform Engineer Lead",
+    "company_name": "Accenture",
+    "location": "Toronto, ON",
+    "search_keyword": "Cloud Engineer",
+    "experience_level": "Junior",
+    "buzzwords_found": {
+      "GitHub Actions": 2,
+      "Azure": 2,
+      "Critical thinking": 1
+    },
+    "total_buzzwords": 5,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJCYWNrZW5kIERldmVsb3BlciIsImNvbXBhbnlfbmFtZSI6IlRla0Zvcm1peCIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoidEFIeW1rVUE3M25UdFF4LUFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Backend Developer",
+    "company_name": "TekFormix",
+    "location": "Mississauga, ON",
+    "search_keyword": "Backend Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "Java": 2,
+      "C": 2,
+      "Ruby": 1,
+      "Spring Boot": 1,
+      "Angular": 1,
+      "React": 1,
+      "Vue.js": 1,
+      "ASP.NET Core": 1,
+      "MySQL": 2,
+      "PostgreSQL": 2,
+      "MongoDB": 2,
+      "Docker": 1,
+      "Kubernetes": 1,
+      "Git": 1,
+      "CI/CD": 2,
+      "AWS": 2,
+      "Azure": 3,
+      "Version control": 2,
+      "Testing and debugging": 1,
+      "Agile": 2,
+      "Scrum": 1,
+      "Kanban": 1,
+      "Problem-solving": 1,
+      "Continuous learning": 1
+    },
+    "total_buzzwords": 37,
+    "unique_buzzwords": 25
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJDIyAuTkVUIEJhY2tlbmQgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiUkVMUSBURUNITk9MT0dJRVMgTExDIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlZnYzJEa2ZkbEZ5SEd5RDVBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "C# .NET Backend Developer",
+    "company_name": "RELQ TECHNOLOGIES LLC",
+    "location": "Toronto, ON",
+    "search_keyword": "Backend Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "C": 6,
+      "JavaScript": 1,
+      "MySQL": 1,
+      "PostgreSQL": 1,
+      "Git": 1,
+      "Jenkins": 1,
+      "CI/CD": 1,
+      "AWS": 1,
+      "Azure": 2,
+      "Version control": 1,
+      "Agile": 1,
+      "Scrum": 1,
+      "Problem-solving": 1,
+      "Attention to detail": 1
+    },
+    "total_buzzwords": 20,
+    "unique_buzzwords": 14
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJCYWNrZW5kIERldmVsb3BlciIsImNvbXBhbnlfbmFtZSI6IlRla0Zvcm1peCIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiTC1HdUl3OUV6M2NMa0V1VEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Backend Developer",
+    "company_name": "TekFormix",
+    "location": "Mississauga, ON",
+    "search_keyword": "Backend Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "Java": 2,
+      "C": 2,
+      "Ruby": 1,
+      "Spring Boot": 1,
+      "Angular": 1,
+      "React": 1,
+      "Vue.js": 1,
+      "ASP.NET Core": 1,
+      "MySQL": 2,
+      "PostgreSQL": 2,
+      "MongoDB": 2,
+      "Docker": 1,
+      "Kubernetes": 1,
+      "Git": 1,
+      "CI/CD": 2,
+      "AWS": 2,
+      "Azure": 3,
+      "Version control": 2,
+      "Testing and debugging": 1,
+      "Agile": 2,
+      "Scrum": 1,
+      "Kanban": 1,
+      "Problem-solving": 1,
+      "Continuous learning": 1
+    },
+    "total_buzzwords": 37,
+    "unique_buzzwords": 25
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJCYWNrLUVuZCBEZXZlbG9wZXIg4oCTIFB5dGhvbi9KYXZhIiwiY29tcGFueV9uYW1lIjoiUHJvY29tIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Il9ZLUFyaTB1ZE9xdUtpMG9BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Back-End Developer – Python/Java",
+    "company_name": "Procom",
+    "location": "Toronto, ON",
+    "search_keyword": "Python Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Python": 12,
+      "Java": 13,
+      "Shell": 2,
+      "PostgreSQL": 1,
+      "AWS": 1,
+      "Azure": 1,
+      "GCP": 1,
+      "Kafka": 1,
+      "Linux": 1,
+      "Decision-making": 1
+    },
+    "total_buzzwords": 34,
+    "unique_buzzwords": 10
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJSZW1vdGUgU2VuaW9yIEZ1bGwtU3RhY2sgRGV2ZWxvcGVyIC0gUmVhY3QgTmF0aXZlIiwiY29tcGFueV9uYW1lIjoiQXBwTGl0IiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImlPTmtZZXRpN3BPeHhCZ0RBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Remote Senior Full-Stack Developer - React Native",
+    "company_name": "AppLit",
+    "location": "Toronto, ON",
+    "search_keyword": "React Native Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "JavaScript": 1,
+      "TypeScript": 1,
+      "React": 2
+    },
+    "total_buzzwords": 4,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEZXZPcHMgSUFDIEVuZ2luZWVyIiwiY29tcGFueV9uYW1lIjoiQ2FwZ2VtaW5pIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImVzdHZQX0UyX0JWY0J0bm5BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "DevOps IAC Engineer",
+    "company_name": "Capgemini",
+    "location": "Toronto, ON",
+    "search_keyword": "DevOps Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Git": 1,
+      "AWS": 1,
+      "Version control": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 4,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJMZWFkIERldk9wcyBFbmdpbmVlciAtIEFXUyB8IEh5YnJpZCAoVG9yb250bykiLCJjb21wYW55X25hbWUiOiJNYXN0ZXJjYXJkIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6InRjU0NIbjRRbzJ0REtSTi1BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Lead DevOps Engineer - AWS | Hybrid (Toronto)",
+    "company_name": "Mastercard",
+    "location": "Toronto, ON",
+    "search_keyword": "DevOps Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "AWS": 3,
+      "Linux": 1
+    },
+    "total_buzzwords": 4,
+    "unique_buzzwords": 2
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEZXZPcHMgJiBJbnRlZ3JhdGlvbiBTb2Z0d2FyZSBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IkhpdGFjaGkgQ2FyZWVycyIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiOXpqa2w0UDRnRmhHYjc5eUFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "DevOps & Integration Software Engineer",
+    "company_name": "Hitachi Careers",
+    "location": "Mississauga, ON",
+    "search_keyword": "DevOps Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Angular": 1,
+      "Docker": 4,
+      "Git": 1,
+      "CI/CD": 1,
+      "Linux": 2,
+      "TCP/IP": 1,
+      "Version control": 1,
+      "Communication": 1,
+      "Networking": 1
+    },
+    "total_buzzwords": 13,
+    "unique_buzzwords": 9
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEZXZPcHMgJiBJbnRlZ3JhdGlvbiBTb2Z0d2FyZSBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IkhJVEFDSEkgRU5FUkdZIiwiYWRkcmVzc19jaXR5IjoiTWlzc2lzc2F1Z2EsIE9OIiwiaHRpZG9jaWQiOiJnU3NVQXdLeHdaeVBFTGhaQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "DevOps & Integration Software Engineer",
+    "company_name": "HITACHI ENERGY",
+    "location": "Mississauga, ON",
+    "search_keyword": "DevOps Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Angular": 2,
+      "Docker": 8,
+      "Git": 2,
+      "CI/CD": 2,
+      "Linux": 4,
+      "TCP/IP": 2,
+      "Version control": 2,
+      "Communication": 2,
+      "Networking": 2
+    },
+    "total_buzzwords": 26,
+    "unique_buzzwords": 9
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgZGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiTWl4dG8gTHRkLiIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoibW11Z3d1dzk1WFZyUU1iekFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Web developer",
+    "company_name": "Mixto Ltd.",
+    "location": "Mississauga, ON",
+    "search_keyword": "Web Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "C": 1,
+      "JavaScript": 1,
+      "TypeScript": 1,
+      "Angular": 1,
+      "Postman": 1,
+      "Team building": 1
+    },
+    "total_buzzwords": 6,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJGdWxsIFN0YWNrIERldmVsb3BlciAoSmF2YS9Bbmd1bGFyKSIsImNvbXBhbnlfbmFtZSI6IkF4ZWxvbiBTZXJ2aWNlcyBDb3Jwb3JhdGlvbiIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiOGM3SjhDLXBBQThtX3ZrNkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Full Stack Developer (Java/Angular)",
+    "company_name": "Axelon Services Corporation",
+    "location": "Mississauga, ON",
+    "search_keyword": "Full Stack Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Java": 3,
+      "Angular": 3,
+      "MongoDB": 1,
+      "Communication": 1,
+      "Verbal communication": 1,
+      "Leadership": 1
+    },
+    "total_buzzwords": 10,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJGdWxsIFN0YWNrIERldmVsb3BlciAoSmF2YSAvIEFuZ3VsYXIpIiwiY29tcGFueV9uYW1lIjoiQXhlbG9uIFNlcnZpY2VzIENvcnBvcmF0aW9uIiwiYWRkcmVzc19jaXR5IjoiTWlzc2lzc2F1Z2EsIE9OIiwiaHRpZG9jaWQiOiJXRUd2NDBmeG1XeENpMXoxQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Full Stack Developer (Java / Angular)",
+    "company_name": "Axelon Services Corporation",
+    "location": "Mississauga, ON",
+    "search_keyword": "Full Stack Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Java": 3,
+      "Angular": 3,
+      "MongoDB": 1,
+      "Communication": 1,
+      "Verbal communication": 1,
+      "Leadership": 1
+    },
+    "total_buzzwords": 10,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgRnVsbCBTdGFjayBEZXZlbG9wZXIgKFJlbW90ZSkiLCJjb21wYW55X25hbWUiOiJBcHBMaXQiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiZUpJTFMzYWFpRFRYNG9aWkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Senior Full Stack Developer (Remote)",
+    "company_name": "AppLit",
+    "location": "Toronto, ON",
+    "search_keyword": "Full Stack Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Java": 2,
+      "C": 2,
+      "JavaScript": 2,
+      "TypeScript": 2,
+      "Swift": 2,
+      "Kotlin": 2,
+      "React": 2,
+      "Jenkins": 2,
+      "CircleCI": 2,
+      "Continuous integration": 2,
+      "Leadership": 2
+    },
+    "total_buzzwords": 22,
+    "unique_buzzwords": 11
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJMZWFybmluZyBNYW5hZ2VtZW50IFN5c3RlbSBBZG1pbmlzdHJhdG9yIC0gKENhbmFkYSIsImNvbXBhbnlfbmFtZSI6IlB1bHNlTGVhcm5pbmciLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoic2JJX1RTTlkxbVZZQUg4OUFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Learning Management System Administrator - (Canada",
+    "company_name": "PulseLearning",
+    "location": "Toronto, ON",
+    "search_keyword": "System Administrator",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "C": 1,
+      "Continuous improvement": 2,
+      "Communication": 1,
+      "Verbal communication": 1,
+      "Leadership": 1,
+      "Problem-solving": 1,
+      "Flexibility": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 9,
+    "unique_buzzwords": 8
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTeXN0ZW0gQWRtaW5pc3RyYXRvciIsImNvbXBhbnlfbmFtZSI6IkomTSBHcm91cCIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiOERlNEMzOGpEb1M5clczQUFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "System Administrator",
+    "company_name": "J&M Group",
+    "location": "Mississauga, ON",
+    "search_keyword": "System Administrator",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "PowerShell": 1,
+      "Windows Server": 2,
+      "TCP/IP": 1,
+      "Networking": 1
+    },
+    "total_buzzwords": 5,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJNaWNyb3NvZnQgRXhjaGFuZ2UgU3lzdGVtcyBBZG1pbmlzdHJhdG9yIiwiY29tcGFueV9uYW1lIjoiT3BlbiBUZXh0IENvcnBvcmF0aW9uIiwiYWRkcmVzc19jaXR5IjoiUmljaG1vbmQgSGlsbCwgT04iLCJodGlkb2NpZCI6IjI2Z2lGWEFianhMbFhZVkZBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Microsoft Exchange Systems Administrator",
+    "company_name": "Open Text Corporation",
+    "location": "Richmond Hill, ON",
+    "search_keyword": "System Administrator",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Go": 1,
+      "PowerShell": 5,
+      "Ansible": 1,
+      "Azure": 3,
+      "TLS": 1,
+      "Windows Server": 1,
+      "DNS": 1,
+      "Load Balancing": 1,
+      "Collaboration": 2,
+      "Networking": 1
+    },
+    "total_buzzwords": 17,
+    "unique_buzzwords": 10
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJOZXR3b3Jr4oCLL1N5c3RlbSBBZG1pbmlzdHJhdG9yIiwiY29tcGFueV9uYW1lIjoiTGVhZGVycyBSZWNydWl0aW5nIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlBHeVFNSVZyZmJUSEpzUUFBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Network​/System Administrator",
+    "company_name": "Leaders Recruiting",
+    "location": "Toronto, ON",
+    "search_keyword": "System Administrator",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Azure": 2,
+      "Networking": 6
+    },
+    "total_buzzwords": 8,
+    "unique_buzzwords": 2
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTci4gU3lzdGVtcyBBZG1pbmlzdHJhdG9yIiwiY29tcGFueV9uYW1lIjoiUHJvY29tIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IjRpT3BaTTM2Z0VsRUZwOGxBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Sr. Systems Administrator",
+    "company_name": "Procom",
+    "location": "Toronto, ON",
+    "search_keyword": "System Administrator",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Azure": 6,
+      "Windows Server": 1,
+      "Communication": 2,
+      "Technical writing": 1,
+      "Problem-solving": 1
+    },
+    "total_buzzwords": 11,
+    "unique_buzzwords": 5
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBEZXZlbG9wZXIgKFB5dGhvbikiLCJjb21wYW55X25hbWUiOiJTb3dpbmdvIiwiYWRkcmVzc19jaXR5IjoiT250YXJpbyIsImh0aWRvY2lkIjoia2NTTlVGcUN0dHJEUVVGZ0FBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Software Developer (Python)",
+    "company_name": "Sowingo",
+    "location": "Ontario",
+    "search_keyword": "Python Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 3,
+      "Flask": 2,
+      "Angular": 2,
+      "React": 2,
+      "MongoDB": 2,
+      "Redis": 4,
+      "Docker": 4,
+      "Git": 4,
+      "AWS": 4,
+      "Linux": 4,
+      "User-friendly": 1
+    },
+    "total_buzzwords": 32,
+    "unique_buzzwords": 11
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJMZWFkIEJhY2tlbmQgRW5naW5lZXIgLSBQeXRob24vRGphbmdvIiwiY29tcGFueV9uYW1lIjoiU2VhcmNoIEF0bGFzIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IkhBYi1XSlB1OWllWTRQQndBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Lead Backend Engineer - Python/Django",
+    "company_name": "Search Atlas",
+    "location": "Toronto, ON",
+    "search_keyword": "Python Developer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Python": 2,
+      "Django": 3,
+      "PostgreSQL": 1,
+      "Docker": 1,
+      "CI/CD": 1,
+      "Grafana": 2,
+      "pytest": 1,
+      "Communication": 1,
+      "Leadership": 1,
+      "Mentoring": 2,
+      "Flexibility": 1,
+      "Initiative": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 18,
+    "unique_buzzwords": 13
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgSW5mcmFzdHJ1Y3R1cmUgRW5naW5lZXIiLCJjb21wYW55X25hbWUiOiJDaGV4eSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJnazBsc2NwXzMzN1ZBM3NyQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Senior Infrastructure Engineer",
+    "company_name": "Chexy",
+    "location": "Toronto, ON",
+    "search_keyword": "Infrastructure Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Go": 1,
+      "TypeScript": 1,
+      "NestJS": 1,
+      "PostgreSQL": 1,
+      "Redis": 1,
+      "BigQuery": 1,
+      "Docker": 1,
+      "Terraform": 2,
+      "GitHub Actions": 1,
+      "CircleCI": 1,
+      "CI/CD": 1,
+      "Google Cloud": 2,
+      "GCP": 2,
+      "SOC": 2,
+      "IAM": 1,
+      "Encryption": 2,
+      "Leadership": 1,
+      "Reliability": 3,
+      "Flexibility": 1,
+      "Networking": 1
+    },
+    "total_buzzwords": 27,
+    "unique_buzzwords": 20
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJJbmZyYXN0cnVjdHVyZSAmIENhcGl0YWwgUHJvamVjdCAtIEVsZWN0cmljYWwgRW5naW5lZXIsIENPTSIsImNvbXBhbnlfbmFtZSI6IkFjY2VudHVyZSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiI5SXhwRDVCazRuM3FYZVBaQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Infrastructure & Capital Project - Electrical Engineer, COM",
+    "company_name": "Accenture",
+    "location": "Toronto, ON",
+    "search_keyword": "Infrastructure Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Continuous improvement": 1,
+      "Communication": 1,
+      "Reliability": 2
+    },
+    "total_buzzwords": 4,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTciBOZXR3b3JraW5nIGFuZCBJbmZyYXN0cnVjdHVyZSBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IkFsc3RvbSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJIMG15a0RVNWFVXzJ3Zk9TQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Sr Networking and Infrastructure Engineer",
+    "company_name": "Alstom",
+    "location": "Toronto, ON",
+    "search_keyword": "Infrastructure Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Python": 2,
+      "Shell": 2,
+      "PowerShell": 4,
+      "Kubernetes": 5,
+      "Terraform": 4,
+      "Ansible": 4,
+      "Puppet": 2,
+      "Chef": 2,
+      "Git": 4,
+      "IDS": 2,
+      "IPS": 2,
+      "Linux": 5,
+      "Ubuntu": 2,
+      "CentOS": 2,
+      "Windows Server": 2,
+      "OSPF": 2,
+      "Load Balancing": 2,
+      "SAN": 2,
+      "NAS": 2,
+      "Networking": 10
+    },
+    "total_buzzwords": 62,
+    "unique_buzzwords": 20
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJFbnRyeSBMZXZlbCBKYXZhIERldmVsb3BlciIsImNvbXBhbnlfbmFtZSI6IlRyaXVuaXR5IFNvZnR3YXJlLCBJbmMuIiwiYWRkcmVzc19jaXR5IjoiTWlzc2lzc2F1Z2EsIE9OIiwiaHRpZG9jaWQiOiJyZTJKeEllNFNmY21XRV9kQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Entry Level Java Developer",
+    "company_name": "Triunity Software, Inc.",
+    "location": "Mississauga, ON",
+    "search_keyword": "Entry Level Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 1,
+      "Java": 3,
+      "MySQL": 1,
+      "Critical thinking": 1
+    },
+    "total_buzzwords": 6,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJFbnRyeS1MZXZlbCBTb2Z0d2FyZSBEZXZlbG9wZXIg4oCUIFJlbW90ZSAmIE1lbnRvcnNoaXAiLCJjb21wYW55X25hbWUiOiJLb25yYWQiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiUVNNcWVUNmlJS2VCbVFaTEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Entry-Level Software Developer — Remote & Mentorship",
+    "company_name": "Konrad",
+    "location": "Toronto, ON",
+    "search_keyword": "Entry Level Developer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Flexibility": 1
+    },
+    "total_buzzwords": 1,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgTWFjaGluZSBMZWFybmluZyBFbmdpbmVlciwgQWQgVGVjaCIsImNvbXBhbnlfbmFtZSI6IkxvYmxhdyIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJBMmkwLXA3SU85QmQ0QXZsQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Senior Machine Learning Engineer, Ad Tech",
+    "company_name": "Loblaw",
+    "location": "Toronto, ON",
+    "search_keyword": "Machine Learning Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Python": 1,
+      "Java": 1,
+      "BigQuery": 2,
+      "Docker": 1,
+      "Kubernetes": 1,
+      "CI/CD": 1,
+      "Google Cloud": 2,
+      "GCP": 1,
+      "Airflow": 1,
+      "Continuous integration": 1,
+      "Communication": 2,
+      "Leadership": 1,
+      "Problem-solving": 2,
+      "Decision-making": 1,
+      "Adaptability": 1,
+      "Attention to detail": 1,
+      "Reliability": 2,
+      "Flexibility": 1,
+      "Initiative": 1,
+      "Collaboration": 2
+    },
+    "total_buzzwords": 26,
+    "unique_buzzwords": 20
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgTWFjaGluZSBMZWFybmluZyBFbmdpbmVlciwgTUxPcHMiLCJjb21wYW55X25hbWUiOiJTcG90aWZ5IiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IjNZbHNuQlJVeVFxdl9lUjBBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Senior Machine Learning Engineer, MLOps",
+    "company_name": "Spotify",
+    "location": "Toronto, ON",
+    "search_keyword": "Machine Learning Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Python": 1,
+      "Go": 2,
+      "Kubernetes": 2,
+      "TensorFlow": 1,
+      "PyTorch": 1,
+      "Agile": 1,
+      "Flexibility": 2
+    },
+    "total_buzzwords": 10,
+    "unique_buzzwords": 7
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgTWFjaGluZSBMZWFybmluZyBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IkF1dG9kZXNrIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImtTV0M2ZVBBeThSR19jY1VBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Senior Machine Learning Engineer",
+    "company_name": "Autodesk",
+    "location": "Toronto, ON",
+    "search_keyword": "Machine Learning Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Python": 2,
+      "FastAPI": 1,
+      "Docker": 1,
+      "Git": 1,
+      "CI/CD": 2,
+      "AWS": 2,
+      "TensorFlow": 1,
+      "PyTorch": 1,
+      "scikit-learn": 1,
+      "Version control": 1,
+      "Predictive analytics": 1,
+      "Agile": 1,
+      "Communication": 1,
+      "Decision-making": 3,
+      "Reliability": 2,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 22,
+    "unique_buzzwords": 16
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJNYWNoaW5lIExlYXJuaW5nIEVuZ2luZWVyIGZvciBUZWxlY29tIERpZ2l0YWwgQ2h1cm4gUHJlZGljdGlvbnMgcHJvamVjdCIsImNvbXBhbnlfbmFtZSI6IkFyY2hpdGVjaCIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJIRFpKTjM4VExOQnp6eUFPQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Machine Learning Engineer for Telecom Digital Churn Predictions project",
+    "company_name": "Architech",
+    "location": "Toronto, ON",
+    "search_keyword": "Machine Learning Engineer",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "Python": 2,
+      "R": 2,
+      "AWS": 2,
+      "Azure": 2,
+      "GCP": 2,
+      "TensorFlow": 2,
+      "PyTorch": 2,
+      "scikit-learn": 2,
+      "Spark": 2,
+      "Databricks": 4,
+      "Predictive analytics": 2,
+      "Communication": 2,
+      "Leadership": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 28,
+    "unique_buzzwords": 14
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEYXRhIFNjaWVudGlzdCIsImNvbXBhbnlfbmFtZSI6Ik1DS0VTU09OIiwiYWRkcmVzc19jaXR5IjoiTWlzc2lzc2F1Z2EsIE9OIiwiaHRpZG9jaWQiOiI0ZjlMU2hnTTIyY2VxcklSQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Data Scientist",
+    "company_name": "MCKESSON",
+    "location": "Mississauga, ON",
+    "search_keyword": "Data Scientist",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 4,
+      "scikit-learn": 2,
+      "Communication": 2,
+      "Decision-making": 1
+    },
+    "total_buzzwords": 9,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEYXRhIFNjaWVudGlzdCDigJQgRHJpdmUgR3Jvd3RoIHdpdGggTUwgJiBFeHBlcmltZW50cyIsImNvbXBhbnlfbmFtZSI6IkplcnJ5IiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IjRyNFhmSWgzclRnQUxrT2NBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Data Scientist — Drive Growth with ML & Experiments",
+    "company_name": "Jerry",
+    "location": "Toronto, ON",
+    "search_keyword": "Data Scientist",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 1,
+      "Decision-making": 1
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 2
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEYXRhIFNjaWVudGlzdCBNYW5hZ2VyIC0gVG9yb250byAoSHlicmlkKSIsImNvbXBhbnlfbmFtZSI6IlNoaWZ0IFRlY2hub2xvZ3kiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiNWZPTXZYMFIyTU5yY2pRZEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Data Scientist Manager - Toronto (Hybrid)",
+    "company_name": "Shift Technology",
+    "location": "Toronto, ON",
+    "search_keyword": "Data Scientist",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 1,
+      "Java": 1,
+      "C": 2,
+      "Mentoring": 1
+    },
+    "total_buzzwords": 5,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEYXRhIFNjaWVudGlzdCBJSSIsImNvbXBhbnlfbmFtZSI6IkludGFjdCBGaW5hbmNpYWwiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoidHhTTzRnU0pyRlFMeWd3RkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Data Scientist II",
+    "company_name": "Intact Financial",
+    "location": "Toronto, ON",
+    "search_keyword": "Data Scientist",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "Quality assurance": 1,
+      "Data analysis": 1,
+      "Data mining": 5,
+      "Communication": 4,
+      "Problem-solving": 2,
+      "Decision-making": 2,
+      "Time management": 4,
+      "Reliability": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 23,
+    "unique_buzzwords": 10
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQcm9kdWN0IERlc2lnbmVyIiwiY29tcGFueV9uYW1lIjoiRG9nIFRhbGVzIFJlc2N1ZSBhbmQgU2FuY3R1YXJ5IiwiYWRkcmVzc19jaXR5IjoiS2luZyBDaXR5LCBPTiIsImh0aWRvY2lkIjoiWk9CYV93aU9oRU1nZGFFdEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Product Designer",
+    "company_name": "Dog Tales Rescue and Sanctuary",
+    "location": "King City, ON",
+    "search_keyword": "Product Designer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Attention to detail": 2
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQYXRpZW50LUNlbnRyaWMgUHJvZHVjdCBEZXNpZ25lciAoUmVtb3RlLCAzLU1vbnRoIENvbnRyYWN0KSIsImNvbXBhbnlfbmFtZSI6IlBvY2tldEhlYWx0aCBJbmMuIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImFIU0dWRmIzdmN5Z3NITkhBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Patient-Centric Product Designer (Remote, 3-Month Contract)",
+    "company_name": "PocketHealth Inc.",
+    "location": "Toronto, ON",
+    "search_keyword": "Product Designer",
+    "experience_level": "Mid",
+    "buzzwords_found": {},
+    "total_buzzwords": 0,
+    "unique_buzzwords": 0
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJSZW1vdGUgTGVhZCBQcm9kdWN0IERlc2lnbmVyIChDb250cmFjdCB0byBIaXJlKSIsImNvbXBhbnlfbmFtZSI6IkxhdW5jaCBQb3RhdG8iLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiQ29ZLTVGaEdTaGtNRTU3bEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Remote Lead Product Designer (Contract to Hire)",
+    "company_name": "Launch Potato",
+    "location": "Toronto, ON",
+    "search_keyword": "Product Designer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Collaboration": 1
+    },
+    "total_buzzwords": 1,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQcm9kdWN0IERlc2lnbmVyIC0gQmlsaW5ndWFsIiwiY29tcGFueV9uYW1lIjoiQWNjZW50dXJlIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Ing5QjBkSHJTSVFuWlROTHdBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Product Designer - Bilingual",
+    "company_name": "Accenture",
+    "location": "Toronto, ON",
+    "search_keyword": "Product Designer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "User-centered design": 2,
+      "Adobe Creative Suite": 2,
+      "Leadership": 2,
+      "Reliability": 2,
+      "Empathy": 2,
+      "Collaboration": 4
+    },
+    "total_buzzwords": 14,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJMZWFkIFByb2R1Y3QgRGVzaWduZXIgLSBGbGVldCIsImNvbXBhbnlfbmFtZSI6Ikdlb3RhYiIsImFkZHJlc3NfY2l0eSI6Ik9ha3ZpbGxlLCBPTiIsImh0aWRvY2lkIjoiQUNpc0xXWlF5WEcwd0x3ckFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Lead Product Designer - Fleet",
+    "company_name": "Geotab",
+    "location": "Oakville, ON",
+    "search_keyword": "Product Designer",
+    "experience_level": "Junior",
+    "buzzwords_found": {
+      "Communication": 1,
+      "Mentoring": 1,
+      "Collaboration": 2
+    },
+    "total_buzzwords": 4,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQcm9kdWN0IERlc2lnbmVyIC0gTW9iaWxlIiwiY29tcGFueV9uYW1lIjoiTUZDSkgiLCJhZGRyZXNzX2NpdHkiOiJXYXRlcmxvbywgT04iLCJodGlkb2NpZCI6Ik1YN1RYeHVHMkRyRWdDZjdBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Product Designer - Mobile",
+    "company_name": "MFCJH",
+    "location": "Waterloo, ON",
+    "search_keyword": "Product Designer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Agile": 2,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 3,
+    "unique_buzzwords": 2
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJRQSBFbmdpbmVlciAtIEF1dG9tYXRpb24gdGVzdGluZyIsImNvbXBhbnlfbmFtZSI6IktsaWNrIE5vbi1iaWxsYWJsZSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJGS1BtVEt1cDZYcS1qc3pGQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "QA Engineer - Automation testing",
+    "company_name": "Klick Non-billable",
+    "location": "Toronto, ON",
+    "search_keyword": "QA Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 1,
+      "JavaScript": 1,
+      "TypeScript": 1,
+      "CI/CD": 2,
+      "AWS": 1,
+      "Azure": 1,
+      "GCP": 1,
+      "Selenium": 1,
+      "Cypress": 1,
+      "Playwright": 1,
+      "Software architecture": 1,
+      "Reliability": 2,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 15,
+    "unique_buzzwords": 13
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgUUEgRW5naW5lZXIgOiBBdXRvbWF0aW9uLCBBUEkgVGVzdGluZyAmIEFnaWxlIFF1YWxpdHkiLCJjb21wYW55X25hbWUiOiJNZWRpdW0iLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoia2FxTzRGb25maXRBS044UkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Senior QA Engineer : Automation, API Testing & Agile Quality",
+    "company_name": "Medium",
+    "location": "Toronto, ON",
+    "search_keyword": "QA Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Java": 1,
+      "JavaScript": 1,
+      "Agile": 2,
+      "Problem-solving": 1
+    },
+    "total_buzzwords": 5,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJDeWJlciBTZWN1cml0eSBBbmFseXN0IC0gR292ZXJuYW5jZSAmIENvbXBsaWFuY2UiLCJjb21wYW55X25hbWUiOiJTTkMtTGF2YWxpbiIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJ5bjMtZExCQk40dnc1U2REQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Cyber Security Analyst - Governance & Compliance",
+    "company_name": "SNC-Lavalin",
+    "location": "Toronto, ON",
+    "search_keyword": "Cybersecurity Analyst",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Communication": 1,
+      "Presentation skills": 1,
+      "Initiative": 1
+    },
+    "total_buzzwords": 3,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTT0MgSW5mcmFzdHJ1Y3R1cmUgU3BlY2lhbGlzdCIsImNvbXBhbnlfbmFtZSI6IklCTSIsImFkZHJlc3NfY2l0eSI6Ik1hcmtoYW0sIE9OIiwiaHRpZG9jaWQiOiJGUWJpZ3F3MURfaGM1cTZ5QUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "SOC Infrastructure Specialist",
+    "company_name": "IBM",
+    "location": "Markham, ON",
+    "search_keyword": "Security Engineer",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "Google Cloud": 1,
+      "GCP": 1,
+      "IBM Cloud": 1,
+      "SOC": 9,
+      "Encryption": 1,
+      "Linux": 1,
+      "RedHat": 1,
+      "Critical thinking": 1,
+      "Networking": 1
+    },
+    "total_buzzwords": 17,
+    "unique_buzzwords": 9
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJJbnRlcm1lZGlhdGUgQ3liZXIgU2VjdXJpdHkgQW5hbHlzdCBDbG91ZCBTZWN1cml0eSBPcGVyYXRpb25zIiwiY29tcGFueV9uYW1lIjoiUy5pLiBTeXN0ZW1zIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Ilo2eG9uM0hNc1FvQnNtbndBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Intermediate Cyber Security Analyst Cloud Security Operations",
+    "company_name": "S.i. Systems",
+    "location": "Toronto, ON",
+    "search_keyword": "Cybersecurity Analyst",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "SIEM": 3,
+      "Communication": 2,
+      "Leadership": 2,
+      "Change management": 2
+    },
+    "total_buzzwords": 9,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJDbG91ZCBEYXRhIEVuZ2luZWVyIC0gQkkgSW50ZWdyYXRpb24gU3BlY2lhbGlzdCIsImNvbXBhbnlfbmFtZSI6IlREIEJhbmsiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiNnBPQVZSQUZIV2RYRl9BNEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Cloud Data Engineer - BI Integration Specialist",
+    "company_name": "TD Bank",
+    "location": "Toronto, ON",
+    "search_keyword": "Data Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Java": 4,
+      "Scala": 2,
+      "Spring Boot": 2,
+      "MongoDB": 2,
+      "Redis": 2,
+      "Cassandra": 2,
+      "Snowflake": 2,
+      "Azure": 2,
+      "GCP": 2,
+      "Spark": 2,
+      "Flink": 2,
+      "Kafka": 2,
+      "Databricks": 4,
+      "Data visualization": 2,
+      "Data governance": 2,
+      "Mentoring": 2
+    },
+    "total_buzzwords": 36,
+    "unique_buzzwords": 16
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3Igc2VjcmV0IGNsZWFyZWQgZGF0YSBzb2x1dGlvbiBhcmNoaXRlY3QgdG8gbWFuYWdlIGRhdGEgZW5naW5lZXJpbmcgYWN0aXZpdGllcyBpbiBtaWNyb3NvZnQgZmFicmljIHdpdGhpbiB0aGUgcHVibGljIHNlY3RvciAtIDA2NCIsImNvbXBhbnlfbmFtZSI6IlMuaS4gU3lzdGVtcyIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJnSzEtQVllQjVmRWFTVHNKQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Senior secret cleared data solution architect to manage data engineering activities in microsoft fabric within the public sector - 064",
+    "company_name": "S.i. Systems",
+    "location": "Toronto, ON",
+    "search_keyword": "Data Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "CI/CD": 1,
+      "Azure": 1
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 2
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJMZWFkIFVYIERlc2lnbiBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IkNvbmZpZGVudGlhbCBDb21wYW55IiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Ii1HOTd3VnVVZHlOM2FtdVpBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Lead UX Design Engineer",
+    "company_name": "Confidential Company",
+    "location": "Toronto, ON",
+    "search_keyword": "UX Designer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "C": 1,
+      "User experience design": 1,
+      "Agile": 1,
+      "Communication": 1,
+      "Presentation skills": 1
+    },
+    "total_buzzwords": 5,
+    "unique_buzzwords": 5
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgVVggRGVzaWduZXIg4oCUIEh5YnJpZCBUb3JvbnRvICgxMuKAkU1vbnRoIENvbnRyYWN0KSIsImNvbXBhbnlfbmFtZSI6IkNyZWF0aXZlIE5pY2hlIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IjE2Q29rclg1OFdvOWlZOTdBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Senior UX Designer — Hybrid Toronto (12‑Month Contract)",
+    "company_name": "Creative Niche",
+    "location": "Toronto, ON",
+    "search_keyword": "UX Designer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "User-centered design": 1
+    },
+    "total_buzzwords": 1,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgRG9jdW1lbnRhdGlvbiBVWCBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6Ik9rdGEsIEluYy4iLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoia2lTSzdmcU1renk3S0E0bkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Senior Documentation UX Designer",
+    "company_name": "Okta, Inc.",
+    "location": "Toronto, ON",
+    "search_keyword": "UX Designer",
+    "experience_level": "Senior",
+    "buzzwords_found": {},
+    "total_buzzwords": 0,
+    "unique_buzzwords": 0
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJVSS9VWCBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IkpheSBBbmFseXRpeCIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiI2UUNsdDlNWlkzZktsWGRMQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "UI/UX Designer",
+    "company_name": "Jay Analytix",
+    "location": "Toronto, ON",
+    "search_keyword": "UI/UX Designer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "User-centered design": 2
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgQW5hbHl0aWNzIEVuZ2luZWVyOyBCSSDigJQgQnVpbGQgR2xvYmFsIERhdGEgU29sdXRpb25zIiwiY29tcGFueV9uYW1lIjoiSGVsbG9wZWJsIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IkxaM0pLUzN5Um4yUWpTVWlBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Senior Analytics Engineer; BI — Build Global Data Solutions",
+    "company_name": "Hellopebl",
+    "location": "Toronto, ON",
+    "search_keyword": "Analytics Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {},
+    "total_buzzwords": 0,
+    "unique_buzzwords": 0
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTYWxlc2ZvcmNlIFFBIFRlc3RlciIsImNvbXBhbnlfbmFtZSI6IkNvbXBlc3QgU29sdXRpb25zIEluYyIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJhR1FjXzJMTE5MTXBad0pYQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Salesforce QA Tester",
+    "company_name": "Compest Solutions Inc",
+    "location": "Toronto, ON",
+    "search_keyword": "Software Tester",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Java": 8,
+      "CI/CD": 3,
+      "Selenium": 5,
+      "Postman": 6,
+      "Software testing": 3,
+      "Agile": 3
+    },
+    "total_buzzwords": 28,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBRdWFsaXR5IEVuZ2luZWVyIiwiY29tcGFueV9uYW1lIjoiUm95YWwgQmFuayBvZiBDYW5hZGEiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiVS1jcHJrd1dOeGtBdlRYMEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Software Quality Engineer",
+    "company_name": "Royal Bank of Canada",
+    "location": "Toronto, ON",
+    "search_keyword": "Software Tester",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Python": 9,
+      "Java": 5,
+      "C": 2,
+      "Hive": 2,
+      "Linux": 1,
+      "Selenium": 2,
+      "Quality assurance": 2,
+      "Predictive analytics": 2,
+      "Agile": 2,
+      "Mentoring": 1,
+      "Coaching": 3,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 32,
+    "unique_buzzwords": 12
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQdWJsaWMgU2VjdG9yIFN1cHBvcnQgU3BlY2lhbGlzdCIsImNvbXBhbnlfbmFtZSI6IlNvZnRjaG9pY2UiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiRHVzR05ObnlzSV9ycWpEcEFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Public Sector Support Specialist",
+    "company_name": "Softchoice",
+    "location": "Toronto, ON",
+    "search_keyword": "IT Support Specialist",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Agile": 1,
+      "Communication": 1,
+      "Verbal communication": 1,
+      "Customer service": 2,
+      "Relationship building": 1
+    },
+    "total_buzzwords": 6,
+    "unique_buzzwords": 5
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJFUEMgVGVjaCBTdXBwb3J0IFNwZWNpYWxpc3QiLCJjb21wYW55X25hbWUiOiJGcmVlZG9tIE1vYmlsZSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJLMy05WXZjQlN0VHd4cEt5QUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "EPC Tech Support Specialist",
+    "company_name": "Freedom Mobile",
+    "location": "Toronto, ON",
+    "search_keyword": "IT Support Specialist",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Go": 1,
+      "Docker": 2,
+      "Kubernetes": 4,
+      "Linux": 2,
+      "DNS": 2,
+      "Data analysis": 2,
+      "Technical writing": 2,
+      "Root cause analysis": 2,
+      "Reliability": 2,
+      "Change management": 2
+    },
+    "total_buzzwords": 21,
+    "unique_buzzwords": 10
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZWN1cml0eSBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IlBheW1lbnR1cyAoQ2FuYWRhKSBDb3Jwb3JhdGlvbiIsImFkZHJlc3NfY2l0eSI6IlJpY2htb25kIEhpbGwsIE9OIiwiaHRpZG9jaWQiOiI4a0lqV21YeENGVVUybDEtQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Security Engineer",
+    "company_name": "Paymentus (Canada) Corporation",
+    "location": "Richmond Hill, ON",
+    "search_keyword": "Security Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 1,
+      "Java": 2,
+      "JavaScript": 1,
+      "Bash": 1,
+      "MySQL": 2,
+      "Docker": 1,
+      "Kubernetes": 1,
+      "Terraform": 1,
+      "Ansible": 1,
+      "Puppet": 1,
+      "Chef": 1,
+      "AWS": 1,
+      "Azure": 1,
+      "GCP": 1,
+      "SOC": 1,
+      "Linux": 1,
+      "Database administration": 2
+    },
+    "total_buzzwords": 20,
+    "unique_buzzwords": 17
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZWN1cml0eSBFbmdpbmVlciAoSFlCUklEKSIsImNvbXBhbnlfbmFtZSI6Ik1jQ29ybWljayAmIENvbXBhbnkiLCJhZGRyZXNzX2NpdHkiOiJNaXNzaXNzYXVnYSwgT04iLCJodGlkb2NpZCI6IjFIVDNta1RZWDNNSWl3Q2NBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Security Engineer (HYBRID)",
+    "company_name": "McCormick & Company",
+    "location": "Mississauga, ON",
+    "search_keyword": "Security Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "R": 2,
+      "PowerShell": 2,
+      "AWS": 2,
+      "Azure": 2,
+      "GCP": 2,
+      "SIEM": 4,
+      "SOC": 2,
+      "Linux": 2,
+      "VPN": 2,
+      "Continuous improvement": 2,
+      "Communication": 2,
+      "Conflict resolution": 2,
+      "Attention to detail": 2,
+      "Resilience": 2,
+      "Collaboration": 1,
+      "Customer service": 2
+    },
+    "total_buzzwords": 35,
+    "unique_buzzwords": 17
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJHdWlkZXdpcmUgVGVjaG5pY2FsIExlYWQgRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiQ29nbml6YW50IiwiYWRkcmVzc19jaXR5IjoiQnVybGluZ3RvbiwgT04iLCJodGlkb2NpZCI6ImlnU245ZHhVU3Z1WFY4RlRBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Guidewire Technical Lead Developer",
+    "company_name": "Cognizant",
+    "location": "Burlington, ON",
+    "search_keyword": "Technical Lead",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Java": 1,
+      "GitHub Actions": 1,
+      "Jenkins": 1,
+      "CI/CD": 1,
+      "AWS": 3,
+      "Flexibility": 2
+    },
+    "total_buzzwords": 9,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJBUEkgVGVjaCBMZWFkIiwiY29tcGFueV9uYW1lIjoiSiZNIEdyb3VwIiwiYWRkcmVzc19jaXR5IjoiTWlzc2lzc2F1Z2EsIE9OIiwiaHRpZG9jaWQiOiItMlM2dnNBR3lXaWtyUjRKQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "API Tech Lead",
+    "company_name": "J&M Group",
+    "location": "Mississauga, ON",
+    "search_keyword": "Technical Lead",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "C": 1,
+      "Terraform": 1,
+      "Git": 1,
+      "CI/CD": 1,
+      "Azure": 7,
+      "Agile": 1,
+      "Communication": 1,
+      "Leadership": 1,
+      "Coaching": 1,
+      "Problem-solving": 1
+    },
+    "total_buzzwords": 16,
+    "unique_buzzwords": 10
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJBcHBsaWNhdGlvbiBEZXZlbG9wbWVudCBUZWNobmljYWwgTGVhZCIsImNvbXBhbnlfbmFtZSI6IkZpcnN0IE5hdGlvbmFsIEZpbmFuY2lhbCBMUCIsImFkZHJlc3NfY2l0eSI6IlZhbmNvdXZlciwgQkMiLCJodGlkb2NpZCI6IkRNcGhXaC1GYlVoVEZpN1JBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Application Development Technical Lead",
+    "company_name": "First National Financial LP",
+    "location": "Vancouver, BC",
+    "search_keyword": "Technical Lead",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Communication": 2,
+      "Written communication": 2,
+      "Leadership": 2,
+      "Problem-solving": 2,
+      "Collaboration": 2
+    },
+    "total_buzzwords": 10,
+    "unique_buzzwords": 5
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJJbmZvcm1hdGlvbiBUZWNobm9sb2d5IFN1cHBvcnQgRW5naW5lZXIiLCJjb21wYW55X25hbWUiOiJURUNFWkUiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiblB0M1RYYUFzbVBISlJfdkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Information Technology Support Engineer",
+    "company_name": "TECEZE",
+    "location": "Toronto, ON",
+    "search_keyword": "Technical Support",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "AWS": 1,
+      "Azure": 1,
+      "TCP/IP": 1,
+      "DNS": 1,
+      "DHCP": 1,
+      "VPN": 1,
+      "Communication": 2,
+      "Networking": 1,
+      "Customer service": 1
+    },
+    "total_buzzwords": 10,
+    "unique_buzzwords": 9
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJPdXIgY2xpZW50IGlzIHNlZWtpbmcgYW4gaW50ZXJtZWRpYXRlIHNoYXJlcG9pbnQgYW5hbHlzdCB0byBwcm92aWRlIHRlY2huaWNhbCBzdXBwb3J0LCB0cm91Ymxlc2hvb3RpbmcsIGFuZCBtYWludGVuYW5jZSBmb3IgYSBwdWJsaWMgc2VjdG9yIHNoYXJlcG9pbnQgZW52aSIsImNvbXBhbnlfbmFtZSI6IlMuaS4gU3lzdGVtcyIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJPcmNOd3NYREQxN1oxWDI5QUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Our client is seeking an intermediate sharepoint analyst to provide technical support, troubleshooting, and maintenance for a public sector sharepoint envi",
+    "company_name": "S.i. Systems",
+    "location": "Toronto, ON",
+    "search_keyword": "Technical Support",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "PowerShell": 2
+    },
+    "total_buzzwords": 2,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJMZWFkLCBUZWNoIFN1cHBvcnQiLCJjb21wYW55X25hbWUiOiJHdWlkZXBvaW50IiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImhESE13NWl4Wmd6cXo3a0VBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Lead, Tech Support",
+    "company_name": "Guidepoint",
+    "location": "Toronto, ON",
+    "search_keyword": "Technical Support",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "C": 2,
+      "Azure": 4,
+      "SSO": 2,
+      "Communication": 2,
+      "Decision-making": 2,
+      "Networking": 4,
+      "Customer service": 6
+    },
+    "total_buzzwords": 22,
+    "unique_buzzwords": 7
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJUZWNobmljYWwgU3VwcG9ydCBTcGVjaWFsaXN0IEkiLCJjb21wYW55X25hbWUiOiJBcmNhZGlzIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlhrVHFrbHpuWGptZl83c1hBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Technical Support Specialist I",
+    "company_name": "Arcadis",
+    "location": "Toronto, ON",
+    "search_keyword": "Technical Support",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "AWS": 3,
+      "Agile": 1,
+      "Communication": 2
+    },
+    "total_buzzwords": 6,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJIeWJyaWQgSVQgU3VwcG9ydCBUZWNobmljaWFuIC0gSGVscGRlc2sgJiBDbGllbnQgVGVjaCBDaGFtcGlvbiIsImNvbXBhbnlfbmFtZSI6IklhYXdnIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlRYazRxQ0lpMnkwNU05d3lBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Hybrid IT Support Technician - Helpdesk & Client Tech Champion",
+    "company_name": "Iaawg",
+    "location": "Toronto, ON",
+    "search_keyword": "Technical Support",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Flexibility": 1
+    },
+    "total_buzzwords": 1,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJUZWNobmljYWwgU3VwcG9ydCBSZXByZXNlbnRhdGl2ZSAoNSkiLCJjb21wYW55X25hbWUiOiJOUlQgVGVjaG5vbG9neSBDb3JwLiIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJiUGdZSThtSEdGWG8ycE5rQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Technical Support Representative (5)",
+    "company_name": "NRT Technology Corp.",
+    "location": "Toronto, ON",
+    "search_keyword": "Technical Support",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Communication": 2,
+      "Verbal communication": 1,
+      "Conflict resolution": 1,
+      "Patience": 1,
+      "Collaboration": 1,
+      "Networking": 1,
+      "Customer service": 2
+    },
+    "total_buzzwords": 9,
+    "unique_buzzwords": 7
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJUZWNobm9sb2d5IFN1cHBvcnQgQW5hbHlzdCIsImNvbXBhbnlfbmFtZSI6IkNJIEZpbmFuY2lhbCBDYXJlZXJzIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImF5UVVHQlpRcnloQnpuYmFBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Technology Support Analyst",
+    "company_name": "CI Financial Careers",
+    "location": "Toronto, ON",
+    "search_keyword": "Technical Support",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Swift": 1,
+      "Communication": 2,
+      "Verbal communication": 1,
+      "Problem-solving": 3,
+      "Root cause analysis": 1,
+      "Attention to detail": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 10,
+    "unique_buzzwords": 7
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgU0RFVCA6IFRlc3QgQXV0b21hdGlvbiBMZWFkZXIgKFJlbW90ZS1GaXJzdCkiLCJjb21wYW55X25hbWUiOiJ2Q2x1c3RlciIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJnS0hEZzd6RkNfUlhkX0dnQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Senior SDET : Test Automation Leader (Remote-First)",
+    "company_name": "vCluster",
+    "location": "Toronto, ON",
+    "search_keyword": "Test Automation Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Kubernetes": 1
+    },
+    "total_buzzwords": 1,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJNYW5hZ2VyLCBQbGF0Zm9ybSBFbmdpbmVlcmluZyIsImNvbXBhbnlfbmFtZSI6ImNvbW1vbnNrdSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJHRzM1VkpxQzVMT2hoOUROQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Manager, Platform Engineering",
+    "company_name": "commonsku",
+    "location": "Toronto, ON",
+    "search_keyword": "Engineering Manager",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Snowflake": 2,
+      "Docker": 2,
+      "Terraform": 2,
+      "GitHub Actions": 2,
+      "CircleCI": 2,
+      "CI/CD": 2,
+      "AWS": 2,
+      "Azure": 2,
+      "GCP": 2,
+      "Agile": 4,
+      "Continuous improvement": 3,
+      "Communication": 2,
+      "Mentoring": 2,
+      "Coaching": 2,
+      "Decision-making": 2,
+      "Reliability": 2,
+      "Empathy": 2,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 38,
+    "unique_buzzwords": 18
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJUZWNoLiBNb2JpbGUgRW5naW5lZXJpbmcgTWFuYWdlcnMgLSBIeWJyaWQiLCJjb21wYW55X25hbWUiOiJURUVNQSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJudi1GUFFYd3h5TnY5U2VEQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Tech. Mobile Engineering Managers - Hybrid",
+    "company_name": "TEEMA",
+    "location": "Toronto, ON",
+    "search_keyword": "Engineering Manager",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Agile": 1,
+      "Communication": 2,
+      "Leadership": 2,
+      "Change management": 2
+    },
+    "total_buzzwords": 7,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJNYW5hZ2VyLCBUZWNobmljYWwgU2VydmljZXMiLCJjb21wYW55X25hbWUiOiJVbml2ZXJzaXR5IG9mIFRvcm9udG8iLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiRHJDRG5heGk4d0xiZEV2T0FBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Manager, Technical Services",
+    "company_name": "University of Toronto",
+    "location": "Toronto, ON",
+    "search_keyword": "Engineering Manager",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Communication": 2,
+      "Written communication": 2,
+      "Leadership": 2,
+      "Reliability": 6,
+      "Initiative": 2
+    },
+    "total_buzzwords": 14,
+    "unique_buzzwords": 5
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEYXRhIEFuYWx5c3QsIEZpbmFuY2UiLCJjb21wYW55X25hbWUiOiJGQ1QiLCJhZGRyZXNzX2NpdHkiOiJPYWt2aWxsZSwgT04iLCJodGlkb2NpZCI6IjFLclBSWHJKdS0tcDJOR1ZBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Data Analyst, Finance",
+    "company_name": "FCT",
+    "location": "Oakville, ON",
+    "search_keyword": "Data Analyst",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Data analysis": 2,
+      "Data mining": 1,
+      "Communication": 1,
+      "Mentoring": 1,
+      "Decision-making": 2,
+      "Time management": 1,
+      "Attention to detail": 1,
+      "Reliability": 1,
+      "Initiative": 1
+    },
+    "total_buzzwords": 11,
+    "unique_buzzwords": 9
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJGaW5hbmNlIERhdGEgQW5hbHlzdCIsImNvbXBhbnlfbmFtZSI6IklvdmF0ZSIsImFkZHJlc3NfY2l0eSI6Ik9ha3ZpbGxlLCBPTiIsImh0aWRvY2lkIjoiSmVjcHNvM2VuNi05cjh6REFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Finance Data Analyst",
+    "company_name": "Iovate",
+    "location": "Oakville, ON",
+    "search_keyword": "Data Analyst",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Communication": 4,
+      "Written communication": 2,
+      "Customer service": 2
+    },
+    "total_buzzwords": 8,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgRGF0YSBBbmFseXN0IiwiY29tcGFueV9uYW1lIjoiVHJhZmZpeCIsImFkZHJlc3NfY2l0eSI6Ik1pbHRvbiwgT04iLCJodGlkb2NpZCI6IlllWWVJTU1aTjhDOF9lM01BQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Senior Data Analyst",
+    "company_name": "Traffix",
+    "location": "Milton, ON",
+    "search_keyword": "Data Analyst",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Python": 2,
+      "Data governance": 2,
+      "Communication": 2,
+      "Problem-solving": 2,
+      "Critical thinking": 2,
+      "Attention to detail": 2
+    },
+    "total_buzzwords": 12,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEYXRhIEFuYWx5c3QgKENvbnRyYWN0KSIsImNvbXBhbnlfbmFtZSI6IkJheXNob3JlIEhlYWx0aENhcmUiLCJhZGRyZXNzX2NpdHkiOiJNaXNzaXNzYXVnYSwgT04iLCJodGlkb2NpZCI6ImJyMlR4dWhUbUlTY2Y3LXhBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Data Analyst (Contract)",
+    "company_name": "Bayshore HealthCare",
+    "location": "Mississauga, ON",
+    "search_keyword": "Data Analyst",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "Azure": 1,
+      "Data analysis": 4,
+      "Communication": 1,
+      "Problem-solving": 1,
+      "Decision-making": 1
+    },
+    "total_buzzwords": 10,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJEYXRhIEFuYWx5c3QgICgxIFllYXIgRml4ZWQgVGVybSkiLCJjb21wYW55X25hbWUiOiJHZW90YWIiLCJhZGRyZXNzX2NpdHkiOiJPYWt2aWxsZSwgT04iLCJodGlkb2NpZCI6IkxUMmFrbkhsaUFvODNFeFZBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Data Analyst (1 Year Fixed Term)",
+    "company_name": "Geotab",
+    "location": "Oakville, ON",
+    "search_keyword": "Data Analyst",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "Data mining": 2,
+      "Communication": 2,
+      "Verbal communication": 2,
+      "Reliability": 2,
+      "Collaboration": 2,
+      "Networking": 2
+    },
+    "total_buzzwords": 14,
+    "unique_buzzwords": 7
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJCSSBBbmFseXN0OiBUdXJuIERhdGEgaW50byBTdHJhdGVnaWMgSW5zaWdodHMiLCJjb21wYW55X25hbWUiOiJFcmNvIFdvcmxkd2lkZSBJbmMiLCJhZGRyZXNzX2NpdHkiOiJNaXNzaXNzYXVnYSwgT04iLCJodGlkb2NpZCI6IjV0c0pMNlBZWW9qVlhFMEFBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "BI Analyst: Turn Data into Strategic Insights",
+    "company_name": "Erco Worldwide Inc",
+    "location": "Mississauga, ON",
+    "search_keyword": "Business Intelligence Analyst",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Collaboration": 1
+    },
+    "total_buzzwords": 1,
+    "unique_buzzwords": 1
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJCdXNpbmVzcyBJbnRlbGxpZ2VuY2UgQW5hbHlzdCAtIFJpc2siLCJjb21wYW55X25hbWUiOiJTcXVhcmUiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiNjJsaUgxUU5qN2FseDNEekFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Business Intelligence Analyst - Risk",
+    "company_name": "Square",
+    "location": "Toronto, ON",
+    "search_keyword": "Business Intelligence Analyst",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "R": 1,
+      "Data analysis": 1,
+      "Leadership": 2
+    },
+    "total_buzzwords": 6,
+    "unique_buzzwords": 4
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJCdXNpbmVzcyBJbnRlbGxpZ2VuY2UgJiBDb21tZXJjaWFsIFN1Y2Nlc3MgQW5hbHlzdCIsImNvbXBhbnlfbmFtZSI6IlZvcnRleCBGcmVpZ2h0IiwiYWRkcmVzc19jaXR5IjoiTWlzc2lzc2F1Z2EsIE9OIiwiaHRpZG9jaWQiOiJJY3E4bTI0UUQ1VEFqZ2ctQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Business Intelligence & Commercial Success Analyst",
+    "company_name": "Vortex Freight",
+    "location": "Mississauga, ON",
+    "search_keyword": "Business Intelligence Analyst",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Data visualization": 2,
+      "Communication": 1,
+      "Leadership": 2,
+      "Attention to detail": 2,
+      "Customer service": 1
+    },
+    "total_buzzwords": 8,
+    "unique_buzzwords": 5
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgRGF0YSBBbmFseXN0IC0gQnVzaW5lc3MgSW50ZWxsaWdlbmNlIFNwZWNpYWxpc3QiLCJjb21wYW55X25hbWUiOiJiZUJlZURhdGFEcml2ZW4iLCJhZGRyZXNzX2NpdHkiOiJNaXNzaXNzYXVnYSwgT04iLCJodGlkb2NpZCI6InV2dGVlcXZaVTEtWjhjVTVBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Senior Data Analyst - Business Intelligence Specialist",
+    "company_name": "beBeeDataDriven",
+    "location": "Mississauga, ON",
+    "search_keyword": "Business Intelligence Analyst",
+    "experience_level": "Senior",
+    "buzzwords_found": {},
+    "total_buzzwords": 0,
+    "unique_buzzwords": 0
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJKdW5pb3IgQXBwbGljYXRpb24gRGV2ZWxvcGVyIiwiY29tcGFueV9uYW1lIjoiU2VyY28gTm9ydGggQW1lcmljYSIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJPVjZqa3pOOXg0VFVWdENwQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Junior Application Developer",
+    "company_name": "Serco North America",
+    "location": "Toronto, ON",
+    "search_keyword": "Junior Developer",
+    "experience_level": "Junior",
+    "buzzwords_found": {
+      "Python": 4,
+      "C": 2,
+      "JavaScript": 2,
+      "React": 4,
+      "ASP.NET Core": 2,
+      "MongoDB": 2,
+      "Azure": 16,
+      "Data visualization": 2,
+      "Agile": 2,
+      "Scrum": 2,
+      "Communication": 2,
+      "Problem-solving": 2,
+      "Continuous learning": 2
+    },
+    "total_buzzwords": 44,
+    "unique_buzzwords": 13
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBEZXZlbG9wZXIgKEp1bmlvcikgODE2NS0zMDEyIiwiY29tcGFueV9uYW1lIjoiRm9pbGNvbiIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiItNHJVaDRzVHYxb3hSWGQ2QUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Software Developer (Junior) 8165-3012",
+    "company_name": "Foilcon",
+    "location": "Toronto, ON",
+    "search_keyword": "Junior Developer",
+    "experience_level": "Junior",
+    "buzzwords_found": {
+      "C": 5,
+      "JavaScript": 2,
+      "TypeScript": 4,
+      "Angular": 4,
+      "Git": 6,
+      "Azure": 6,
+      "Linux": 3,
+      "Version control": 6,
+      "Testing and debugging": 5,
+      "Agile": 2,
+      "Scrum": 2,
+      "Communication": 4,
+      "Presentation skills": 1,
+      "Written communication": 4,
+      "Problem-solving": 3,
+      "Decision-making": 1,
+      "Attention to detail": 2,
+      "Negotiation": 1
+    },
+    "total_buzzwords": 61,
+    "unique_buzzwords": 18
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJBaSBBZ2VudCBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IkJhbmsgb2YgTW9udHJlYWwiLCJhZGRyZXNzX2NpdHkiOiJUb3JvbnRvLCBPTiIsImh0aWRvY2lkIjoiR2lXV01UeGMzeHhmdlBISkFBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Ai Agent Engineer",
+    "company_name": "Bank of Montreal",
+    "location": "Toronto, ON",
+    "search_keyword": "AI Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 4,
+      "JavaScript": 2,
+      "TypeScript": 2,
+      "Flask": 2,
+      "FastAPI": 2,
+      "React": 4,
+      "Docker": 4,
+      "Kubernetes": 4,
+      "GitHub Actions": 2,
+      "CI/CD": 2,
+      "AWS": 6,
+      "Azure": 8,
+      "GCP": 4,
+      "TensorFlow": 2,
+      "PyTorch": 2,
+      "pytest": 2,
+      "unittest": 2,
+      "Continuous improvement": 2,
+      "Coaching": 2,
+      "Reliability": 2,
+      "Collaboration": 4
+    },
+    "total_buzzwords": 64,
+    "unique_buzzwords": 21
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgQUkgRW5naW5lZXIgOiBTY2FsYWJsZSBBSSBTeXN0ZW1zICYgTWVudG9yc2hpcCIsImNvbXBhbnlfbmFtZSI6IlNvY2nDqXTDqSBGaW5hbmNpw6hyZSBNYW51dmllIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6Im94amZRWWZNVzBoZlYtSTNBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Senior AI Engineer : Scalable AI Systems & Mentorship",
+    "company_name": "Société Financière Manuvie",
+    "location": "Toronto, ON",
+    "search_keyword": "AI Engineer",
+    "experience_level": "Senior",
+    "buzzwords_found": {},
+    "total_buzzwords": 0,
+    "unique_buzzwords": 0
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJBSSBFbmdpbmVlciIsImNvbXBhbnlfbmFtZSI6IlJhbmRzdGFkIERpZ2l0YWwgQW1lcmljYXMiLCJhZGRyZXNzX2NpdHkiOiJPYWt2aWxsZSwgT04iLCJodGlkb2NpZCI6InhjSnpxcjBZNmRRR2YtbFpBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "AI Engineer",
+    "company_name": "Randstad Digital Americas",
+    "location": "Oakville, ON",
+    "search_keyword": "AI Engineer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Python": 2,
+      "C": 1,
+      "JavaScript": 2,
+      "Angular": 2,
+      "React": 1,
+      "GitHub Actions": 1,
+      "CI/CD": 1,
+      "Azure": 9,
+      "Agile": 1,
+      "Communication": 1,
+      "Flexibility": 1,
+      "Continuous learning": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 24,
+    "unique_buzzwords": 13
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgc2l0ZSBkZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IkdhbGF4eSBTZWN1cml0eSIsImFkZHJlc3NfY2l0eSI6Ik1hcmtoYW0sIE9OIiwiaHRpZG9jaWQiOiItbl9paVNjNklMeDJTYkdTQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Web site designer",
+    "company_name": "Galaxy Security",
+    "location": "Markham, ON",
+    "search_keyword": "Web Designer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Communication": 2,
+      "Written communication": 1,
+      "Attention to detail": 1,
+      "Flexibility": 1,
+      "Initiative": 1
+    },
+    "total_buzzwords": 6,
+    "unique_buzzwords": 5
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJHcmFwaGljIFdlYiBEZXNpZ25lclxyXG5HcmFwaGljIFdlYiBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IkVQSUMgLSBFZHVjYXRpb25hbCBQcm9ncmFtIElubm92YXRpb25zIENlbnRlciIsImFkZHJlc3NfY2l0eSI6Ik1pc3Npc3NhdWdhLCBPTiIsImh0aWRvY2lkIjoiYl9yeWRGWS00NVVfa3d0X0FBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Graphic Web Designer Graphic Web Designer",
+    "company_name": "EPIC - Educational Program Innovations Center",
+    "location": "Mississauga, ON",
+    "search_keyword": "Web Designer",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Communication": 1,
+      "Written communication": 1,
+      "Attention to detail": 1
+    },
+    "total_buzzwords": 3,
+    "unique_buzzwords": 3
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTci4gV2ViIERlc2lnbmVyIiwiY29tcGFueV9uYW1lIjoiQ29pbmtpdGUgSW5jLiIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJaZEpydWNTZjJ3alh6NWhnQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Sr. Web Designer",
+    "company_name": "Coinkite Inc.",
+    "location": "Toronto, ON",
+    "search_keyword": "Web Designer",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "Python": 2,
+      "JavaScript": 2,
+      "R": 1,
+      "Svelte": 1,
+      "Redis": 1,
+      "Leadership": 1
+    },
     "total_buzzwords": 8,
     "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQcm9qZWN0IE1hbmFnZXIg4oCTIERhdGEgQW5hbHl0aWNzIEluaXRpYXRpdmVzIiwiY29tcGFueV9uYW1lIjoiQWdpbHVzIFdvcmsgU29sdXRpb25zIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IlRUVjlqTlBNZDhkMk9SWDNBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Project Manager – Data Analytics Initiatives",
+    "company_name": "Agilus Work Solutions",
+    "location": "Toronto, ON",
+    "search_keyword": "Project Manager",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "AWS": 4,
+      "Azure": 2,
+      "Agile": 1,
+      "Scrum": 1,
+      "Communication": 1,
+      "Attention to detail": 1,
+      "Initiative": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 12,
+    "unique_buzzwords": 8
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQcm9qZWN0IE1hbmFnZXItIFNlcnZpY2VzIiwiY29tcGFueV9uYW1lIjoiQWN0aW9uc3RlcCIsImFkZHJlc3NfY2l0eSI6IlRvcm9udG8sIE9OIiwiaHRpZG9jaWQiOiJISElEWkJYZjhXbXhoMFljQUFBQUFBPT0iLCJobCI6ImVuIn0=",
+    "title": "Project Manager- Services",
+    "company_name": "Actionstep",
+    "location": "Toronto, ON",
+    "search_keyword": "Project Manager",
+    "experience_level": "Senior",
+    "buzzwords_found": {
+      "Swift": 1,
+      "Continuous improvement": 2,
+      "Communication": 2,
+      "Leadership": 1,
+      "Team building": 1,
+      "Collaboration": 1
+    },
+    "total_buzzwords": 8,
+    "unique_buzzwords": 6
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJQcm9qZWN0IE1hbmFnZXItIEhpZ2h3YXkgUGxhbm5pbmciLCJjb21wYW55X25hbWUiOiJHSEQiLCJhZGRyZXNzX2NpdHkiOiJNYXJraGFtLCBPTiIsImh0aWRvY2lkIjoiRy1Ud1lzUHJHaVRnYk4tQ0FBQUFBQT09IiwiaGwiOiJlbiJ9",
+    "title": "Project Manager- Highway Planning",
+    "company_name": "GHD",
+    "location": "Markham, ON",
+    "search_keyword": "Project Manager",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "Go": 1,
+      "Communication": 2,
+      "Leadership": 11,
+      "Mentoring": 2,
+      "Coaching": 2,
+      "Flexibility": 2,
+      "Curiosity": 1,
+      "Collaboration": 4,
+      "Stakeholder management": 2
+    },
+    "total_buzzwords": 27,
+    "unique_buzzwords": 9
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJTY3J1bSBNYXN0ZXIsIERpZ2l0YWwgRGVsaXZlcnkgLSBUYW5nZXJpbmUiLCJjb21wYW55X25hbWUiOiJTY290aWFiYW5rIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6IkNPemV5SHF6UktFOVZDMXVBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Scrum Master, Digital Delivery - Tangerine",
+    "company_name": "Scotiabank",
+    "location": "Toronto, ON",
+    "search_keyword": "Scrum Master",
+    "experience_level": "Mid",
+    "buzzwords_found": {
+      "Agile": 6,
+      "Scrum": 4,
+      "Continuous improvement": 1,
+      "Communication": 2,
+      "Written communication": 1,
+      "Leadership": 1,
+      "Conflict resolution": 1,
+      "Critical thinking": 1,
+      "Adaptability": 1,
+      "Collaboration": 1,
+      "Relationship building": 1,
+      "Negotiation": 1
+    },
+    "total_buzzwords": 21,
+    "unique_buzzwords": 12
+  },
+  {
+    "job_id": "eyJqb2JfdGl0bGUiOiJBZ2lsZSBQcm9qZWN0IE1hbmFnZXIvU2NydW0gTWFzdGVyIiwiY29tcGFueV9uYW1lIjoiUkVMUSBURUNITk9MT0dJRVMgTExDIiwiYWRkcmVzc19jaXR5IjoiVG9yb250bywgT04iLCJodGlkb2NpZCI6ImttQWJmMFNRVTdIVmNLOUVBQUFBQUE9PSIsImhsIjoiZW4ifQ==",
+    "title": "Agile Project Manager/Scrum Master",
+    "company_name": "RELQ TECHNOLOGIES LLC",
+    "location": "Toronto, ON",
+    "search_keyword": "Scrum Master",
+    "experience_level": "Lead",
+    "buzzwords_found": {
+      "Agile": 20,
+      "Scrum": 4,
+      "Continuous improvement": 2,
+      "Communication": 4,
+      "Stakeholder communication": 2,
+      "Leadership": 4,
+      "Problem-solving": 2,
+      "Decision-making": 2
+    },
+    "total_buzzwords": 40,
+    "unique_buzzwords": 8
   }
 ]
