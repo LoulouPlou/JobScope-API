@@ -161,7 +161,7 @@ def upload_analytics():
     analytics_collection = db["analytics"]
     
     # Job Types
-    print("  [1/?] Job types distribution...")
+    print("  [1/9] Job types distribution...")
     job_types_result = get_job_types()
     analytics_collection.update_one(
         {"type": "job_type_distribution"},
@@ -178,8 +178,8 @@ def upload_analytics():
         upsert=True
     )
     
-    # Top Cities
-    print("  [2/?] Top cities...")
+    # Top Cities (Global)
+    print("  [2/9] Top cities...")
     cities_result = get_top_cities()
     analytics_collection.update_one(
         {"type": "top_cities"},
@@ -190,6 +190,7 @@ def upload_analytics():
             "data": cities_result["data"],
             "metadata": {
                 "total_location": cities_result["total_locations"],
+                "total_jobs": cities_result["total_jobs"],
                 "last_updated": datetime.now()
             }
         }},
@@ -197,7 +198,7 @@ def upload_analytics():
     )
     
     # Top Languages
-    print("  [3/?] Top programming languages...")
+    print("  [3/9] Top programming languages...")
     languages_result = get_top_10_languages()
     analytics_collection.update_one(
         {"type": "top_programming_languages"},
@@ -214,14 +215,15 @@ def upload_analytics():
         upsert=True
     )
     
-    print("  [4/?] Top soft skills...")
+    # Top Soft Skills
+    print("  [4/9] Top soft skills...")
     softskills_result = get_top_soft_skills()
     analytics_collection.update_one(
         {"type": "top_soft_skills"},
         {"$set": {
-            "type": "top_programming_languages",
+            "type": "top_soft_skills",
             "title": "Top 10 Soft Skills",
-            "chart_type": "horizontal_bar",
+            "chart_type": "bar",
             "data": softskills_result["data"],
             "metadata": {
                 "total_mentions": softskills_result["total_mentions"],
@@ -231,14 +233,15 @@ def upload_analytics():
         upsert=True
     )
     
-    print("  [5/?] Top hard skills no languages...")
+    # Top Hard Skills
+    print("  [5/9] Top hard skills no languages...")
     hardskills_result = get_top_hard_skills_no_languages()
     analytics_collection.update_one(
         {"type": "top_hard_skills_no_lang"},
         {"$set": {
-            "type": "top_programming_languages",
+            "type": "top_hard_skills_no_lang",
             "title": "Top 10 Hard Skills (Excluding Languages)",
-            "chart_type": "horizontal_bar",
+            "chart_type": "bar",
             "data": hardskills_result["data"],
             "metadata": {
                 "total_mentions": hardskills_result["total_mentions"],
@@ -249,7 +252,7 @@ def upload_analytics():
     )
     
     # Top Technologies by IT Domain
-    print("  [6/?] Top technologies by domain...")
+    print("  [6/9] Top technologies by domain...")
     for domain in DOMAINS:
         result = get_top_5_technologies_by_domain(domain)
         analytics_collection.update_one(
@@ -269,7 +272,7 @@ def upload_analytics():
             upsert=True
         )
         
-    print("  [7/?] Skills Radar by domain...")
+    print("  [7/9] Skills Radar by domain...")
     for domain in DOMAINS:
         result = get_skills_by_category_for_domain(domain)
         
@@ -279,6 +282,7 @@ def upload_analytics():
             {"type": f"radar_domain_{domain_key}"},
             {"$set": {
                 "type": f"radar_domain_{domain_key}",
+                "title": f"Skills Distribution - {domain} Domain",
                 "domain": domain,
                 "chart_type": "radar",
                 "data": result["data"],
@@ -291,7 +295,7 @@ def upload_analytics():
             upsert=True
         )
         
-    print("  [8/?] Top cities by domain...")
+    print("  [8/9] Top cities by domain...")
     for domain in DOMAINS:
         cities_result = get_top_cities(domain)
         
@@ -303,6 +307,7 @@ def upload_analytics():
                 "type": f"top_cities_{domain_key}",
                 "title": f"Top 5 Cities - {domain}",
                 "chart_type": "horizontal_bar",
+                "domain": domain,
                 "data": cities_result["data"],
                 "metadata": {
                     "total_locations": cities_result["total_locations"],
@@ -324,6 +329,7 @@ def upload_analytics():
                 "type": f"seniority_distribution_{domain_key}",
                 "title": f"Seniority distribution for jobs offers in {domain}",
                 "chart_type": "donut",
+                "domain": domain,
                 "data": seniority_result["data"],
                 "metadata": {
                     "total_jobs": seniority_result["total_jobs"],
