@@ -23,7 +23,7 @@ jobs:
 
     env:
       NODE_ENV: test
-      MONGO_URI: mongodb://mongo:27017/jobscope_test
+      MONGO_URI: mongodb://localhost:27017/jobscope_test
       # TODO: add lint script step when available (e.g., npm run lint)
       # TODO: add Newman step when Postman collection + env are ready (npm run test:newman)
 
