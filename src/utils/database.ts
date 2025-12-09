@@ -2,17 +2,22 @@ import mongoose from "mongoose";
 import config from "config";
 import { logger } from "./logger";
 
-export async function connectDB(): Promise<void> {
-  try {
-    const DEFAULT_URI = config.get<string>("db.uri");
-    const MONGO_URI = process.env.MONGO_URI || DEFAULT_URI;
+export async function connectDB(retries: number = 10, delayMs: number = 3000): Promise<void> {
+  const DEFAULT_URI = config.get<string>("db.uri");
+  const MONGO_URI = process.env.MONGO_URI || DEFAULT_URI;
 
-    await mongoose.connect(MONGO_URI);
-
-    logger.info(`MongoDB connected: ${MONGO_URI}`);
-  } catch (error) {
-    logger.error("MongoDB connection error:", error);
-    process.exit(1);
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      await mongoose.connect(MONGO_URI);
+      logger.info(`MongoDB connected: ${MONGO_URI}`);
+      return;
+    } catch (error) {
+      logger.error(`MongoDB connection error (attempt ${attempt}/${retries}):`, error);
+      if (attempt === retries) {
+        process.exit(1);
+      }
+      await new Promise((res) => setTimeout(res, delayMs));
+    }
   }
 }
 
