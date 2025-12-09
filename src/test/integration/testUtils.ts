@@ -4,6 +4,7 @@ import { connectDB, disconnectDB, clearDB } from "../../utils/database";
 import { seedDatabase } from "../../data/seed";
 import { UserModel } from "../../models/user.model";
 import mongoose from "mongoose";
+import config from "config";
 
 export const TEST_PASSWORD = "Password123!";
 
@@ -16,11 +17,13 @@ export function setupIntegrationTestDB(options: { muteConsole?: boolean } = {}):
   const { muteConsole = true } = options;
 
   beforeAll(async () => {
-    // Ensure each Jest worker uses its own database to avoid unique-index collisions
-    if (!process.env.MONGO_URI) {
-      const workerId = process.env.JEST_WORKER_ID || "1";
-      process.env.MONGO_URI = `mongodb://localhost:27017/jobscope_test_${workerId}`;
-    }
+    const baseUri =
+      process.env.MONGO_URI || config.get<string>("db.uri") || "mongodb://localhost:27017/jobscope_test";
+    const workerId = process.env.JEST_WORKER_ID || "1";
+    process.env.MONGO_URI = baseUri.replace(
+      /([^/?]+)(\?.*)?$/,
+      (_match, dbName: string, query: string = "") => `${dbName}_${workerId}${query}`
+    );
 
     if (muteConsole) {
       logSpy = jest.spyOn(console, "log").mockImplementation(() => {});
@@ -30,7 +33,6 @@ export function setupIntegrationTestDB(options: { muteConsole?: boolean } = {}):
   });
 
   beforeEach(async () => {
-    // Drop the whole DB to reset indexes and avoid duplicate key errors across tests
     if (mongoose.connection.db) {
       await mongoose.connection.db.dropDatabase();
     } else {
