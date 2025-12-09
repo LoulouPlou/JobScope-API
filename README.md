@@ -140,6 +140,16 @@ config/
   - be reviewed and approved by at least one teammate before merging,
   - prefer “Squash and merge” for a clean history.
 
+## Load Testing (k6)
+
+- Script: `test/load/k6-smoke.js` (light smoke/ramp on auth, jobs, analytics, favorites).
+- Local prerequisite: install `k6` (e.g., `brew install k6` or the official binary).
+- Local run (test env, port 3001):
+  1. Start Mongo (e.g., `docker run -p 27017:27017 mongo:6`) if needed.
+  2. In one terminal: `npm run start:test`.
+  3. In another terminal: `BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js`.
+- Dedicated GitHub Actions workflow: `.github/workflows/load-test.yml` (manual trigger and weekly schedule). It is kept separate from the fast CI to avoid slowing down builds.
+
 ---
 
 ## Collaborators
