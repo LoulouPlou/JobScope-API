@@ -9,6 +9,8 @@ from keywords import BUZZWORDS_TECH, JOBS
 
 DOMAINS = ["Web", "Mobile", "DevOps", "Data", "QA & Security", "Design", "Management"]
 
+JOB_DOMAIN_MAP = {job["title"]: job["category"] for job in JOBS}
+
 CATEGORY_GROUPS = {
     "Programming & Frameworks": [ "Programming Language", "Web Framework", ],
     "DevOps & Cloud": [ "DevOps", "Cloud Platform", "Operating System", "Networking", "Storage", "Monitoring", ],
@@ -28,7 +30,7 @@ def load_jobs_analysis():
     with open("data-scraper/data/jobs_analysis.json", 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def get_job_types_data():
+def get_job_types():
     """Returns job types distribution data."""
     jobs = load_master_jobs()
     
@@ -67,27 +69,43 @@ def get_job_types_data():
         "total_jobs": len(jobs)
     }
 
-def get_top_cities_data():
-    """Returns top 5 cities data."""
+def get_top_cities(domain_name=None, top_n=5):
+    """
+    Returns top N locations for specific domain,
+    
+    Args:
+        domain: "Web", "Data", "DevOps", "Mobile", etc. If None, returns all domains.
+    """
     jobs = load_master_jobs()
-    
     city_counter = Counter()
+
     for job in jobs:
-        location = job.get('location', '').strip()
-        if location:
-            city_counter[location] += 1
-    
-    top_5 = city_counter.most_common(5)
-    
-    data = [{"city": city, "count": count} for city, count in top_5]
-    
+        location = job.get("location", "").strip()
+        if not location or location == "Anywhere":
+            continue
+
+        # domain if specified
+        if domain_name:
+            job_title = job.get("search_keyword", "")
+            job_domain = JOB_DOMAIN_MAP.get(job_title, "Other")
+
+            if job_domain != domain_name:
+                continue
+
+        city_counter[location] += 1
+
+    top_cities = city_counter.most_common(top_n)
+
     return {
-        "data": data,
-        "total_cities": len(city_counter)
+        "domain": domain_name or "All",
+        "data": [{"location": city, "count": count} for city, count in top_cities],
+        "total_locations": len(city_counter),
+        "total_jobs": sum(city_counter.values())
     }
 
+
 def get_top_10_languages():
-    """Returns top 10 programming languages."""
+    """Returns top 10 programming languages. All domains"""
     analysis = load_jobs_analysis()
     
     languages = {b["term"] for b in BUZZWORDS_TECH if b["category"] == "Programming Language"}
@@ -118,11 +136,9 @@ def get_top_5_technologies_by_domain(domain=None):
     """
     analysis = load_jobs_analysis()
     
-    job_domain_map = {job["title"]: job["category"] for job in JOBS}
-    
     filtered_analysis = [
         result for result in analysis
-        if domain is None or job_domain_map.get(result.get("search_keyword", "")) == domain
+        if domain is None or JOB_DOMAIN_MAP.get(result.get("search_keyword", "")) == domain
     ]
     
     tech_counter = Counter()
@@ -218,12 +234,10 @@ def get_top_hard_skills_no_languages(top_n=10):
     
 def get_skills_by_category_for_domain(domain_name):
     """
-    Returns aggregated skill mentions for specified job domain.
+    Returns aggregated skill mentions for specific job domain.
     The buzzword are grouped in categories (see group cat. at top of the file)
     """
     analysis = load_jobs_analysis()
-    
-    job_domain_map = {job["title"]: job["category"] for job in JOBS}
     
     buzzword_lookup = {b["term"]: b for b in BUZZWORDS_TECH}
     
@@ -231,7 +245,7 @@ def get_skills_by_category_for_domain(domain_name):
     
     for result in analysis:
         job_title = result.get("search_keyword", "")
-        job_domain = job_domain_map.get(job_title, "Other")
+        job_domain = JOB_DOMAIN_MAP.get(job_title, "Other")
         
         if job_domain != domain_name:
             continue
@@ -269,4 +283,47 @@ def get_skills_by_category_for_domain(domain_name):
         "total_categories": len(data),
         "total_mentions": total_mentions,
         "category_groups": CATEGORY_GROUPS
+    }
+
+def get_seniority_distribution_by_domain(domain_name):
+    """
+    Returns job seniority distribution for a specific domain
+    
+    Args:
+        domain: "Web", "Data", "DevOps", "Mobile", etc. If None, returns all domains.
+    """
+    analysis = load_jobs_analysis()
+    
+    seniority_counter = Counter()
+    
+    for result in analysis:
+        job_title = result.get("search_keyword", "")
+        job_domain = JOB_DOMAIN_MAP.get(job_title, "Other")
+        
+        if job_domain != domain_name:
+            continue
+        
+        experience_level = result.get("experience_level")
+        
+        if experience_level:
+            seniority_counter[experience_level] += 1
+    
+    total_jobs = sum(seniority_counter.values())
+    
+    ordered_levels = ["Junior", "Mid", "Senior", "Lead"]
+    
+    data = []
+    for level in ordered_levels:
+        count = seniority_counter.get(level, 0)
+        if count > 0:
+            data.append({
+                "level": level,
+                "count": count,
+                "percentage": round((count / total_jobs * 100), 1) if total_jobs > 0 else 0
+            })
+    
+    return {
+        "domain": domain_name,
+        "data": data,
+        "total_jobs": total_jobs
     }

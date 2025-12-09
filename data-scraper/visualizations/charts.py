@@ -5,18 +5,19 @@ Each function returns a Plotly figure.
 import pandas as pd
 import plotly.express as px
 from .data_processors import (
-    get_job_types_data,
-    get_top_cities_data,
+    get_job_types,
+    get_top_cities,
     get_top_10_languages,
     get_top_5_technologies_by_domain,
     get_top_soft_skills,
     get_top_hard_skills_no_languages,
-    get_skills_by_category_for_domain
+    get_skills_by_category_for_domain,
+    get_seniority_distribution_by_domain
 )
 
 def create_job_type_pie():
     """Creates job types pie chart."""
-    result = get_job_types_data()
+    result = get_job_types()
     
     df = pd.DataFrame(result["data"])
     df.columns = ['Type', 'Count', 'Percentage']
@@ -45,19 +46,19 @@ def create_job_type_pie():
     
     return fig
 
-def create_top_5_cities():
+def create_top_5_cities(domain=None):
     """Creates top 5 cities bar chart."""
-    result = get_top_cities_data()
+    result = get_top_cities(domain)
     
     df = pd.DataFrame(result["data"])
     
     fig = px.bar(
         df,
         x='count',
-        y='city',
+        y='location',
         orientation='h',
-        labels={'count': "Number of job offers", 'city': ''},
-        title="Top 5 Cities with the Most Job Offers",
+        labels={'count': "Number of job offers", 'location': ''},
+        title=f"Top 5 Cities  - {result['domain']}",
         color='count',
         color_continuous_scale='Teal',
         text='count'
@@ -251,7 +252,6 @@ def create_top_hard_skills_no_languages_chart(top_n=10):
     return fig
 
 def create_skills_radar_by_domain(domain=None):
-    # Get data for this domain
     result = get_skills_by_category_for_domain(domain)
     
     if not result["data"]:
@@ -260,7 +260,6 @@ def create_skills_radar_by_domain(domain=None):
     
     df = pd.DataFrame(result["data"])
     
-    # create radar chart using scatterpolar
     fig = px.line_polar(
         df,
         r='mentions',
@@ -300,6 +299,61 @@ def create_skills_radar_by_domain(domain=None):
         ),
         font=dict(size=12),
         showlegend=False
+    )
+    
+    return fig
+
+def create_seniority_donut_by_domain(domain):
+    """
+    Creates a donut chart showing seniority distribution for a specific domain.
+    Uses the 'experience_level' field from jobs_analysis.json.
+    """
+    
+    result = get_seniority_distribution_by_domain(domain)
+    
+    if not result["data"]:
+        print(f"No seniority data found for domain: {domain}")
+        return None
+    
+    df = pd.DataFrame(result["data"])
+    
+    colors = {
+        "Junior": "#BEE9E8",
+        "Mid": "#62B6CB",
+        "Senior": "#1B4965",
+        "Lead": "#006989",
+    }
+    
+    df['color'] = df['level'].map(lambda x: colors.get(x, '#62B6CB'))
+    
+    fig = px.pie(
+        df,
+        names='level',
+        values='count',
+        title=f"Seniority Distribution for jobs offers in {domain}",
+        hole=0.4,
+        color='level',
+        color_discrete_map=colors
+    )
+    
+    fig.update_traces(
+        textposition='auto',
+        textinfo='label+percent',
+        hovertemplate='<b>%{label}</b><br>Jobs: %{value}<br>Percentage: %{percent}<extra></extra>'
+    )
+    
+    fig.update_layout(
+        height=500,
+        template='plotly_white',
+        title_x=0.5,
+        title_font_size=20,
+        legend=dict(
+            orientation="v",
+            yanchor="middle",
+            y=0.5,
+            xanchor="left",
+            x=1
+        )
     )
     
     return fig

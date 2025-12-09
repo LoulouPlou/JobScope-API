@@ -4,13 +4,14 @@ from pymongo import MongoClient
 from datetime import datetime
 from dotenv import load_dotenv
 from visualizations.data_processors import (
-    get_job_types_data,
-    get_top_cities_data,
+    get_job_types,
+    get_top_cities,
     get_top_10_languages,
     get_top_5_technologies_by_domain,
     get_top_soft_skills,
     get_top_hard_skills_no_languages,
-    get_skills_by_category_for_domain
+    get_skills_by_category_for_domain,
+    get_seniority_distribution_by_domain
 )
 
 load_dotenv(".env.development")
@@ -161,7 +162,7 @@ def upload_analytics():
     
     # Job Types
     print("  [1/?] Job types distribution...")
-    job_types_result = get_job_types_data()
+    job_types_result = get_job_types()
     analytics_collection.update_one(
         {"type": "job_type_distribution"},
         {"$set": {
@@ -179,7 +180,7 @@ def upload_analytics():
     
     # Top Cities
     print("  [2/?] Top cities...")
-    cities_result = get_top_cities_data()
+    cities_result = get_top_cities()
     analytics_collection.update_one(
         {"type": "top_cities"},
         {"$set": {
@@ -188,7 +189,7 @@ def upload_analytics():
             "chart_type": "horizontal_bar",
             "data": cities_result["data"],
             "metadata": {
-                "total_cities": cities_result["total_cities"],
+                "total_location": cities_result["total_locations"],
                 "last_updated": datetime.now()
             }
         }},
@@ -283,6 +284,48 @@ def upload_analytics():
                 "metadata": {
                     "total_categories": result["total_categories"],
                     "total_mentions": result["total_mentions"],
+                    "last_updated": datetime.now()
+                }
+            }},
+            upsert=True
+        )
+        
+    print("  [8/?] Top cities by domain...")
+    for domain in DOMAINS:
+        cities_result = get_top_cities(domain)
+        
+        domain_key = domain.lower().replace(' ', '_').replace('&', 'and')
+        
+        analytics_collection.update_one(
+            {"type": "top_cities"},
+            {"$set": {
+                "type": f"top_cities_{domain_key}",
+                "title": f"Top 5 Cities - {domain}",
+                "chart_type": "horizontal_bar",
+                "data": cities_result["data"],
+                "metadata": {
+                    "total_locations": cities_result["total_locations"],
+                    "last_updated": datetime.now()
+                }
+            }},
+            upsert=True
+        )
+        
+    print("  [9/9] Senority distribution by domain...")
+    for domain in DOMAINS:
+        seniority_result = get_seniority_distribution_by_domain(domain)
+        
+        domain_key = domain.lower().replace(' ', '_').replace('&', 'and')
+        
+        analytics_collection.update_one(
+            {"type": "top_cities"},
+            {"$set": {
+                "type": f"seniority_distribution_{domain_key}",
+                "title": f"Seniority distribution for jobs offers in {domain}",
+                "chart_type": "horizontal_bar",
+                "data": seniority_result["data"],
+                "metadata": {
+                    "total_jobs": seniority_result["total_jobs"],
                     "last_updated": datetime.now()
                 }
             }},
