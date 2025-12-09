@@ -1,0 +1,87 @@
+name: Load Test - JobScope API
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1" # weekly Monday 03:00 UTC
+
+jobs:
+  k6-load-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mongo:
+        image: mongo:6
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd="mongosh --eval 'db.adminCommand(\"ping\")'"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    env:
+      NODE_ENV: test
+      MONGO_URI: mongodb://mongo:27017/jobscope_test
+      BASE_URL: http://localhost:3001
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Start API (test mode)
+        run: |
+          npm run start:test > server.log 2>&1 &
+          for i in {1..20}; do
+            if curl -sSf http://localhost:3001 >/dev/null; then
+              echo "API is up"
+              exit 0
+            fi
+            sleep 3
+          done
+          echo "API did not start in time"; cat server.log; exit 1
+
+      - name: Install k6
+        uses: grafana/setup-k6@v0.2
+
+      - name: Run k6 smoke load test
+        run: k6 run test/load/k6-smoke.js
+
+      - name: Notify Microsoft Teams on failure
+        if: failure()
+        run: |
+          payload=$(cat << 'JSON'
+          {
+            "@type": "MessageCard",
+            "@context": "https://schema.org/extensions",
+            "summary": "JobScope load test failed",
+            "themeColor": "FF0000",
+            "title": "JobScope load test failed",
+            "sections": [
+              {
+                "activityTitle": "Branch: ${{ github.ref }}",
+                "activitySubtitle": "Workflow: ${{ github.workflow }}",
+                "facts": [
+                  { "name": "Repository", "value": "${{ github.repository }}" },
+                  { "name": "Actor", "value": "${{ github.actor }}" },
+                  { "name": "Run URL", "value": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" }
+                ],
+                "markdown": true
+              }
+            ]
+          }
+          JSON
+          )
+
+          curl -H "Content-Type: application/json" \
+               -d "$payload" \
+               "${{ secrets.MS_TEAMS_WEBHOOK_URL }}"
