@@ -280,6 +280,7 @@ def upload_analytics():
             {"$set": {
                 "type": f"radar_domain_{domain_key}",
                 "domain": domain,
+                "chart_type": "radar",
                 "data": result["data"],
                 "metadata": {
                     "total_categories": result["total_categories"],
@@ -322,7 +323,7 @@ def upload_analytics():
             {"$set": {
                 "type": f"seniority_distribution_{domain_key}",
                 "title": f"Seniority distribution for jobs offers in {domain}",
-                "chart_type": "horizontal_bar",
+                "chart_type": "donut",
                 "data": seniority_result["data"],
                 "metadata": {
                     "total_jobs": seniority_result["total_jobs"],
