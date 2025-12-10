@@ -81,14 +81,7 @@ export class JobController {
 
     async getJobPersonalized(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
         try {
-            const userId = req.user?._id;
-
-            if (!userId) {
-                res.status(401).json({
-                    error: "Unauthorized. Please login to get personalized jobs."
-                });
-                return;
-            }
+            const userId = req.user!._id;
 
             const jobs = await JobService.getPersonalizedJobs(String(userId));
             res.json(jobs);
