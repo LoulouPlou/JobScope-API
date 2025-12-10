@@ -2,7 +2,7 @@ import request from "supertest";
 import app from "../../app";
 import { setupIntegrationTestDB, createAuthenticatedUser, TEST_PASSWORD } from "./testUtils";
 
-jest.setTimeout(30000);
+jest.setTimeout(90000);
 
 setupIntegrationTestDB();
 

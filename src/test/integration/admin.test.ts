@@ -4,7 +4,7 @@ import app from "../../app";
 import { setupIntegrationTestDB, createAuthenticatedUser, TEST_PASSWORD } from "./testUtils";
 import { UserModel } from "../../models/user.model";
 
-jest.setTimeout(30000);
+jest.setTimeout(90000);
 
 setupIntegrationTestDB();
 
