@@ -1,38 +1,39 @@
 import { Request, Response, NextFunction } from "express";
 import { AnalyticsService } from "../services/analytics.service";
+import { VALID_DOMAINS, isValidDomain } from '../constants/domains.constant';
 
 export class AnalyticsController {
-    async getTopPaying(_req: Request, res: Response, next: NextFunction): Promise<void> {
+    async getOverviewDashboard(_req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            const topPayingJobs = await AnalyticsService.getTopPayingJobs();
-            res.status(200).json(topPayingJobs);
+            const dashboard = await AnalyticsService.getOverviewDashboard();
+            res.json(dashboard);
         } catch (error) {
             next(error);
         }
+          
     }
 
-    async getMostDemanded(_req: Request, res: Response, next: NextFunction): Promise<void> {
+    async getDomainDashboard(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            const mostDemandedJobs = await AnalyticsService.getMostDemandedJobs();
-            res.status(200).json(mostDemandedJobs);
-        } catch (error) {
-            next(error);
-        }
-    }
+            const { domain } = req.params;
 
-    async getMostCommonSkills(_req: Request, res: Response, next: NextFunction): Promise<void> {
-        try {
-            const mostCommonSkills = await AnalyticsService.getMostCommonSkills();
-            res.status(200).json(mostCommonSkills);
-        } catch (error) {
-            next(error);
-        }
-    }
+            if (!domain) {
+                res.status(400).json({
+                    error: 'Domain parameter is required'
+                });
+                return;
+            }
 
-    async getJobsByLocation(_req: Request, res: Response, next: NextFunction): Promise<void> {
-        try {
-            const jobsByLocation = await AnalyticsService.getJobsByLocation();
-            res.status(200).json(jobsByLocation);
+            if (!isValidDomain(domain)) {
+                res.status(400).json({
+                    error: `Invalid domain: ${domain}`,
+                    validDomains: VALID_DOMAINS
+                });
+                return;
+            }
+
+            const dashboard = await AnalyticsService.getDomainDashboard(domain);
+            res.json(dashboard);
         } catch (error) {
             next(error);
         }

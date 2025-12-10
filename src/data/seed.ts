@@ -1,6 +1,7 @@
 import { UserModel } from '../models/user.model';
 import { JobModel } from '../models/job.model';
 import { FavoriteModel } from '../models/favorite.model';
+import { AnalyticsModel } from '../models/analytics.model';
 
 export async function seedDatabase() {
   try {
@@ -84,6 +85,26 @@ export async function seedDatabase() {
       {
         userId: user._id,
         jobId: jobs[1]?._id
+      }
+    ]);
+
+    await AnalyticsModel.create([
+      {
+        "title": "Job Types Distribution",
+        "type": "job_type_distribution",
+        "chart_type": "pie",
+        "data": [
+          { "label": "Full-time", "value": 944, "percentage": 80.2 },
+          { "label": "Contractor", "value": 209, "percentage": 17.8 },
+          { "label": "Part-time", "value": 19, "percentage": 1.6 },
+          { "label": "Internship", "value": 5, "percentage": 0.4 }
+        ],
+        "metadata": {
+          "total_jobs": 1223,
+          "last_updated": {
+            "$date": "2025-12-09T15:04:51.996Z"
+          }
+        }
       }
     ]);
   } catch (error) {
