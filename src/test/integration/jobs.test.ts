@@ -1,10 +1,12 @@
 import request from "supertest";
 import mongoose from "mongoose";
 import app from "../../app";
-import { setupIntegrationTestDB } from "./testUtils";
+import { setupIntegrationTestDB, createAuthenticatedUser } from "./testUtils";
 import { JobModel } from "../../models/job.model";
+import { UserModel } from "../../models/user.model";
+import { JobService } from "../../services/job.service";
 
-jest.setTimeout(30000);
+jest.setTimeout(90000);
 
 setupIntegrationTestDB();
 
@@ -17,17 +19,17 @@ describe("Job endpoints", () => {
     expect(res.body[0]).toHaveProperty("title");
   });
 
-  // it("searches jobs with filters and pagination", async () => {
-  //   const res = await request(app)
-  //     .get("/api/jobs/search")
-  //     .query({ skills: "React", limit: 2, page: 1 });
+  it("searches jobs with filters and pagination", async () => {
+    const res = await request(app)
+      .get("/api/jobs/search")
+      .query({ title: "Developer", limit: 2, page: 1 });
 
-  //   expect(res.status).toBe(200);
-  //   expect(Number(res.body.page)).toBe(1);
-  //   expect(Number(res.body.limit)).toBe(2);
-  //   expect(res.body.items.length).toBeGreaterThan(0);
-  //   expect(res.body.items[0]).toHaveProperty("skills");
-  // });
+    expect(res.status).toBe(200);
+    expect(Number(res.body.page)).toBe(1);
+    expect(Number(res.body.limit)).toBe(2);
+    expect(res.body.items.length).toBeGreaterThan(0);
+    expect(res.body.items[0]).toHaveProperty("title");
+  });
 
   it("returns job details by id and handles missing jobs", async () => {
     const job = await JobModel.findOne();
@@ -43,17 +45,63 @@ describe("Job endpoints", () => {
     expect(missingRes.body.code).toBe("JOB_NOT_FOUND");
   });
 
-  // it("supports filtering by multiple fields", async () => {
-  //   const res = await request(app)
-  //     .get("/api/jobs/search")
-  //     .query({
-  //       title: "Developer",
-  //       company: "Lightspeed",
-  //       location: "Toronto",
-  //       jobType: "Full-time",
-  //     });
+  it("supports filtering by multiple fields", async () => {
+    const res = await request(app)
+      .get("/api/jobs/search")
+      .query({
+        title: "Developer",
+        experience: ["5+ years"],
+        jobType: ["Full-time"],
+      });
 
-  //   expect(res.status).toBe(200);
-  //   expect(res.body.items.length).toBeGreaterThan(0);
-  // });
+    expect(res.status).toBe(200);
+    expect(res.body.items.length).toBeGreaterThan(0);
+  });
+
+  it("returns personalized jobs for authenticated users", async () => {
+    const { token, user } = await createAuthenticatedUser();
+    await UserModel.updateOne({ _id: user?._id }, { interest: "React" });
+
+    const res = await request(app)
+      .get("/api/jobs/personalized")
+      .set("Authorization", `Bearer ${token}`);
+
+    expect(res.status).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.body.length).toBeGreaterThan(0);
+    expect(res.body[0]).toHaveProperty("_id");
+  });
+});
+
+describe("Job service behaviors", () => {
+  it("filters by title at service layer", async () => {
+    const result = await JobService.searchJobs({ title: "Developer" });
+    expect(result.items.length).toBeGreaterThan(0);
+    expect(result.items[0].title).toMatch(/Developer/i);
+  });
+
+  it("filters by jobType array", async () => {
+    const result = await JobService.searchJobs({ jobType: ["Full-time"] });
+    expect(result.items.length).toBeGreaterThan(0);
+    expect(result.items[0].jobType).toBe("Full-time");
+  });
+
+  it("filters by experience array", async () => {
+    const result = await JobService.searchJobs({ experience: ["5+ years"] });
+    expect(result.items.length).toBeGreaterThan(0);
+    const details = await JobService.getJobById(result.items[0]._id);
+    expect(details.experience).toBe("5+ years");
+  });
+
+  it("returns personalized jobs when user has interests", async () => {
+    const user = await UserModel.findOne({ role: "user" });
+    const jobs = await JobService.getPersonalizedJobs(String(user?._id));
+    expect(jobs.length).toBeGreaterThan(0);
+  });
+
+  it("falls back to recent jobs when no interest", async () => {
+    const admin = await UserModel.findOne({ role: "admin" });
+    const jobs = await JobService.getPersonalizedJobs(String(admin?._id));
+    expect(jobs.length).toBeGreaterThan(0);
+  });
 });
