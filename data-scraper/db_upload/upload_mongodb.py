@@ -302,7 +302,7 @@ def upload_analytics():
         domain_key = domain.lower().replace(' ', '_').replace('&', 'and')
         
         analytics_collection.update_one(
-            {"type": "top_cities"},
+            {"type": f"top_cities_{domain_key}"},
             {"$set": {
                 "type": f"top_cities_{domain_key}",
                 "title": f"Top 5 Cities - {domain}",
@@ -324,7 +324,7 @@ def upload_analytics():
         domain_key = domain.lower().replace(' ', '_').replace('&', 'and')
         
         analytics_collection.update_one(
-            {"type": "top_cities"},
+            {"type": f"seniority_distribution_{domain_key}"},
             {"$set": {
                 "type": f"seniority_distribution_{domain_key}",
                 "title": f"Seniority distribution for jobs offers in {domain}",
