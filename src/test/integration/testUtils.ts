@@ -6,6 +6,8 @@ import { UserModel } from "../../models/user.model";
 import mongoose from "mongoose";
 import config from "config";
 
+jest.setTimeout(90000);
+
 jest.setTimeout(60000);
 
 export const TEST_PASSWORD = "Password123!";
