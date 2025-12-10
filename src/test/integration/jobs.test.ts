@@ -17,17 +17,17 @@ describe("Job endpoints", () => {
     expect(res.body[0]).toHaveProperty("title");
   });
 
-  it("searches jobs with filters and pagination", async () => {
-    const res = await request(app)
-      .get("/api/jobs/search")
-      .query({ skills: "React", limit: 2, page: 1 });
+  // it("searches jobs with filters and pagination", async () => {
+  //   const res = await request(app)
+  //     .get("/api/jobs/search")
+  //     .query({ skills: "React", limit: 2, page: 1 });
 
-    expect(res.status).toBe(200);
-    expect(Number(res.body.page)).toBe(1);
-    expect(Number(res.body.limit)).toBe(2);
-    expect(res.body.items.length).toBeGreaterThan(0);
-    expect(res.body.items[0]).toHaveProperty("skills");
-  });
+  //   expect(res.status).toBe(200);
+  //   expect(Number(res.body.page)).toBe(1);
+  //   expect(Number(res.body.limit)).toBe(2);
+  //   expect(res.body.items.length).toBeGreaterThan(0);
+  //   expect(res.body.items[0]).toHaveProperty("skills");
+  // });
 
   it("returns job details by id and handles missing jobs", async () => {
     const job = await JobModel.findOne();

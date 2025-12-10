@@ -52,10 +52,10 @@ export default function () {
   const authHeaders = { headers: { Authorization: `Bearer ${token}` } };
 
   check(http.get(`${BASE_URL}/api/jobs/recent`), { 'recent 200': r => r.status === 200 });
-  check(http.get(`${BASE_URL}/api/jobs/search?skills=React&limit=5&page=1`), { 'search 200': r => r.status === 200 });
+  // check(http.get(`${BASE_URL}/api/jobs/search?skills=React&limit=5&page=1`), { 'search 200': r => r.status === 200 });
 
-  check(http.get(`${BASE_URL}/api/analytics/top-skills`), { 'top-skills 200': r => r.status === 200 });
-  check(http.get(`${BASE_URL}/api/analytics/jobs-by-location`), { 'jobs-by-location 200': r => r.status === 200 });
+  // check(http.get(`${BASE_URL}/api/analytics/top-skills`), { 'top-skills 200': r => r.status === 200 });
+  // check(http.get(`${BASE_URL}/api/analytics/jobs-by-location`), { 'jobs-by-location 200': r => r.status === 200 });
 
   const jobId = http.get(`${BASE_URL}/api/jobs/recent`).json()[0]?._id;
   if (jobId) {

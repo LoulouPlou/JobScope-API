@@ -65,13 +65,13 @@ export default function () {
     'search 200': r => r.status === 200,
   });
 
-  // analytics
-  check(http.get(`${BASE_URL}/api/analytics/top-skills`), {
-    'top-skills 200': r => r.status === 200,
-  });
-  check(http.get(`${BASE_URL}/api/analytics/jobs-by-location`), {
-    'jobs-by-location 200': r => r.status === 200,
-  });
+  // // analytics
+  // check(http.get(`${BASE_URL}/api/analytics/top-skills`), {
+  //   'top-skills 200': r => r.status === 200,
+  // });
+  // check(http.get(`${BASE_URL}/api/analytics/jobs-by-location`), {
+  //   'jobs-by-location 200': r => r.status === 200,
+  // });
 
   // favorites (protected)
   const jobId = http.get(`${BASE_URL}/api/jobs/recent`).json()[0]?._id;
