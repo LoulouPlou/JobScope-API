@@ -1,7 +1,5 @@
 /** @type {import('jest').Config} */
 
-const isCI = process.env.CI === 'true';
-
 const config = {
   preset: 'ts-jest',
   testEnvironment: 'node',
@@ -18,17 +16,14 @@ const config = {
   ],
 
   coverageReporters: ['text', 'json-summary', 'lcov'],
-};
-
-if (!isCI) {
-  config.coverageThreshold = {
+  coverageThreshold: {
     global: {
       branches: 70,
       functions: 70,
       lines: 70,
       statements: 70,
     },
-  };
-}
+  },
+};
 
 module.exports = config;

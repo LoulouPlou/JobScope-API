@@ -6,7 +6,6 @@ const userSchema = new Schema<IUser>(
         email: {
             type: String,
             required: true,
-            unique: true,
             match: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
             trim: true,
             lowercase: true,
@@ -51,18 +50,22 @@ const userSchema = new Schema<IUser>(
 
             }
         },
+        
         interest: {
             type: String,
             trim: true,
         },
     },
     {
-        timestamps: true
+        timestamps: {
+            createdAt: "created_at",
+            updatedAt: "updated_at",
+        }
     }
 );
 
 // Index
-// userSchema.index({ email: 1 },{ unique: true });
+userSchema.index({ email: 1 },{ unique: true });
 
 export const UserModel: Model<IUser> = mongoose.model<IUser>(
     "User",

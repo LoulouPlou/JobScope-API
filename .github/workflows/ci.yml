@@ -23,7 +23,9 @@ jobs:
 
     env:
       NODE_ENV: test
-      MONGO_URI: mongodb://mongo:27017/jobscope_test
+      MONGO_URI: mongodb://localhost:27017/jobscope_test
+      # TODO: add lint script step when available (e.g., npm run lint)
+      # TODO: add Newman step when Postman collection + env are ready (npm run test:newman)
 
     outputs:
       coverage_status: ${{ steps.coverage.outputs.coverage_status }}
@@ -59,7 +61,6 @@ jobs:
             fs.appendFileSync(process.env.GITHUB_OUTPUT, out);
             process.exit(0);
           }
-
           const data = JSON.parse(fs.readFileSync(summaryPath, 'utf-8'));
           const total = data.total || {};
           const linesPct = total.lines?.pct ?? 0;
@@ -136,7 +137,7 @@ jobs:
         run: |
           echo "Deploying JobScope API to production..."
           echo "Coverage: ${{ needs.test-and-quality.outputs.coverage_pct }}%"
-          # TODO: real deploy commands here
+          # TODO: add Render CLI/API deploy command here
 
       - name: Notify Microsoft Teams on deploy failure
         if: failure()
