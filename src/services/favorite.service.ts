@@ -3,6 +3,11 @@ import { JobModel } from "../models/job.model";
 import { IFavorite } from "../interfaces/favorite.interface";
 
 export class FavoriteService {
+    static async getUserFavoriteJobIds(userId: string): Promise<Set<string>> {
+        const favorites = await FavoriteModel.find({ userId }).select('jobId');
+        return new Set(favorites.map(fav => fav.jobId.toString()));
+    }
+    
     static async getUserFavorites(userId: string): Promise<IFavorite[]> {
         const favorites = await FavoriteModel.find({ userId })
             .populate("jobId") // optional: if you want full job details
