@@ -1,4 +1,6 @@
 export interface IJobInfo {
+  _id: string;
+
   title: string;
   company: string;
   location: string;
@@ -11,24 +13,26 @@ export interface IJobInfo {
 }
 
 export interface IJobDetails {
-    title: string;
-    company: string;
-    location: string;
+  _id: string;
 
-    jobType?: string;
-    experience?: string;
+  title: string;
+  company: string;
+  location: string;
 
-    education: string;
-    languages?: string[];
+  jobType?: string;
+  experience?: string;
 
-    description: string;
+  education: string;
+  languages?: string[];
 
-    skills: string[];
-    tags?: [string, string, string];
+  description: string;
 
-    salary?: string;
-    postedOn?: string;
-    publishedTime?: string;
+  skills: string[];
+  tags?: [string, string, string];
 
-    isFavorite: boolean;
+  salary?: string;
+  postedOn?: string;
+  publishedTime?: string;
+
+  isFavorite: boolean;
 }

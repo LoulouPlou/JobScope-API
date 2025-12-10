@@ -4,6 +4,7 @@ import { IJobInfo, IJobDetails } from "../dto/job.dto";
 export class JobMapper {
   static toJobInfo(job: IJob, isFavorite: boolean = false): IJobInfo {
     return {
+      _id: job._id.toString(),
       title: job.title,
       company: job.company,
       location: job.location,
@@ -16,13 +17,13 @@ export class JobMapper {
 
   static toJobDetails(job: IJob, isFavorite: boolean = false): IJobDetails {
     return {
+      _id: job._id.toString(),
       title: job.title,
       company: job.company,
       location: job.location,
       jobType: job.jobType,
       experience: job.experience,
       education: job.education,
-      languages: job.languages,
       description: job.description,
       skills: job.skills,
       tags: job.tags,
