@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import config from "config";
 import { logger } from "./logger";
 
-export async function connectDB(retries: number = 10, delayMs: number = 3000): Promise<void> {
+export async function connectDB(retries: number = 15, delayMs: number = 3000): Promise<void> {
   const DEFAULT_URI = config.get<string>("db.uri");
   const MONGO_URI = process.env.MONGO_URI || DEFAULT_URI;
 
