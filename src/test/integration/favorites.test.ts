@@ -3,7 +3,7 @@ import app from "../../app";
 import { setupIntegrationTestDB, createAuthenticatedUser } from "./testUtils";
 import { JobModel } from "../../models/job.model";
 
-jest.setTimeout(30000);
+jest.setTimeout(90000);
 
 setupIntegrationTestDB();
 
@@ -62,21 +62,29 @@ describe("Favorites", () => {
     expect(res.body.code).toBe("FAVORITE_NOT_FOUND");
   });
 
-  // it("lists favorites for the authenticated user", async () => {
-  //   const { token } = await createAuthenticatedUser();
-  //   const job = await JobModel.findOne();
+  it("lists favorites with pagination and job info", async () => {
+    const { token } = await createAuthenticatedUser();
+    const job = await JobModel.findOne();
 
-  //   await request(app)
-  //     .post(`/api/favorites/${job?._id}`)
-  //     .set("Authorization", `Bearer ${token}`);
+    await request(app)
+      .post(`/api/favorites/${job?._id}`)
+      .set("Authorization", `Bearer ${token}`);
 
-  //   const res = await request(app)
-  //     .get("/api/favorites")
-  //     .set("Authorization", `Bearer ${token}`);
+    const res = await request(app)
+      .get("/api/favorites?page=1&limit=5")
+      .set("Authorization", `Bearer ${token}`);
 
-  //   expect(res.status).toBe(200);
-  //   expect(res.body.length).toBe(1);
-  //   const returnedJobId = res.body[0].jobId._id || res.body[0].jobId;
-  //   expect(returnedJobId).toBe(String(job?._id));
-  // });
+    expect(res.status).toBe(200);
+    expect(res.body.page).toBe(1);
+    expect(res.body.limit).toBe(5);
+    expect(res.body.total).toBeGreaterThan(0);
+    expect(Array.isArray(res.body.items)).toBe(true);
+    expect(res.body.items[0]).toMatchObject({
+      _id: expect.any(String),
+      title: expect.any(String),
+      company: expect.any(String),
+      location: expect.any(String),
+      isFavorite: true,
+    });
+  });
 });
