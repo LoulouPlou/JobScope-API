@@ -10,10 +10,10 @@
     "start:dev": "cross-env NODE_ENV=development ts-node src/server.ts",
     "start:prod": "cross-env NODE_ENV=production node dist/server.js",
     "start:test": "cross-env NODE_ENV=test ts-node src/server.ts",
-    
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "scrape": "python data-scraper/daily_job.py"
   },
   "repository": {
     "type": "git",
