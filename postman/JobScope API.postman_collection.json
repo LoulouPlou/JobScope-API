@@ -400,6 +400,64 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Search - Authenticated",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/jobs/search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job by ID - Authenticated",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/jobs/{{job_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"{{job_id}}"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -613,76 +671,41 @@
 			"name": "Analytics",
 			"item": [
 				{
-					"name": "Get Top Paying Jobs",
+					"name": "Get Dashboard by Domain - Web",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/api/analytics/top-paying",
+							"raw": "{{base_url}}/api/analytics/dashboard/domain/Web",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"api",
 								"analytics",
-								"top-paying"
+								"dashboard",
+								"domain",
+								"Web"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Most Demanded Jobs",
+					"name": "Get Dashboard Overview",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/api/analytics/most-demanded",
+							"raw": "{{base_url}}/api/analytics/dashboard/overview",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"api",
 								"analytics",
-								"most-demanded"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Top Skills",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/analytics/top-skills",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"analytics",
-								"top-skills"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Jobs by Location",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/analytics/jobs-by-location",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"analytics",
-								"jobs-by-location"
+								"dashboard",
+								"overview"
 							]
 						}
 					},
