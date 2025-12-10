@@ -28,8 +28,6 @@ const analyticsSchema = new Schema<IAnalytics>({
     type: Schema.Types.Mixed,
     required: true
   }
-}, {
-  timestamps: true
 });
 
 analyticsSchema.index({ type: 1, domain: 1 });

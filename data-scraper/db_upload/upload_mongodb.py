@@ -103,7 +103,7 @@ def upload_jobs():
     client, db = get_mongodb_connection()
     jobs_collection = db["jobs"]
     
-    jobs_collection.create_index("jobId", unique=True)
+    # jobs_collection.create_index("jobId", unique=True)
     
     print(f"[JOBS] Syncing {len(jobs)} jobs to MongoDB...")
     
@@ -255,10 +255,13 @@ def upload_analytics():
     print("  [6/9] Top technologies by domain...")
     for domain in DOMAINS:
         result = get_top_5_technologies_by_domain(domain)
+        
+        domain_key = domain.lower().replace(' ', '_').replace('&', 'and')
+        
         analytics_collection.update_one(
-            {"type": "top_technologies_by_domain", "domain": domain},
+            {"type": f"top_technologies_{domain_key}"},
             {"$set": {
-                "type": "top_technologies_by_domain",
+                "type": f"top_technologies_{domain_key}",
                 "title": f"Top 5 Technologies - {domain}",
                 "chart_type": "horizontal_bar",
                 "domain": domain,

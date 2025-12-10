@@ -12,3 +12,18 @@ export interface IAnalytics {
         [key: string]: any;
     };
 }
+
+
+// dashboard interface
+export interface IDashboardOverviewResponse {
+  dashboard: 'overview';
+  charts: IAnalytics[];
+  total: number;
+}
+
+export interface IDashboardDomainResponse {
+  dashboard: 'domain';
+  domain: string;
+  charts: IAnalytics[];
+  total: number;
+}
