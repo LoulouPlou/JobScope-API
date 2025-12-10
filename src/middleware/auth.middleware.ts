@@ -48,3 +48,37 @@ export function authenticate(
         });
     }
 }
+
+export function optionalAuthenticate(
+    req: AuthRequest,
+    _res: Response,
+    next: NextFunction
+): void {
+    try {
+        const authHeader = req.headers.authorization;
+
+        // if no token provided, will continue as guest
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
+            next();
+            return;
+        }
+
+        const token = authHeader.substring(7);
+        const jwtSecret = config.get<string>("security.jwt.secret");
+
+        const decoded = jwt.verify(token, jwtSecret) as {
+            userId: string;
+            role: string;
+        };
+
+        req.user = {
+            _id: decoded.userId,
+            role: decoded.role,
+        };
+
+        next();
+    } catch (error) {
+        logger.debug("Optional authentication failed, continuing as guest:", error);
+        next();
+    }
+}
