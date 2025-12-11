@@ -161,7 +161,7 @@ def clean_jobs(raw_jobs):
     
     return cleaned_jobs
 
-def save_jobs(jobs, output_dir="data-scraper", prefix="jobs"):
+def save_jobs(jobs, output_dir="data-scraper/data/scraped_data", prefix="jobs"):
     os.makedirs(output_dir, exist_ok=True)
     date_str = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"{output_dir}/{prefix}_{date_str}.json"

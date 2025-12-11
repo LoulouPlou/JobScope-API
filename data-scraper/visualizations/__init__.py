@@ -68,11 +68,13 @@ def generate_all_charts():
     # Dashboard 2
     print("\nDashboard 2:")
     
-    fig = create_top_5_technologies_by_domain(None)
-    if fig:
-        fig.write_html("data-scraper/db2/top_tech_all.html")
-        print("\tTop 5 Technologies (All)")
-        charts_created += 1
+    for domain in DOMAINS:
+        fig = create_top_5_technologies_by_domain(domain)
+        if fig:
+            filename = f"data-scraper/db2/top_tech_{domain.lower().replace(' ', '_').replace('&', 'and')}.html"
+            fig.write_html(filename)
+            print(f"\t Top 5 technologies for domain: {domain}")
+            charts_created += 1
         
     for domain in DOMAINS:
         fig = create_skills_radar_by_domain(domain)

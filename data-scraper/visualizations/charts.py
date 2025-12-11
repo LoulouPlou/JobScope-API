@@ -52,6 +52,10 @@ def create_top_5_cities(domain=None):
     
     df = pd.DataFrame(result["data"])
     
+    if not result["data"]:
+        print(f"No data found for domain: {domain}")
+        return None
+    
     fig = px.bar(
         df,
         x='count',
@@ -113,7 +117,7 @@ def create_top_5_technologies_by_domain(domain=None):
     result = get_top_5_technologies_by_domain(domain)
     
     if not result["data"]:
-        print(f"No data found for domain: {domain}")
+        print(f"No top 5 technologies found for domain: {domain}")
         return None
     
     df = pd.DataFrame(result["data"])
