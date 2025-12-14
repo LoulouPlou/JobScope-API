@@ -7,9 +7,9 @@
     "dev": "nodemon --watch src --exec ts-node src/server.ts",
     "start": "node dist/server.js",
     "build": "tsc",
-    "start:dev": "cross-env NODE_ENV=development ts-node src/server.ts",
-    "start:prod": "cross-env NODE_ENV=production node dist/server.js",
-    "start:test": "cross-env NODE_ENV=test ts-node src/server.ts"
+    "start:dev": "NODE_ENV=development ts-node src/server.ts",
+    "start:prod": "node dist/server.js",
+    "start:test": "NODE_ENV=test ts-node src/server.ts"
   },
   "repository": {
     "type": "git",
