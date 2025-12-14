@@ -1,0 +1,170 @@
+name: CI + Deploy - JobScope API
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test-and-quality:
+    runs-on: ubuntu-latest
+
+    services:
+      mongo:
+        image: mongo:6
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd="mongosh --eval 'db.adminCommand(\"ping\")'" 
+          --health-interval=10s 
+          --health-timeout=5s 
+          --health-retries=5
+
+    env:
+      NODE_ENV: test
+      MONGO_URI: mongodb://localhost:27017/jobscope_test
+      # TODO: add lint script step when available (e.g., npm run lint)
+      # TODO: add Newman step when Postman collection + env are ready (npm run test:newman)
+
+    outputs:
+      coverage_status: ${{ steps.coverage.outputs.coverage_status }}
+      coverage_pct: ${{ steps.coverage.outputs.coverage_pct }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests with coverage
+        run: npm run test:cov
+
+      - name: Determine coverage status
+        id: coverage
+        run: |
+          node - << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+
+          const summaryPath = path.join('coverage', 'coverage-summary.json');
+          if (!fs.existsSync(summaryPath)) {
+            console.log('No coverage summary found. Marking as UNSTABLE.');
+            const out = `coverage_status=unstable\ncoverage_pct=0\n`;
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, out);
+            process.exit(0);
+          }
+          const data = JSON.parse(fs.readFileSync(summaryPath, 'utf-8'));
+          const total = data.total || {};
+          const linesPct = total.lines?.pct ?? 0;
+
+          let status = 'unstable';
+          if (linesPct >= 70) {
+            status = 'stable';
+          }
+
+          console.log(`Total line coverage: ${linesPct}% → ${status.toUpperCase()}`);
+
+          const out = `coverage_status=${status}\ncoverage_pct=${linesPct}\n`;
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, out);
+          EOF
+
+      - name: Notify Microsoft Teams on failure
+        if: failure()
+        run: |
+          payload=$(cat << 'JSON'
+          {
+            "@type": "MessageCard",
+            "@context": "https://schema.org/extensions",
+            "summary": "JobScope CI failed (tests or build)",
+            "themeColor": "FF0000",
+            "title": "JobScope CI failed",
+            "sections": [
+              {
+                "activityTitle": "Branch: ${{ github.ref }}",
+                "activitySubtitle": "Workflow: ${{ github.workflow }}",
+                "facts": [
+                  { "name": "Repository", "value": "${{ github.repository }}" },
+                  { "name": "Actor", "value": "${{ github.actor }}" },
+                  { "name": "Run URL", "value": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" }
+                ],
+                "markdown": true
+              }
+            ]
+          }
+          JSON
+          )
+
+          curl -H "Content-Type: application/json" \
+               -d "$payload" \
+               "${{ secrets.MS_TEAMS_WEBHOOK_URL }}"
+
+  deploy:
+    needs: test-and-quality
+    runs-on: ubuntu-latest
+    if: >
+      github.ref == 'refs/heads/main' &&
+      needs.test-and-quality.result == 'success' &&
+      needs.test-and-quality.outputs.coverage_status == 'stable'
+
+    environment:
+      name: production
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy API (placeholder)
+        run: |
+          echo "Deploying JobScope API to production..."
+          echo "Coverage: ${{ needs.test-and-quality.outputs.coverage_pct }}%"
+          # TODO: add Render CLI/API deploy command here
+
+      - name: Notify Microsoft Teams on deploy failure
+        if: failure()
+        run: |
+          payload=$(cat << 'JSON'
+          {
+            "@type": "MessageCard",
+            "@context": "https://schema.org/extensions",
+            "summary": "JobScope deploy failed",
+            "themeColor": "FF0000",
+            "title": "JobScope deploy failed",
+            "sections": [
+              {
+                "activityTitle": "Branch: ${{ github.ref }}",
+                "activitySubtitle": "Workflow: ${{ github.workflow }}",
+                "facts": [
+                  { "name": "Repository", "value": "${{ github.repository }}" },
+                  { "name": "Actor", "value": "${{ github.actor }}" },
+                  { "name": "Run URL", "value": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" }
+                ],
+                "markdown": true
+              }
+            ]
+          }
+          JSON
+          )
+
+          curl -H "Content-Type: application/json" \
+               -d "$payload" \
+               "${{ secrets.MS_TEAMS_WEBHOOK_URL }}"

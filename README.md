@@ -125,6 +125,33 @@ config/
 
 ---
 
+## Testing & CI Policy
+
+- All new backend features must include tests (at least integration tests).
+- We use Jest + Supertest for testing.
+- The target global test coverage is **70% or higher**.
+- Locally, Jest enforces a 70% global coverage threshold. If coverage is below 70%, `npm test` fails.
+- In CI (GitHub Actions), the pipeline **does not fail** on low coverage, but logs a warning and marks the build as **UNSTABLE** if coverage is below 70%.
+- The CI workflow (`.github/workflows/ci.yml`) runs on:
+  - every push to `main` or `dev`
+  - every Pull Request targeting `main` or `dev`.
+- All Pull Requests must:
+  - have a green CI result (tests passing),
+  - be reviewed and approved by at least one teammate before merging,
+  - prefer “Squash and merge” for a clean history.
+
+## Load Testing (k6)
+
+- Script: `test/load/k6-smoke.js` (light smoke/ramp on auth, jobs, analytics, favorites).
+- Local prerequisite: install `k6` (e.g., `brew install k6` or the official binary).
+- Local run (test env, port 3001):
+  1. Start Mongo (e.g., `docker run -p 27017:27017 mongo:6`) if needed.
+  2. In one terminal: `npm run start:test`.
+  3. In another terminal: `BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js`.
+- Dedicated GitHub Actions workflow: `.github/workflows/load-test.yml` (manual trigger and weekly schedule). It is kept separate from the fast CI to avoid slowing down builds.
+
+---
+
 ## Collaborators
 
 - **Kristina Hristova Beneva**
