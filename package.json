@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "build": "tsc",
     "start:dev": "cross-env NODE_ENV=development ts-node src/server.ts",
-    "start:prod": "cross-env NODE_ENV=production node dist/server.js",
+    "start:prod": "node dist/server.js",
     "start:test": "cross-env NODE_ENV=test ts-node src/server.ts",
     "test": "jest --runInBand",
     "test:watch": "jest --watch",

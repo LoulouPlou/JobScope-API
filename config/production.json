@@ -5,11 +5,11 @@
       "port": 80
     },
     "https": {
-      "enabled": true,
+      "enabled": false,
       "port": 443,
       "keyPath": "./ssl/key.pem",
       "certPath": "./ssl/cert.pem",
-      "redirectAllHttpToHttps": true
+      "redirectAllHttpToHttps": false
     },
     "trustProxy": true
   },
