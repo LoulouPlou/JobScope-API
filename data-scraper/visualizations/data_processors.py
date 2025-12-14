@@ -17,7 +17,8 @@ CATEGORY_GROUPS = {
     "Data & Databases": [ "Database", "AI/ML", "Big Data", "Data & Analytics", ],
     "Design & UX": [ "Design Tool", "Design & UX", ],
     "Communication & Leadership": [ "Communication", "Leadership", "Project Management", "Business & PM", ],
-    "Problem Solving & Teamwork": [ "Problem Solving", "Personal Attributes", "Interpersonal", ], }
+    "Problem Solving & Teamwork": [ "Problem Solving", "Personal Attributes", "Interpersonal", ]
+}
 
 
 def load_master_jobs():
