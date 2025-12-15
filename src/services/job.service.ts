@@ -88,7 +88,7 @@ export class JobService {
 
     // if not auth, get recent jobs instead of personnalized
     static async getRecentJobs(): Promise<IJobInfo[]> {
-        const jobs = await JobModel.find().sort({ createdAt: -1 }).limit(3);
+        const jobs = await JobModel.find().sort({ publishedTime: -1 }).limit(3);
 
         return JobMapper.toJobInfoList(jobs, new Set<string>());
     }
@@ -109,7 +109,7 @@ export class JobService {
                 { title: { $regex: interest, $options: "i" } },
             ],
         })
-            .sort({ createdAt: -1 })
+            .sort({ publishedTime: -1 })
             .limit(3);
 
         // fallback: if no personalized jobs found, return recent jobs

@@ -31,20 +31,7 @@ const jobSchema = new Schema<IJob>(
             trim: true
         },
 
-        education: {
-            type: String,
-            required: true,
-            trim: true
-        },
-
         languages: [{ type: String }],
-
-        shortDescription: {
-            type: String,
-            required: true,
-            trim: true,
-            minlength: 1,
-        },
 
         description: {
             type: String,
@@ -59,13 +46,12 @@ const jobSchema = new Schema<IJob>(
         },
 
         tags: {
-            type: [String],
-            validate: {
-                validator: function (arr: string[] | undefined) {
-                    return !arr || arr.length === 3;
-                },
-                message: "tags must contain exactly 3 items",
-            }
+            type: [{
+                type: String,
+                trim: true,
+                minlength: 1
+            }],
+            maxlength: [3, "tags must contain at most 3 items"]
         },
 
         salary: {
@@ -77,7 +63,9 @@ const jobSchema = new Schema<IJob>(
         },
 
         publishedTime: {
-            type: String, trim: true
+            type: Date,
+            required: true,
+            default: Date.now
         },
     },
     {
@@ -89,6 +77,7 @@ const jobSchema = new Schema<IJob>(
 jobSchema.index({ company: 1 });
 jobSchema.index({ location: 1 });
 jobSchema.index({ skills: 1 });
+jobSchema.index({ publishedTime: -1 });
 
 export const JobModel: Model<IJob> = mongoose.model<IJob>(
     "Job",

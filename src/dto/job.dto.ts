@@ -6,7 +6,7 @@ export interface IJobInfo {
   location: string;
 
   jobType?: string;
-  tags?: [string, string, string];
+  tags?: string[];
   publishedTime?: string;
 
   isFavorite: boolean;
@@ -22,13 +22,10 @@ export interface IJobDetails {
   jobType?: string;
   experience?: string;
 
-  education: string;
-  languages?: string[];
-
   description: string;
 
   skills: string[];
-  tags?: [string, string, string];
+  tags?: string[];
 
   salary?: string;
   postedOn?: string;
