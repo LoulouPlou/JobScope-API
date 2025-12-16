@@ -8,19 +8,15 @@ export interface IJob {
 
     jobType?: string;
     experience?: string;
-
-    education: string;
-    languages?: string[];
-
-    shortDescription: string;
     description: string;
 
     skills: string[];
-    tags?: [string, string, string];
+    tags?: string[];
 
     salary?: string;
     postedOn?: string;
-    publishedTime?: string;
+    
+    publishedTime: Date;
 
     createdAt?: Date;
     updatedAt?: Date;
