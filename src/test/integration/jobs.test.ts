@@ -50,7 +50,7 @@ describe("Job endpoints", () => {
       .get("/api/jobs/search")
       .query({
         title: "Developer",
-        experience: ["5+ years"],
+        experience: ["Mid"],
         jobType: ["Full-time"],
       });
 
@@ -87,10 +87,10 @@ describe("Job service behaviors", () => {
   });
 
   it("filters by experience array", async () => {
-    const result = await JobService.searchJobs({ experience: ["5+ years"] });
+    const result = await JobService.searchJobs({ experience: ["Mid"] });
     expect(result.items.length).toBeGreaterThan(0);
     const details = await JobService.getJobById(result.items[0]._id);
-    expect(details.experience).toBe("5+ years");
+    expect(details.experience).toBe("Mid");
   });
 
   it("returns personalized jobs when user has interests", async () => {
