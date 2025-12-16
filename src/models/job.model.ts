@@ -31,8 +31,6 @@ const jobSchema = new Schema<IJob>(
             trim: true
         },
 
-        languages: [{ type: String }],
-
         description: {
             type: String,
             required: true,

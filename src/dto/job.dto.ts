@@ -21,7 +21,6 @@ export interface IJobDetails {
 
   jobType?: string;
   experience?: string;
-
   description: string;
 
   skills: string[];

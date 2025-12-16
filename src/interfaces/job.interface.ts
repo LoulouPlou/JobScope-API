@@ -8,8 +8,6 @@ export interface IJob {
 
     jobType?: string;
     experience?: string;
-
-    languages?: string[];
     description: string;
 
     skills: string[];
