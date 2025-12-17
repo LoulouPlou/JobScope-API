@@ -1,58 +1,14 @@
 import { FavoriteModel } from "../models/favorite.model";
 import { JobModel } from "../models/job.model";
 import { IFavorite } from "../interfaces/favorite.interface";
-import { IJobInfo } from "../dto/job.dto";
-import { JobMapper } from "../mappers/job.mapper";
-
-interface PaginatedResponse<T> {
-    items: T[];
-    total: number;
-    page: number;
-    pages: number;
-    limit: number;
-}
 
 export class FavoriteService {
-    static async getUserFavoriteJobIds(userId: string): Promise<Set<string>> {
-        const favorites = await FavoriteModel.find({ userId }).select('jobId');
-        return new Set(favorites.map(fav => fav.jobId.toString()));
-    }
+    static async getUserFavorites(userId: string): Promise<IFavorite[]> {
+        const favorites = await FavoriteModel.find({ userId })
+            .populate("jobId") // optional: if you want full job details
+            .sort({ savedAt: -1 });
 
-    static async getUserFavorites(
-        userId: string,
-        page: number = 1,
-        limit: number = 10
-    ): Promise<PaginatedResponse<IJobInfo>> {
-
-        const skip = (page - 1) * limit;
-
-        const [favorites, total] = await Promise.all([
-            FavoriteModel.find({ userId })
-                .populate("jobId")
-                .sort({ savedAt: -1 })
-                .skip(skip)
-                .limit(limit),
-
-            FavoriteModel.countDocuments({ userId })
-        ]);
-
-        const jobIds = favorites.map(f => f.jobId);
-
-        const jobs = await JobModel.find({ _id: { $in: jobIds } });
-
-        // all jobs are favorites
-        const favoriteJobIds = new Set(jobs.map(job => job._id.toString()));
-
-        // convert to dto before returning
-        const jobInfos = JobMapper.toJobInfoList(jobs, favoriteJobIds);
-
-        return {
-            items: jobInfos,
-            total,
-            page,
-            pages: Math.ceil(total / limit),
-            limit,
-        };
+        return favorites;
     }
 
     static async addFavorite(userId: string, jobId: string): Promise<IFavorite> {

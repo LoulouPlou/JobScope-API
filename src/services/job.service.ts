@@ -1,11 +1,8 @@
 import { JobModel } from "../models/job.model";
-import { FavoriteModel } from "../models/favorite.model";
+import { IJob } from "../interfaces/job.interface";
 import { UserModel } from "../models/user.model";
-import { IJobInfo, IJobDetails } from "../dto/job.dto";
-import { JobMapper } from "../mappers/job.mapper";
-import { FavoriteService } from "./favorite.service";
 
-interface PaginatedResponse<T> {
+interface PaginatedRespond<T> {
     items: T[];
     total: number;
     page: number;
@@ -13,33 +10,32 @@ interface PaginatedResponse<T> {
     limit: number;
 }
 
-interface SearchFilters {
-    title?: string;
-    jobType?: string[]; //checkbox form in FE
-    experience?: string[]; //checkbox form in FE
-}
-
 export class JobService {
-    static async searchJobs(
-        filters: SearchFilters,
-        page: number = 1,
-        limit: number = 10,
-        userId?: string
-    ): Promise<PaginatedResponse<IJobInfo>> {
+    static async searchJobs(query: any): Promise<PaginatedRespond<IJob>> {
+        const page = query.page || 1;
+        const limit = query.limit || 10;
         const skip = (page - 1) * limit;
 
         const filter: any = {};
 
-        if (filters.title) {
-            filter.title = { $regex: filters.title, $options: "i" };
+        if (query.title) {
+            filter.title = { $regex: query.title, $options: "i" };
         }
 
-        if (filters.jobType && filters.jobType.length > 0) {
-            filter.jobType = { $in: filters.jobType };
+        if (query.company) {
+            filter.company = { $regex: query.company, $options: "i" };
         }
 
-        if (filters.experience && filters.experience.length > 0) {
-            filter.experience = { $in: filters.experience };
+        if (query.location) {
+            filter.location = { $regex: query.location, $options: "i" };
+        }
+
+        if (query.skills) {
+            filter.skills = { $in: [new RegExp(query.skills, "i")] };
+        }
+
+        if (query.jobType) {
+            filter.jobType = query.jobType;
         }
 
         const [jobs, total] = await Promise.all([
@@ -47,20 +43,8 @@ export class JobService {
             JobModel.countDocuments(filter),
         ]);
 
-        // if auth, get user's favorite job IDs, else empty
-        let favoriteJobIds: Set<string>;
-
-        if (userId) {
-            favoriteJobIds = await FavoriteService.getUserFavoriteJobIds(userId);
-        } else {
-            favoriteJobIds = new Set<string>();
-        }
-
-        // convert to DTO with isFavorite (empty will return false)
-        const jobInfos = JobMapper.toJobInfoList(jobs, favoriteJobIds);
-
         return {
-            items: jobInfos,
+            items: jobs,
             total,
             page,
             pages: Math.ceil(total / limit),
@@ -68,7 +52,11 @@ export class JobService {
         };
     }
 
-    static async getJobById(id: string, userId?: string): Promise<IJobDetails> {
+    static async getRecentJobs(): Promise<IJob[]> {
+        return JobModel.find().sort({ createdAt: -1 }).limit(3);
+    }
+
+    static async getJobById(id: string): Promise<IJob> {
         const job = await JobModel.findById(id);
 
         if (!job) {
@@ -78,47 +66,25 @@ export class JobService {
             throw error;
         }
 
-        // isFavorite?
-        const isFavorite = userId
-            ? await FavoriteModel.exists({ userId, jobId: id })
-            : false;
-
-        return JobMapper.toJobDetails(job, !!isFavorite);
+        return job;
     }
 
-    // if not auth, get recent jobs instead of personnalized
-    static async getRecentJobs(): Promise<IJobInfo[]> {
-        const jobs = await JobModel.find().sort({ publishedTime: -1 }).limit(3);
-
-        return JobMapper.toJobInfoList(jobs, new Set<string>());
-    }
-
-    static async getPersonalizedJobs(userId: string): Promise<IJobInfo[]> {
+    static async getPersonalizedJobs(userId: string): Promise<IJob[]> {
         const user = await UserModel.findById(userId);
 
-        // fallback: if no user or no interests, return recent jobs
         if (!user || !user.interest) {
-            return this.getRecentJobs();
+            return JobModel.find().sort({ createdAt: -1 }).limit(3);
         }
-
         const interest = user.interest;
 
-        const jobs = await JobModel.find({
+        return JobModel.find({
             $or: [
                 { skills: { $in: [new RegExp(interest, "i")] } },
-                { title: { $regex: interest, $options: "i" } },
-            ],
+                { tags: { $in: [new RegExp(interest, "i")] } },
+                { title: { $regex: interest, $options: "i" } }
+            ]
         })
-            .sort({ publishedTime: -1 })
+            .sort({ createdAt: -1 })
             .limit(3);
-
-        // fallback: if no personalized jobs found, return recent jobs
-        if (jobs.length === 0) {
-            return this.getRecentJobs();
-        }
-
-        const favoriteJobIds = await FavoriteService.getUserFavoriteJobIds(userId);
-
-        return JobMapper.toJobInfoList(jobs, favoriteJobIds);
     }
 }

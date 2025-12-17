@@ -6,44 +6,8 @@ export class JobController {
     //GET /api/jobs/search + Search jobs with filters + pagination
     async searchJobs(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            const { title, jobType, experience, page = 1, limit = 10 } = req.query;
-
-            // Get userId if authenticated
-            const userId = (req as AuthRequest).user?._id;
-
-            const filters: any = {};
-
-            // job title
-            if (title) {
-                filters.title = String(title);
-            }
-
-            // job type (array or single)
-            if (jobType) {
-                if (Array.isArray(jobType)) {
-                    filters.jobType = jobType;
-                } else {
-                    filters.jobType = [String(jobType)];
-                }
-            }
-
-            // experience (array or single)
-            if (experience) {
-                if (Array.isArray(experience)) {
-                    filters.experience = experience;
-                } else {
-                    filters.experience = [String(experience)];
-                }
-            }
-
-            const result = await JobService.searchJobs(
-                filters,
-                Number(page),
-                Number(limit),
-                userId ? String(userId) : undefined
-            );
-
-            res.json(result);
+            const jobs = await JobService.searchJobs(req.query);
+            res.json(jobs);
         } catch (err) {
             next(err);
         }
@@ -53,7 +17,6 @@ export class JobController {
     async getRecentJobs(_req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             const jobs = await JobService.getRecentJobs();
-
             res.json(jobs);
         } catch (err) {
             next(err);
@@ -70,19 +33,16 @@ export class JobController {
                 return;
             }
 
-            const userId = (req as AuthRequest).user?._id;
-
-            const job = await JobService.getJobById(id, userId ? String(userId) : undefined);
+            const job = await JobService.getJobById(id);
             res.json(job);
         } catch (err) {
             next(err);
         }
     }
 
-    async getJobPersonalized(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
+    async getJobPersonnalized(req: AuthRequest , res: Response, next: NextFunction): Promise<void> {
         try {
-            const userId = req.user!._id;
-
+            const userId = req.user?._id;
             const jobs = await JobService.getPersonalizedJobs(String(userId));
             res.json(jobs);
         } catch (err) {
