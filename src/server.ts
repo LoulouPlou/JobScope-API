@@ -15,7 +15,6 @@ dotenv.config({ path: envFile });
 async function startServer() {
   try {
     await connectDB();
-
     if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test") {
       await seedDatabase();
       console.log(`Database in env ${process.env.NODE_ENV} seeded`)

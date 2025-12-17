@@ -6,6 +6,6 @@ describe('Root endpoint', () => {
     const res = await request(app).get('/');
 
     expect(res.status).toBe(200);
-    expect(res.text).toBe('Welcome to the JobScope API');
+    expect(res.body.description).toBe('REST API for IT job market analysis in Canada');
   });
 });
