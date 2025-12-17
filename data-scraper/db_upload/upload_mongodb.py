@@ -1,5 +1,7 @@
 import os
 import json
+from datetime import datetime, timedelta
+import re
 from pymongo import MongoClient
 from datetime import datetime
 from dotenv import load_dotenv
@@ -31,56 +33,167 @@ def get_mongodb_connection():
     return client, db
 
 # JOBS SYNC
+def extract_job_type(extensions):
+    """
+    Extract job type from extensions.
+    
+    Args:
+        extensions: List of strings like ["Full-time", "2 days ago", "$80K a year"]
+    
+    Returns:
+        Job type string: "Full-time", "Contract", "Part-time", or "Internship"
+    """
+    if not extensions:
+        return "Full-time"  # Default
+    
+    # Check in priority order
+    if any(term in extensions for term in ["Contractor", "Contract"]):
+        return "Contract"
+    elif "Part-time" in extensions:
+        return "Part-time"
+    elif "Internship" in extensions:
+        return "Internship"
+    elif "Full-time" in extensions:
+        return "Full-time"
+    
+    return "Full-time"
+
+def extract_salary_from_extensions(extensions):
+    """
+    Extract salary information from extensions. Just looks for $ sign...
+        Args:
+        extensions: List of strings
+    
+    Returns:
+        String like "$45K–$55K a year" or None
+    """
+    if not extensions:
+        return None
+    
+    for ext in extensions:
+        ext_str = str(ext)
+        if '$' in ext_str:
+            return ext_str.strip()
+    
+    return None
+
+def extract_posted_time(extensions):
+    """
+    Extract posted time string from extensions.
+    
+    Args:
+        extensions: List of strings
+    
+    Returns:
+        String like "2 days ago" or None
+    """
+    if not extensions:
+        return None
+    
+    for ext in extensions:
+        ext_str = str(ext).lower()
+        if any(word in ext_str for word in ["ago", "day", "hour", "week", "month"]):
+            return str(ext)
+    
+    return None
+
+
+def parse_posted_time(time_str):
+    if not time_str:
+        return None
+    
+    time_str_lower = time_str.lower() 
+    
+    try:
+        number_match = re.search(r'(\d+)', time_str_lower)
+        if not number_match:
+            return None
+        
+        value = int(number_match.group(1))
+        now = datetime.now()
+        
+        if 'hour' in time_str_lower:
+            date = now - timedelta(hours=value)
+        elif 'day' in time_str_lower:
+            date = now - timedelta(days=value)
+        elif 'week' in time_str_lower:
+            date = now - timedelta(weeks=value)
+        elif 'month' in time_str_lower:
+            date = now - timedelta(days=value * 30)
+        elif 'year' in time_str_lower:
+            date = now - timedelta(days=value * 365)
+        else:
+            return None
+        
+        return date.isoformat()
+    
+    except Exception as e:
+        print(f"Error parsing time '{time_str}': {e}")
+        return None
+
+
 def transform_job_for_mongo(job, analysis_result=None):
     """
     Transform scraped job to MongoDB schema.
-    
-    Args:
-        job: Raw job from jobs_master.json
-        analysis_result: Corresponding analysis from jobs_analysis.json
+    Only includes non-empty fields.
     """
-    # Extract job type from extensions
-    job_type = "Full-time"  # Default
     extensions = job.get('extensions', [])
-    if "Contractor" in extensions or "Contract" in extensions:
-        job_type = "Contract"
-    elif "Part-time" in extensions:
-        job_type = "Part-time"
-    elif "Internship" in extensions:
-        job_type = "Internship"
     
-    # Extract posted time
-    posted_time = None
-    for ext in extensions:
-        if "ago" in ext.lower() or "day" in ext.lower() or "hour" in ext.lower():
-            posted_time = ext
-            break
+    job_type = extract_job_type(extensions)
+    salary = extract_salary_from_extensions(extensions)
     
-    # Get skills and tags from analysis
+    posted_time_raw = extract_posted_time(extensions)
+    
+    if posted_time_raw:
+        posted_date = parse_posted_time(posted_time_raw)  
+    else:
+        posted_date = None
+    
+    # scrape_date if no posted_date
+    if not posted_date:
+        scrape_date = job.get("scrape_date")
+        if scrape_date:
+            posted_date = scrape_date
+        else:
+            posted_date = datetime.now().isoformat()
+    
     skills = []
     tags = []
+    experience = ""
+    
     if analysis_result:
         buzzwords = analysis_result.get("buzzwords_found", {})
         sorted_buzzwords = sorted(buzzwords.items(), key=lambda x: x[1], reverse=True)
         
         skills = [bw for bw, count in sorted_buzzwords]
-        
         tags = [bw for bw, count in sorted_buzzwords[:3]]
+        experience = analysis_result.get("experience_level", "")
     
-    # Build MongoDB document
     mongo_job = {
         "jobId": job.get("job_id", ""),
         "title": job.get("title", ""),
         "company": job.get("company_name", ""),
         "location": job.get("location", ""),
-        "jobType": job_type,
-        "experience": analysis_result.get("experience_level", "") if analysis_result else "",
         "description": job.get("description", ""),
-        "skills": skills,
-        "tags": tags,
-        "postedOn": job.get("via", ""),
-        "publishedTime": posted_time
+        "jobType": job_type,
+        "publishedTime": posted_date,
     }
+    
+    # optional fields only if not empty
+    if experience:
+        mongo_job["experience"] = experience
+    
+    if skills:
+        mongo_job["skills"] = skills
+    
+    if tags:
+        mongo_job["tags"] = tags
+    
+    if salary:
+        mongo_job["salary"] = salary
+    
+    if job.get("via"):
+        mongo_job["postedOn"] = job.get("via")
     
     return mongo_job
 

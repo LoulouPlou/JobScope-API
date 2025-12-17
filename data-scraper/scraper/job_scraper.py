@@ -237,8 +237,9 @@ def extract_experience_level(job):
     full_text = f"{title} {highlights} {description}"
     
     year_patterns = [
-        r'(\d+)\+\s*(?:years?|yrs?)',       # 5+ years
-        r'(\d+)-(\d+)\s*(?:years?|yrs?)',   # 3-5 years
+        r'(\d+)\+\s*(?:years?|yrs?)',                    # 5+ years
+        r'(\d+)\s*(?:-|to)\s*(\d+)\s*(?:years?|yrs?)',   # 3-5 years, 7 to 10 years
+        r'(\d+)\s*(?:years?|yrs?)',                      # 5 years (standalone)
     ]
     
     years_found = []
