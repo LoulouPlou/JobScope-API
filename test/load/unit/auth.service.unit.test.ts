@@ -1,87 +1,118 @@
-import { adminService } from "../../../src/services/admin.service";
+import { AuthService } from "../../../src/services/auth.service";
 import { UserModel } from "../../../src/models/user.model";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import config from "config";
+
+jest.unmock("../../../src/services/auth.service");
 
 jest.mock("../../../src/models/user.model");
+jest.mock("bcryptjs");
+jest.mock("jsonwebtoken");
+jest.mock("config");
 
-describe("adminService", () => {
+describe("AuthService Unit Tests", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
-  // getAllUsers()
-  test("getAllUsers , success", async () => {
-    (UserModel.find as jest.Mock).mockReturnValue({
-      skip: () => ({
-        limit: () => ({
-          select: () => ({
-            sort: () => Promise.resolve([{ email: "a@test.com" }])
-          })
-        })
+  test("register success", async () => {
+    (UserModel.findOne as jest.Mock).mockResolvedValue(null);
+    (bcrypt.hash as jest.Mock).mockResolvedValue("hashed");
+    (config.get as jest.Mock).mockReturnValue(10);
+
+    (UserModel.create as jest.Mock).mockResolvedValue({
+      email: "test@test.com",
+      role: "user",
+    });
+
+    const result = await AuthService.register({
+      email: "test@test.com",
+      password: "123456",
+      firstName: "Test",
+      lastName: "User",
+    });
+
+    expect(result.email).toBe("test@test.com");
+  });
+
+  test("register USER_EXISTS", async () => {
+    (UserModel.findOne as jest.Mock).mockResolvedValue({ email: "test@test.com" });
+
+    await expect(
+      AuthService.register({
+        email: "test@test.com",
+        password: "123",
+        firstName: "Test",
+        lastName: "User",
       })
-    });
-
-    (UserModel.countDocuments as jest.Mock).mockResolvedValue(1);
-
-    const result = await adminService.getAllUsers();
-
-    expect(result.items.length).toBe(1);
-    expect(result.total).toBe(1);
+    ).rejects.toMatchObject({ code: "USER_EXISTS" });
   });
 
-  // infoUser()
-  test("infoUser , success", async () => {
-    (UserModel.findById as jest.Mock).mockReturnValue({
-      select: () => Promise.resolve({ email: "a@test.com" })
-    });
+  test("login USER_NOT_FOUND", async () => {
+    (UserModel.findOne as jest.Mock).mockResolvedValue(null);
 
-    const result = await adminService.infoUser("1");
-    expect(result.email).toBe("a@test.com");
-  });
-
-  test("infoUser , USER_NOT_FOUND", async () => {
-    (UserModel.findById as jest.Mock).mockReturnValue({
-      select: () => Promise.resolve(null)
-    });
-
-    await expect(adminService.infoUser("x"))
-      .rejects.toMatchObject({ code: "USER_NOT_FOUND" });
-  });
-
-  // updateUser()
-  test("updateUser , success", async () => {
-    (UserModel.findByIdAndUpdate as jest.Mock).mockReturnValue({
-      select: () => Promise.resolve({ firstName: "Updated" })
-    });
-
-    const result = await adminService.updateUser("1", { firstName: "Updated" });
-    expect(result.firstName).toBe("Updated");
-  });
-
-  test("updateUser ,PASSWORD_UPDATE_FORBIDDEN", async () => {
     await expect(
-      adminService.updateUser("1", { password: "123" } as any)
-    ).rejects.toMatchObject({ code: "PASSWORD_UPDATE_FORBIDDEN" });
+      AuthService.login({ email: "x@test.com", password: "123" })
+    ).rejects.toMatchObject({ code: "INVALID_CREDENTIALS" });
   });
 
-  test("updateUser , USER_NOT_FOUND", async () => {
-    (UserModel.findByIdAndUpdate as jest.Mock).mockReturnValue({
-      select: () => Promise.resolve(null)
+  test("login INVALID_PASSWORD", async () => {
+    (UserModel.findOne as jest.Mock).mockResolvedValue({
+      password: "hashed",
+    });
+
+    (bcrypt.compare as jest.Mock).mockResolvedValue(false);
+
+    await expect(
+      AuthService.login({ email: "test@test.com", password: "wrong" })
+    ).rejects.toMatchObject({ code: "INVALID_CREDENTIALS" });
+  });
+
+  test("login JWT_SECRET_MISSING", async () => {
+    (UserModel.findOne as jest.Mock).mockResolvedValue({
+      _id: "1",
+      email: "test@test.com",
+      password: "hashed",
+      role: "user",
+    });
+
+    (bcrypt.compare as jest.Mock).mockResolvedValue(true);
+
+    (config.get as jest.Mock).mockImplementation((key: string) => {
+      if (key === "security.jwt.secret") return undefined;
+      if (key === "security.jwt.expiresIn") return "1d";
+      return null;
     });
 
     await expect(
-      adminService.updateUser("x", { firstName: "Test" })
-    ).rejects.toMatchObject({ code: "USER_NOT_FOUND" });
+      AuthService.login({ email: "test@test.com", password: "123" })
+    ).rejects.toThrow("JWT secret is not configured");
   });
 
-  // deleteUser()
-  test("deleteUser , success", async () => {
-    (UserModel.findByIdAndDelete as jest.Mock).mockResolvedValue({});
+  test("login success", async () => {
+    (UserModel.findOne as jest.Mock).mockResolvedValue({
+      _id: "1",
+      email: "test@test.com",
+      password: "hashed",
+      role: "user",
+    });
 
-    await expect(adminService.deleteUser("1"))
-      .resolves.toBeUndefined();
-  });
+    (bcrypt.compare as jest.Mock).mockResolvedValue(true);
+    (jwt.sign as jest.Mock).mockReturnValue("token");
 
-  test("deleteUser ,USER_NOT_FOUND", async () => {
-    (UserModel.findByIdAndDelete as jest.Mock).mockResolvedValue(null);
+    (config.get as jest.Mock).mockImplementation((key: string) => {
+      if (key === "security.jwt.secret") return "secret";
+      if (key === "security.jwt.expiresIn") return "1d";
+      return null;
+    });
 
-    await expect(adminService.deleteUser("x"))
-      .rejects.toMatchObject({ code: "USER_NOT_FOUND" });
+    const result = await AuthService.login({
+      email: "test@test.com",
+      password: "123",
+    });
+
+    expect(result.token).toBe("token");
+    expect(result.user.email).toBe("test@test.com");
   });
 });

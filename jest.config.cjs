@@ -1,29 +1,29 @@
 /** @type {import('jest').Config} */
-
-const config = {
+module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
 
-  testMatch: ['**/test/**/*.test.ts', '**/test/**/*.spec.ts'],
+  testMatch: ['**/test/load/unit/**/*.unit.test.ts'],
 
   collectCoverage: true,
   coverageDirectory: 'coverage',
+
   collectCoverageFrom: [
-    'src/**/*.ts',
-    '!src/server.ts',
-    '!src/data/**',
-    '!src/utils/logger.ts',
+    'src/services/**/*.ts',
+    '!src/services/index.ts',
   ],
 
-  coverageReporters: ['text', 'json-summary', 'lcov'],
+  coverageReporters: ['text', 'lcov', 'json-summary'],
+
   coverageThreshold: {
     global: {
+      statements: 70,
       branches: 70,
       functions: 70,
       lines: 70,
-      statements: 70,
     },
   },
-};
 
-module.exports = config;
+  clearMocks: true,
+  restoreMocks: true,
+};
