@@ -11,14 +11,15 @@ jobs:
 
     services:
       mongo:
-        image: mongo:6
+        image: ghcr.io/library/mongo:6
         ports:
           - 27017:27017
         options: >-
+          --platform=linux/amd64
           --health-cmd="mongosh --eval 'db.adminCommand(\"ping\")'"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=5
+          --health-retries=12
 
     env:
       NODE_ENV: test
@@ -37,6 +38,19 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Wait for MongoDB
+        run: |
+          for i in {1..20}; do
+            if mongosh --host localhost --port 27017 --eval 'db.adminCommand("ping")' >/dev/null 2>&1; then
+              echo "Mongo is up"
+              exit 0
+            fi
+            echo "Waiting for Mongo..."
+            sleep 3
+          done
+          echo "Mongo did not become ready in time"
+          exit 1
 
       - name: Start API (test mode)
         run: |
