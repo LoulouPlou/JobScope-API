@@ -1,7 +1,7 @@
 import request from "supertest";
-import app from "../../app";
+import app from "../../src/app";
 import { setupIntegrationTestDB } from "./testUtils";
-import { VALID_DOMAINS } from "../../constants/domains.constant";
+import { VALID_DOMAINS } from "../../src/constants/domains.constant";
 
 jest.setTimeout(90000);
 

@@ -11,18 +11,19 @@ jobs:
 
     services:
       mongo:
-        image: mongo:6
+        image: mirror.gcr.io/library/mongo:6.0
         ports:
           - 27017:27017
         options: >-
-          --health-cmd="mongosh --eval 'db.adminCommand(\"ping\")'"
+          --platform=linux/amd64
+          --health-cmd="echo 'db.runCommand({ ping: 1 })' | mongosh --quiet"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=5
+          --health-retries=12
 
     env:
       NODE_ENV: test
-      MONGO_URI: mongodb://mongo:27017/jobscope_test
+      MONGO_URI: mongodb://localhost:27017/jobscope_test
       BASE_URL: http://localhost:3001
 
     steps:
@@ -38,20 +39,36 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Wait for MongoDB
+        run: |
+          for i in {1..30}; do
+            if nc -z localhost 27017; then
+              echo "Mongo is up"
+              exit 0
+            fi
+            echo "Waiting for Mongo..."
+            sleep 2
+          done
+          echo "Mongo did not become ready in time"
+          exit 1
+
       - name: Start API (test mode)
         run: |
-          npm run start:test > server.log 2>&1 &
-          for i in {1..20}; do
+          TS_NODE_TRANSPILE_ONLY=1 npm run start:test > server.log 2>&1 &
+          for i in {1..30}; do
             if curl -sSf http://localhost:3001 >/dev/null; then
               echo "API is up"
               exit 0
             fi
             sleep 3
           done
-          echo "API did not start in time"; cat server.log; exit 1
+          echo "API did not start in time"
+          echo "=== server.log ==="
+          cat server.log || true
+          exit 1
 
       - name: Install k6
-        uses: grafana/setup-k6@v0.2
+        uses: grafana/setup-k6-action@v1
 
       - name: Run k6 smoke load test
         run: k6 run test/load/k6-smoke.js

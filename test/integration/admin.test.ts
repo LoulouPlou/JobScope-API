@@ -1,8 +1,8 @@
 import request from "supertest";
 import mongoose from "mongoose";
-import app from "../../app";
+import app from "../../src/app";
 import { setupIntegrationTestDB, createAuthenticatedUser, TEST_PASSWORD } from "./testUtils";
-import { UserModel } from "../../models/user.model";
+import { UserModel } from "../../src/models/user.model";
 
 jest.setTimeout(90000);
 

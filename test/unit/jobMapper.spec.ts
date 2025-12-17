@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import { JobMapper } from "../../mappers/job.mapper";
-import { IJob } from "../../interfaces/job.interface";
+import { JobMapper } from "../../src/mappers/job.mapper";
+import { IJob } from "../../src/interfaces/job.interface";
 
 describe("JobMapper timeAgo branches", () => {
     const baseJob = (publishedTime: Date): IJob => ({

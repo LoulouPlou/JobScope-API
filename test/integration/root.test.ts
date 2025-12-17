@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../../app';
+import app from '../../src/app';
 
 describe('Root endpoint', () => {
   it('GET / should return welcome message', async () => {
