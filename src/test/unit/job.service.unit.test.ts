@@ -1,6 +1,6 @@
-import { JobService } from "../../../src/services/job.service";
-import { JobModel } from "../../../src/models/job.model";
-import { UserModel } from "../../../src/models/user.model";
+import { JobService } from "../../services/job.service";
+import { JobModel } from "../../models/job.model";
+import { UserModel } from "../../models/user.model";
 
 jest.mock("../../../src/models/job.model");
 jest.mock("../../../src/models/user.model");

@@ -1,5 +1,5 @@
-import { AnalyticsService } from "../../../src/services/analytics.service";
-import { JobModel } from "../../../src/models/job.model";
+import { AnalyticsService } from "../../services/analytics.service";
+import { JobModel } from "../../models/job.model";
 
 jest.mock("../../../src/models/job.model");
 

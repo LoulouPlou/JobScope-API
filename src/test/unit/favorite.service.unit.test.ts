@@ -1,6 +1,6 @@
-import { FavoriteService } from "../../../src/services/favorite.service";
-import { FavoriteModel } from "../../../src/models/favorite.model";
-import { JobModel } from "../../../src/models/job.model";
+import { FavoriteService } from "../../services/favorite.service";
+import { FavoriteModel } from "../../models/favorite.model";
+import { JobModel } from "../../models/job.model";
 
 jest.mock("../../../src/models/favorite.model");
 jest.mock("../../../src/models/job.model");

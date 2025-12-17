@@ -1,8 +1,8 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import config from "config";
-import { AuthService } from "../../../src/services/auth.service";
-import { UserModel } from "../../../src/models/user.model";
+import { AuthService } from "../../services/auth.service";
+import { UserModel } from "../../models/user.model";
 
 jest.mock("../../../src/models/user.model");
 jest.mock("bcryptjs");

@@ -1,5 +1,5 @@
-import { adminService } from "../../../src/services/admin.service";
-import { UserModel } from "../../../src/models/user.model";
+import { adminService } from "../../services/admin.service";
+import { UserModel } from "../../models/user.model";
 
 jest.mock("../../../src/models/user.model");
 

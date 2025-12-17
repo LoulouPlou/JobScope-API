@@ -1,6 +1,6 @@
 
-import { UserService } from "../../../src/services/user.service";
-import { UserModel } from "../../../src/models/user.model";
+import { UserService } from "../../services/user.service";
+import { UserModel } from "../../models/user.model";
 
 jest.mock("../../../src/models/user.model");
 
