@@ -51,7 +51,7 @@ jobs:
           echo "API did not start in time"; cat server.log; exit 1
 
       - name: Install k6
-        uses: grafana/setup-k6@v0.2
+        uses: grafana/setup-k6-action@v1
 
       - name: Run k6 smoke load test
         run: k6 run test/load/k6-smoke.js
