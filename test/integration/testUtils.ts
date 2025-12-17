@@ -1,8 +1,8 @@
 import request from "supertest";
-import app from "../../app";
-import { connectDB, disconnectDB, clearDB } from "../../utils/database";
-import { seedDatabase } from "../../data/seed";
-import { UserModel } from "../../models/user.model";
+import app from "../../src/app";
+import { connectDB, disconnectDB, clearDB } from "../../src/utils/database";
+import { seedDatabase } from "../../src/data/seed";
+import { UserModel } from "../../src/models/user.model";
 import mongoose from "mongoose";
 import config from "config";
 

@@ -1,7 +1,7 @@
 import request from "supertest";
-import app from "../../app";
+import app from "../../src/app";
 import { setupIntegrationTestDB, createAuthenticatedUser } from "./testUtils";
-import { JobModel } from "../../models/job.model";
+import { JobModel } from "../../src/models/job.model";
 
 jest.setTimeout(90000);
 
