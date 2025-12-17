@@ -61,7 +61,8 @@ export default function () {
   check(http.get(`${BASE_URL}/api/jobs/recent`), {
     'recent 200': r => r.status === 200,
   });
-  check(http.get(`${BASE_URL}/api/jobs/search?limit=5&page=1`), {
+  const searchRes = http.get(`${BASE_URL}/api/jobs/search?limit=5&page=1`);
+  check(searchRes, {
     'search 200': r => r.status === 200,
   });
 
@@ -74,13 +75,21 @@ export default function () {
   });
 
   // favorites (protected)
-  const jobId = http.get(`${BASE_URL}/api/jobs/recent`).json()[0]?._id;
+  const recent = http.get(`${BASE_URL}/api/jobs/recent`).json();
+  const search = searchRes.json();
+  const jobId =
+    recent?.[0]?._id ||
+    search?.items?.[0]?._id ||
+    search?.[0]?._id;
+
   if (jobId) {
     check(http.post(`${BASE_URL}/api/favorites/${jobId}`, null, authHeaders), {
       'add favorite 201/400': r => r.status === 201 || r.status === 400,
     });
-    check(http.get(`${BASE_URL}/api/favorites`, authHeaders), {
+    const favRes = http.get(`${BASE_URL}/api/favorites?page=1&limit=5`, authHeaders);
+    check(favRes, {
       'favorites list 200': r => r.status === 200,
+      'favorites payload has items': r => Array.isArray(r.json()?.items),
     });
   }
 

@@ -1,12 +1,10 @@
-import { AuthService } from "../../../src/services/auth.service";
-import { UserModel } from "../../../src/models/user.model";
+import { AuthService } from "../../src/services/auth.service";
+import { UserModel } from "../../src/models/user.model";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import config from "config";
 
-jest.unmock("../../../src/services/auth.service");
-
-jest.mock("../../../src/models/user.model");
+jest.mock("../../src/models/user.model");
 jest.mock("bcryptjs");
 jest.mock("jsonwebtoken");
 jest.mock("config");

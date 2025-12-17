@@ -1,9 +1,9 @@
-import { FavoriteService } from "../../../src/services/favorite.service";
-import { FavoriteModel } from "../../../src/models/favorite.model";
-import { JobModel } from "../../../src/models/job.model";
+import { FavoriteService } from "../../src/services/favorite.service";
+import { FavoriteModel } from "../../src/models/favorite.model";
+import { JobModel } from "../../src/models/job.model";
 
-jest.mock("../../../src/models/favorite.model");
-jest.mock("../../../src/models/job.model");
+jest.mock("../../src/models/favorite.model");
+jest.mock("../../src/models/job.model");
 
 describe("FavoriteService Unit Tests", () => {
 
@@ -14,19 +14,51 @@ describe("FavoriteService Unit Tests", () => {
   //getUserFavorites()
   test("getUserFavorites,should return a list of favorites", async () => {
     const mockFavorites = [
-      { userId: "1", jobId: "job1", savedAt: new Date() },
-      { userId: "1", jobId: "job2", savedAt: new Date() },
+      {
+        userId: "1",
+        jobId: {
+          _id: "job1",
+          title: "Dev 1",
+          company: "ACME",
+          location: "MTL",
+          description: "desc",
+          skills: [],
+          publishedTime: new Date(),
+        },
+        savedAt: new Date(),
+      },
+      {
+        userId: "1",
+        jobId: {
+          _id: "job2",
+          title: "Dev 2",
+          company: "ACME",
+          location: "MTL",
+          description: "desc",
+          skills: [],
+          publishedTime: new Date(),
+        },
+        savedAt: new Date(),
+      },
     ];
 
-    (FavoriteModel.find as jest.Mock).mockReturnValue({
-      populate: jest.fn().mockReturnThis(),
-      sort: jest.fn().mockResolvedValue(mockFavorites)
-    });
+    const limit = jest.fn().mockResolvedValue(mockFavorites);
+    const skip = jest.fn().mockReturnValue({ limit });
+    const sort = jest.fn().mockReturnValue({ skip });
+    const populate = jest.fn().mockReturnValue({ sort });
+
+    (FavoriteModel.find as jest.Mock).mockReturnValue({ populate });
+    (FavoriteModel.countDocuments as jest.Mock).mockResolvedValue(mockFavorites.length);
 
     const result = await FavoriteService.getUserFavorites("1");
 
-    expect(result).toHaveLength(2);
+    expect(result.items).toHaveLength(2);
+    expect(result.total).toBe(2);
     expect(FavoriteModel.find).toHaveBeenCalledWith({ userId: "1" });
+    expect(populate).toHaveBeenCalledWith("jobId");
+    expect(sort).toHaveBeenCalledWith({ savedAt: -1 });
+    expect(skip).toHaveBeenCalledWith(0);
+    expect(limit).toHaveBeenCalledWith(10);
   });
 
   //addFavorite()

@@ -12,9 +12,12 @@ interface PaginatedRespond<T> {
 
 export class JobService {
     static async searchJobs(query: any): Promise<PaginatedRespond<IJob>> {
-        const page = query.page || 1;
-        const limit = query.limit || 10;
+        const page = Number(query.page) || 1;
+        const limit = Number(query.limit) || 10;
         const skip = (page - 1) * limit;
+
+        const toArray = (value: unknown): string[] =>
+            Array.isArray(value) ? value.map(String) : [String(value)];
 
         const filter: any = {};
 
@@ -31,11 +34,23 @@ export class JobService {
         }
 
         if (query.skills) {
-            filter.skills = { $in: [new RegExp(query.skills, "i")] };
+            const skills = toArray(query.skills).map((skill) => new RegExp(skill, "i"));
+            filter.skills = { $in: skills };
         }
 
         if (query.jobType) {
-            filter.jobType = query.jobType;
+            const jobTypes = toArray(query.jobType);
+            filter.jobType = { $in: jobTypes };
+        }
+
+        if (query.experience) {
+            const experiences = toArray(query.experience);
+            filter.experience = { $in: experiences };
+        }
+
+        if (query.tags) {
+            const tags = toArray(query.tags).map((tag) => new RegExp(tag, "i"));
+            filter.tags = { $in: tags };
         }
 
         const [jobs, total] = await Promise.all([

@@ -1,7 +1,7 @@
-import { AnalyticsService } from "../../../src/services/analytics.service";
-import { AnalyticsModel } from "../../../src/models/analytics.model";
+import { AnalyticsService } from "../../src/services/analytics.service";
+import { AnalyticsModel } from "../../src/models/analytics.model";
 
-jest.mock("../../../src/models/analytics.model");
+jest.mock("../../src/models/analytics.model");
 
 describe("AnalyticsService Unit Tests", () => {
 

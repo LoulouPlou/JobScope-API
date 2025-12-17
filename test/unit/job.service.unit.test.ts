@@ -1,9 +1,9 @@
-import { JobService } from "../../../src/services/job.service";
-import { JobModel } from "../../../src/models/job.model";
-import { UserModel } from "../../../src/models/user.model";
+import { JobService } from "../../src/services/job.service";
+import { JobModel } from "../../src/models/job.model";
+import { UserModel } from "../../src/models/user.model";
 
-jest.mock("../../../src/models/job.model");
-jest.mock("../../../src/models/user.model");
+jest.mock("../../src/models/job.model");
+jest.mock("../../src/models/user.model");
 
 describe("JobService Unit Tests", () => {
   beforeEach(() => {
@@ -88,5 +88,34 @@ describe("JobService Unit Tests", () => {
     const result = await JobService.getPersonalizedJobs("1");
 
     expect(result[0].title).toBe("Java Dev");
+  });
+
+  test("getJobById , success", async () => {
+    const job = { _id: "1", title: "Dev" };
+    (JobModel.findById as jest.Mock).mockResolvedValue(job);
+
+    const result = await JobService.getJobById("1");
+    expect(result).toBe(job as any);
+  });
+
+  test("getJobById , JOB_NOT_FOUND", async () => {
+    (JobModel.findById as jest.Mock).mockResolvedValue(null);
+
+    await expect(JobService.getJobById("missing")).rejects.toMatchObject({
+      code: "JOB_NOT_FOUND",
+      status: 404,
+    });
+  });
+
+  test("getRecentJobs , returns latest 3 jobs", async () => {
+    const limitFn = jest.fn().mockResolvedValue([{ title: "A" }]);
+    const sortFn = jest.fn().mockReturnValue({ limit: limitFn });
+    (JobModel.find as jest.Mock).mockReturnValue({ sort: sortFn });
+
+    const jobs = await JobService.getRecentJobs();
+
+    expect(sortFn).toHaveBeenCalledWith({ createdAt: -1 });
+    expect(limitFn).toHaveBeenCalledWith(3);
+    expect(jobs[0].title).toBe("A");
   });
 });

@@ -1,10 +1,10 @@
 import request from "supertest";
 import mongoose from "mongoose";
-import app from "../../app";
+import app from "../../src/app";
 import { setupIntegrationTestDB, createAuthenticatedUser } from "./testUtils";
-import { JobModel } from "../../models/job.model";
-import { UserModel } from "../../models/user.model";
-import { JobService } from "../../services/job.service";
+import { JobModel } from "../../src/models/job.model";
+import { UserModel } from "../../src/models/user.model";
+import { JobService } from "../../src/services/job.service";
 
 jest.setTimeout(90000);
 
@@ -89,7 +89,7 @@ describe("Job service behaviors", () => {
   it("filters by experience array", async () => {
     const result = await JobService.searchJobs({ experience: ["Mid"] });
     expect(result.items.length).toBeGreaterThan(0);
-    const details = await JobService.getJobById(result.items[0]._id);
+    const details = await JobService.getJobById(result.items[0]._id.toString());
     expect(details.experience).toBe("Mid");
   });
 

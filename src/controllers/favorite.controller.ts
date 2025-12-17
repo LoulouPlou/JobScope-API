@@ -6,7 +6,9 @@ export class FavoriteController {
     async getUserFavorites(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
         try {
             const userId = req.user?._id;
-            const favorites = await FavoriteService.getUserFavorites(String(userId));
+            const page = Number(req.query.page) || 1;
+            const limit = Number(req.query.limit) || 10;
+            const favorites = await FavoriteService.getUserFavorites(String(userId), { page, limit });
             res.status(200).json(favorites);
 
         } catch (error) {

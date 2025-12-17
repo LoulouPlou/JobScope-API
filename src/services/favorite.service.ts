@@ -1,14 +1,38 @@
 import { FavoriteModel } from "../models/favorite.model";
 import { JobModel } from "../models/job.model";
 import { IFavorite } from "../interfaces/favorite.interface";
+import { JobMapper } from "../mappers/job.mapper";
+
+interface PaginationOptions {
+    page?: number;
+    limit?: number;
+}
 
 export class FavoriteService {
-    static async getUserFavorites(userId: string): Promise<IFavorite[]> {
-        const favorites = await FavoriteModel.find({ userId })
-            .populate("jobId") // optional: if you want full job details
-            .sort({ savedAt: -1 });
+    static async getUserFavorites(userId: string, options: PaginationOptions = {}): Promise<{
+        items: any[];
+        total: number;
+        page: number;
+        limit: number;
+    }> {
+        const page = options.page && options.page > 0 ? options.page : 1;
+        const limit = options.limit && options.limit > 0 ? options.limit : 10;
+        const skip = (page - 1) * limit;
 
-        return favorites;
+        const [favorites, total] = await Promise.all([
+            FavoriteModel.find({ userId })
+                .populate("jobId")
+                .sort({ savedAt: -1 })
+                .skip(skip)
+                .limit(limit),
+            FavoriteModel.countDocuments({ userId }),
+        ]);
+
+        const items = favorites
+            .filter((fav) => fav.jobId)
+            .map((fav) => JobMapper.toJobInfo(fav.jobId as any, true));
+
+        return { items, total, page, limit };
     }
 
     static async addFavorite(userId: string, jobId: string): Promise<IFavorite> {
