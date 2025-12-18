@@ -7,7 +7,7 @@ from scraper import run_scraper, run_analysis
 from db_upload import sync_all_to_mongodb
 from visualizations import generate_all_charts
 
-load_dotenv(".env.development")
+load_dotenv(".env.production")
 
 def setup_logger():
     """Setup logger to append to a single log file."""
@@ -44,38 +44,53 @@ def main():
         # STEP 1: SCRAPING
         print_header("STEP 1/4: SCRAPING JOBS", logger)
         
-        # scrape_stats = run_scraper()
+        try:
+            scrape_stats = run_scraper()
 
-        # logger.info(f"Scraping complete!")
-        # logger.info(f"- New jobs: {scrape_stats['new_jobs']}")
-        # logger.info(f"- Updated jobs: {scrape_stats['updated_jobs']}")
-        # logger.info(f"- Total in database: {scrape_stats['total_jobs']}")
+            logger.info(f"Scraping complete!")
+            logger.info(f"- New jobs: {scrape_stats['new_jobs']}")
+            logger.info(f"- Updated jobs: {scrape_stats['updated_jobs']}")
+            logger.info(f"- Total in database: {scrape_stats['total_jobs']}")
+        except Exception as e:
+            logger.error(f"Scraping failed: {e}")
         
         # STEP 2: ANALYSIS
         print_header("STEP 2/4: ANALYZING BUZZWORDS & EXPERIENCE", logger)
         
-        analysis_stats = run_analysis()
-        
-        logger.info(f"Analysis complete!")
-        logger.info(f"- Jobs analyzed: {analysis_stats['jobs_analyzed']}")
-        logger.info(f"- Total buzzword mentions: {analysis_stats['total_mentions']}")
+        try:
+            analysis_stats = run_analysis()
+
+            logger.info(f"Analysis complete!")
+            logger.info(f"- Jobs analyzed: {analysis_stats['jobs_analyzed']}")
+            logger.info(f"- Total buzzword mentions: {analysis_stats['total_mentions']}")
+        except Exception as e:
+            logger.error(f"Analysis failed: {e}")
+            logger.error("Skipping visualizations and MongoDB sync")
+            raise
         
         # STEP 3: VISUALIZATIONS
         print_header("STEP 3/4: GENERATING VISUALIZATIONS", logger)
         
-        viz_stats = generate_all_charts()
-        
-        logger.info(f"Visualizations generated!")
-        logger.info(f"- Charts created: {viz_stats['charts_created']}")
-        
+        try:
+            viz_stats = generate_all_charts()
+
+            logger.info(f"Visualizations generated!")
+            logger.info(f"- Charts created: {viz_stats['charts_created']}")
+        except Exception as e:
+            logger.error(f"Visualization generation failed: {e}")
+            
         # STEP 4: MONGODB SYNC
         print_header("STEP 4/4: SYNCING TO MONGODB", logger)
         
-        sync_stats = sync_all_to_mongodb()
-        
-        logger.info(f"MongoDB sync complete!")
-        logger.info(f"- Jobs synced: {sync_stats['total_jobs']}")
-        logger.info(f"- Analytics uploaded: {sync_stats['analytics_uploaded']}")
+        try:
+            sync_stats = sync_all_to_mongodb()
+
+            logger.info(f"MongoDB sync complete!")
+            logger.info(f"- Jobs synced: {sync_stats['total_jobs']}")
+            logger.info(f"- Analytics uploaded: {sync_stats['analytics_uploaded']}")
+        except Exception as e:
+            logger.error(f"MongoDB sync failed: {e}")
+            raise
         
         # SUMMARY
         end_time = datetime.now()

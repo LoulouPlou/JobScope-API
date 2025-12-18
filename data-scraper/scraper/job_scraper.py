@@ -10,7 +10,7 @@ from collections import Counter
 from dotenv import load_dotenv
 from keywords import JOB_TITLES, BUZZWORDS_TECH
 
-load_dotenv(".env.development")
+load_dotenv(".env.production")
 
 MAX_PAGES = 1
 # JOB_TITLES = ["Web developer"]

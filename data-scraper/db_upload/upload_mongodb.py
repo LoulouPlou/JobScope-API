@@ -16,7 +16,7 @@ from visualizations.data_processors import (
     get_seniority_distribution_by_domain
 )
 
-load_dotenv(".env.development")
+load_dotenv(".env.production")
 
 DOMAINS = ["Web", "Mobile", "DevOps", "Data", "QA & Security", "Design", "Management"]
 
