@@ -25,7 +25,6 @@ jobs:
     env:
       NODE_ENV: test
       MONGO_URI: mongodb://localhost:27017/jobscope_test
-      # TODO: add lint script step when available (e.g., npm run lint)
 
     outputs:
       coverage_status: ${{ steps.coverage.outputs.coverage_status }}
@@ -43,6 +42,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Lint (ESLint)
+        run: npm run lint
 
       - name: Start test server (background)
         run: |

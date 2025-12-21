@@ -1,7 +1,7 @@
-import { Types } from "mongoose";
+import { Types } from 'mongoose';
 
 export interface IFavorite {
-    userId: Types.ObjectId;
-    jobId: Types.ObjectId;
-    savedAt: Date;
+  userId: Types.ObjectId;
+  jobId: Types.ObjectId;
+  savedAt: Date;
 }

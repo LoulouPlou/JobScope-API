@@ -361,15 +361,7 @@
           },
           "domain": {
             "type": "string",
-            "enum": [
-              "Web",
-              "Mobile",
-              "DevOps",
-              "Data",
-              "QA & Security",
-              "Design",
-              "Management"
-            ]
+            "enum": ["Web", "Mobile", "DevOps", "Data", "QA & Security", "Design", "Management"]
           },
           "data": {
             "type": "array",
@@ -1096,15 +1088,7 @@
             "required": true,
             "schema": {
               "type": "string",
-              "enum": [
-                "Web",
-                "Mobile",
-                "DevOps",
-                "Data",
-                "QA & Security",
-                "Design",
-                "Management"
-              ]
+              "enum": ["Web", "Mobile", "DevOps", "Data", "QA & Security", "Design", "Management"]
             },
             "description": "Job domain",
             "example": "Web"

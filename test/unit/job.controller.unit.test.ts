@@ -1,7 +1,7 @@
-import { JobController } from "../../src/controllers/job.controller";
-import { JobService } from "../../src/services/job.service";
+import { JobController } from '../../src/controllers/job.controller';
+import { JobService } from '../../src/services/job.service';
 
-jest.mock("../../src/services/job.service");
+jest.mock('../../src/services/job.service');
 
 const mockRes = () => {
   const res: any = {};
@@ -10,7 +10,7 @@ const mockRes = () => {
   return res;
 };
 
-describe("JobController", () => {
+describe('JobController', () => {
   const controller = new JobController();
   const next = jest.fn();
 
@@ -18,58 +18,58 @@ describe("JobController", () => {
     jest.clearAllMocks();
   });
 
-  it("searchJobs delegates to service", async () => {
-    const req: any = { query: { title: "Dev" } };
+  it('searchJobs delegates to service', async () => {
+    const req: any = { query: { title: 'Dev' } };
     const res = mockRes();
     (JobService.searchJobs as jest.Mock).mockResolvedValue({ items: [] });
 
     await controller.searchJobs(req, res, next);
 
-    expect(JobService.searchJobs).toHaveBeenCalledWith({ title: "Dev" }, 1, 10, undefined);
+    expect(JobService.searchJobs).toHaveBeenCalledWith({ title: 'Dev' }, 1, 10, undefined);
     expect(res.json).toHaveBeenCalledWith({ items: [] });
   });
 
-  it("getRecentJobs returns latest jobs", async () => {
+  it('getRecentJobs returns latest jobs', async () => {
     const req: any = {};
     const res = mockRes();
-    (JobService.getRecentJobs as jest.Mock).mockResolvedValue([{ title: "A" }]);
+    (JobService.getRecentJobs as jest.Mock).mockResolvedValue([{ title: 'A' }]);
 
     await controller.getRecentJobs(req, res, next);
 
     expect(JobService.getRecentJobs).toHaveBeenCalled();
-    expect(res.json).toHaveBeenCalledWith([{ title: "A" }]);
+    expect(res.json).toHaveBeenCalledWith([{ title: 'A' }]);
   });
 
-  it("getJobById validates id presence", async () => {
+  it('getJobById validates id presence', async () => {
     const reqMissing: any = { params: {} };
     const resMissing = mockRes();
 
     await controller.getJobById(reqMissing, resMissing, next);
 
     expect(resMissing.status).toHaveBeenCalledWith(400);
-    expect(resMissing.json).toHaveBeenCalledWith({ error: "Job ID is required." });
+    expect(resMissing.json).toHaveBeenCalledWith({ error: 'Job ID is required.' });
     expect(JobService.getJobById).not.toHaveBeenCalled();
   });
 
-  it("getJobById returns job when id provided", async () => {
-    const req: any = { params: { id: "1" } };
+  it('getJobById returns job when id provided', async () => {
+    const req: any = { params: { id: '1' } };
     const res = mockRes();
-    (JobService.getJobById as jest.Mock).mockResolvedValue({ _id: "1" });
+    (JobService.getJobById as jest.Mock).mockResolvedValue({ _id: '1' });
 
     await controller.getJobById(req, res, next);
 
-    expect(JobService.getJobById).toHaveBeenCalledWith("1", undefined);
-    expect(res.json).toHaveBeenCalledWith({ _id: "1" });
+    expect(JobService.getJobById).toHaveBeenCalledWith('1', undefined);
+    expect(res.json).toHaveBeenCalledWith({ _id: '1' });
   });
 
-  it("getJobPersonnalized uses auth user id", async () => {
-    const req: any = { user: { _id: "user123" } };
+  it('getJobPersonnalized uses auth user id', async () => {
+    const req: any = { user: { _id: 'user123' } };
     const res = mockRes();
-    (JobService.getPersonalizedJobs as jest.Mock).mockResolvedValue([{ title: "P" }]);
+    (JobService.getPersonalizedJobs as jest.Mock).mockResolvedValue([{ title: 'P' }]);
 
     await controller.getJobPersonalized(req, res, next);
 
-    expect(JobService.getPersonalizedJobs).toHaveBeenCalledWith("user123");
-    expect(res.json).toHaveBeenCalledWith([{ title: "P" }]);
+    expect(JobService.getPersonalizedJobs).toHaveBeenCalledWith('user123');
+    expect(res.json).toHaveBeenCalledWith([{ title: 'P' }]);
   });
 });

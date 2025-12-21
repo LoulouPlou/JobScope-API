@@ -1,7 +1,7 @@
 export interface UpdateUserProfileDTO {
-    firstName?: string;
-    lastName?: string;
-    profilePicture?: string;
-    biography?: string;
-    interest?: string;
+  firstName?: string;
+  lastName?: string;
+  profilePicture?: string;
+  biography?: string;
+  interest?: string;
 }

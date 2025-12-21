@@ -1,14 +1,13 @@
-import express, { Application, Request, Response } from "express";
-import cors, { CorsOptions } from "cors";
-import helmet from "helmet";
-import config from "config";
+import express, { Application, Request, Response } from 'express';
+import cors, { CorsOptions } from 'cors';
+import helmet from 'helmet';
+import config from 'config';
 
-import jobscopeRoutes from "./routes/jobscope.routes";
-import { errorHandler, notFoundHandler } from "./middleware/error.middleware";
+import jobscopeRoutes from './routes/jobscope.routes';
+import { errorHandler, notFoundHandler } from './middleware/error.middleware';
 //Swagger JSON
-import swaggerUi from "swagger-ui-express";
-import swaggerDocument from "../docs/swagger.jobscope.json";
-
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from '../docs/swagger.jobscope.json';
 
 const app: Application = express();
 
@@ -18,33 +17,29 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
 //CORS
-const corsOptions = config.get<CorsOptions>("security.cors");
+const corsOptions = config.get<CorsOptions>('security.cors');
 app.use(cors(corsOptions));
 
 //ROOT / HEALTH CHECK
-app.get("/", (req: Request, res: Response) => {
-    const host = req.get("host");
-    const protocol = req.protocol;
+app.get('/', (req: Request, res: Response) => {
+  const host = req.get('host');
+  const protocol = req.protocol;
 
-    res.json({
-        name: "JobScope API",
-        version: "1.0.0",
-        description: "REST API for IT job market analysis in Canada",
-        documentation: {
-            swagger: `${protocol}://${host}/docs`,
-        },
-    });
+  res.json({
+    name: 'JobScope API',
+    version: '1.0.0',
+    description: 'REST API for IT job market analysis in Canada',
+    documentation: {
+      swagger: `${protocol}://${host}/docs`,
+    },
+  });
 });
 
 //API ROUTES
-app.use("/api", jobscopeRoutes);
+app.use('/api', jobscopeRoutes);
 
 //SWAGGER
-app.use(
-    "/docs",
-    swaggerUi.serve,
-    swaggerUi.setup(swaggerDocument)
-);
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // 404 + ERROR HANDLING
 app.use(notFoundHandler);
