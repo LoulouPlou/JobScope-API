@@ -123,6 +123,14 @@ config/
 | `npm run build` | Build TypeScript | Production |
 | `npm run start:prod` | Start production server | Production |
 
+- Linting & formatting:
+  - `npm run lint` / `npm run lint:fix` (ESLint)
+  - `npm run format` (Prettier)
+- Postman/Newman:
+  - Start the API in test mode: `npm run start:test`
+  - Run the collection: `npm run test:newman`
+  - Uses `postman/JobScope API.postman_collection.json` with `postman/local.postman_environment.json` (base_url `http://localhost:3001`)
+
 ---
 
 ## Testing & CI Policy
@@ -139,11 +147,11 @@ config/
   - have a green CI result (tests passing),
   - be reviewed and approved by at least one teammate before merging,
   - prefer “Squash and merge” for a clean history.
-- Postman/Newman (tests API end-to-end) :
-  - Collection : `postman/JobScope API.postman_collection.json`
-  - Environnement local : `postman/local.postman_environment.json` (base_url `http://localhost:3001`).
-  - Pré-requis : MongoDB local en route (`mongodb://localhost:27017/jobscope_test`) puis `npm run start:test`.
-  - Lancement Newman : `npm run test:newman` (utilise la collection ci-dessus, variables dynamiques et assertions de statut/erreurs).
+- Postman/Newman (end-to-end API checks):
+  - Collection: `postman/JobScope API.postman_collection.json`
+  - Local environment: `postman/local.postman_environment.json` (base_url `http://localhost:3001`)
+  - Prereqs: MongoDB running locally (`mongodb://localhost:27017/jobscope_test`) then `npm run start:test`
+  - Run: `npm run test:newman` (uses the collection above with dynamic variables and status/error assertions)
 
 ## Load Testing (k6)
 

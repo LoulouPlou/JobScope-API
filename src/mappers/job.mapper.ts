@@ -1,8 +1,7 @@
-import { IJob } from "../interfaces/job.interface";
-import { IJobInfo, IJobDetails } from "../dto/job.dto";
+import { IJob } from '../interfaces/job.interface';
+import { IJobInfo, IJobDetails } from '../dto/job.dto';
 
 export class JobMapper {
-
   // returns "x days ago" instead of Date to frontend
   private static timeAgo(date: Date): string {
     const now = new Date();
@@ -13,10 +12,10 @@ export class JobMapper {
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
 
-    if (days > 0) return `${days} day${days > 1 ? "s" : ""} ago`;
-    if (hours > 0) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
-    if (minutes > 0) return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
-    return "just now";
+    if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`;
+    if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    if (minutes > 0) return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+    return 'just now';
   }
 
   static toJobInfo(job: IJob, isFavorite: boolean = false): IJobInfo {
@@ -51,14 +50,10 @@ export class JobMapper {
   }
 
   static toJobInfoList(jobs: IJob[], favoriteJobIds: Set<string>): IJobInfo[] {
-    return jobs.map((job) =>
-      this.toJobInfo(job, favoriteJobIds.has(job._id.toString()))
-    );
+    return jobs.map((job) => this.toJobInfo(job, favoriteJobIds.has(job._id.toString())));
   }
 
   static toJobDetailsList(jobs: IJob[], favoriteJobIds: Set<string>): IJobDetails[] {
-    return jobs.map((job) =>
-      this.toJobDetails(job, favoriteJobIds.has(job._id.toString()))
-    );
+    return jobs.map((job) => this.toJobDetails(job, favoriteJobIds.has(job._id.toString())));
   }
 }

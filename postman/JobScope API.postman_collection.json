@@ -45,14 +45,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/auth/register",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "register"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "register"]
             }
           },
           "response": []
@@ -92,14 +86,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/auth/register",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "register"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "register"]
             }
           },
           "response": []
@@ -141,14 +129,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/auth/login",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "login"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
             }
           },
           "response": []
@@ -188,14 +170,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/auth/login",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "login"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
             }
           },
           "response": []
@@ -219,14 +195,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/auth/logout",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "logout"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "logout"]
             }
           },
           "response": []
@@ -267,14 +237,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/auth/login",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "login"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
             }
           },
           "response": []
@@ -314,14 +278,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/users/profile",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "profile"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "profile"]
             }
           },
           "response": []
@@ -346,14 +304,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/users/profile",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "profile"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "profile"]
             }
           },
           "response": []
@@ -403,14 +355,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users/profile",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "profile"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "profile"]
             }
           },
           "response": []
@@ -441,14 +387,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/jobs/search",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "jobs",
-                "search"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "search"]
             }
           },
           "response": []
@@ -472,14 +412,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/jobs/recent",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "jobs",
-                "recent"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "recent"]
             }
           },
           "response": []
@@ -504,14 +438,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/jobs/{{job_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "jobs",
-                "{{job_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "{{job_id}}"]
             }
           },
           "response": []
@@ -546,14 +474,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/jobs/search",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "jobs",
-                "search"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "search"]
             }
           },
           "response": []
@@ -589,14 +511,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/jobs/{{job_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "jobs",
-                "{{job_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "{{job_id}}"]
             }
           },
           "response": []
@@ -630,14 +546,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/jobs/personalized",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "jobs",
-                "personalized"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "personalized"]
             }
           },
           "response": []
@@ -677,13 +587,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/favorites",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "favorites"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites"]
             }
           },
           "response": []
@@ -718,14 +623,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/favorites/{{job_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "favorites",
-                "{{job_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{job_id}}"]
             }
           },
           "response": []
@@ -760,14 +659,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/favorites/{{job_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "favorites",
-                "{{job_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{job_id}}"]
             }
           },
           "response": []
@@ -802,14 +695,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/favorites/{{invalid_job_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "favorites",
-                "{{invalid_job_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{invalid_job_id}}"]
             }
           },
           "response": []
@@ -844,13 +731,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/favorites",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "favorites"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites"]
             }
           },
           "response": []
@@ -883,14 +765,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/favorites/{{job_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "favorites",
-                "{{job_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{job_id}}"]
             }
           },
           "response": []
@@ -925,14 +801,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/favorites/{{job_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "favorites",
-                "{{job_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{job_id}}"]
             }
           },
           "response": []
@@ -961,16 +831,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/analytics/dashboard/domain/Web",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "analytics",
-                "dashboard",
-                "domain",
-                "Web"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "analytics", "dashboard", "domain", "Web"]
             }
           },
           "response": []
@@ -994,15 +856,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/analytics/dashboard/overview",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "analytics",
-                "dashboard",
-                "overview"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "analytics", "dashboard", "overview"]
             }
           },
           "response": []
@@ -1026,16 +881,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/analytics/dashboard/domain/InvalidDomain",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "analytics",
-                "dashboard",
-                "domain",
-                "InvalidDomain"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "analytics", "dashboard", "domain", "InvalidDomain"]
             }
           },
           "response": []
@@ -1082,14 +929,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/auth/login",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "login"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
             }
           },
           "response": []
@@ -1126,14 +967,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/admin/users?page=1&limit=10",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users"
-              ],
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users"],
               "query": [
                 {
                   "key": "page",
@@ -1177,14 +1012,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/admin/users?page=1&limit=10",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users"
-              ],
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users"],
               "query": [
                 {
                   "key": "page",
@@ -1221,14 +1050,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/admin/users?page=1&limit=10",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users"
-              ],
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users"],
               "query": [
                 {
                   "key": "page",
@@ -1272,15 +1095,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/admin/users/{{user_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users",
-                "{{user_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
             }
           },
           "response": []
@@ -1314,15 +1130,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/admin/users/{{invalid_user_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users",
-                "{{invalid_user_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{invalid_user_id}}"]
             }
           },
           "response": []
@@ -1372,15 +1181,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/admin/users/{{user_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users",
-                "{{user_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
             }
           },
           "response": []
@@ -1429,15 +1231,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/admin/users/{{user_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users",
-                "{{user_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
             }
           },
           "response": []
@@ -1486,15 +1281,8 @@
             },
             "url": {
               "raw": "{{base_url}}/api/admin/users/{{user_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users",
-                "{{user_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
             }
           },
           "response": []
@@ -1527,15 +1315,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/admin/users/{{user_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users",
-                "{{user_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
             }
           },
           "response": []
@@ -1569,15 +1350,8 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/admin/users/{{invalid_user_id}}",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "admin",
-                "users",
-                "{{invalid_user_id}}"
-              ]
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{invalid_user_id}}"]
             }
           },
           "response": []
@@ -1605,9 +1379,7 @@
       "listen": "test",
       "script": {
         "type": "text/javascript",
-        "exec": [
-          ""
-        ]
+        "exec": [""]
       }
     }
   ],
