@@ -1,9 +1,9 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const userSchema = z.object({
   email: z.string().email().optional(),
   password: z.string().min(8).optional(),
-  role: z.enum(["user", "admin"]).optional(),
+  role: z.enum(['user', 'admin']).optional(),
   firstName: z.string().optional(),
   lastName: z.string().optional(),
   profilePicture: z.string().optional(),
@@ -18,9 +18,6 @@ export const jobSchema = z.object({
   location: z.string(),
   jobType: z.string().optional(),
   experience: z.string().optional(),
-  education: z.string(),
-  languages: z.array(z.string()).optional(),
-  shortDescription: z.string(),
   description: z.string(),
   skills: z.array(z.string()),
   tags: z.array(z.string()).optional(),

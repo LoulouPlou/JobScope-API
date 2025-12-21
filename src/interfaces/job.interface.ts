@@ -1,27 +1,23 @@
 import { Types } from 'mongoose';
 
 export interface IJob {
-    _id: Types.ObjectId;
-    title: string;
-    company: string;
-    location: string;
+  _id: Types.ObjectId;
+  title: string;
+  company: string;
+  location: string;
 
-    jobType?: string;
-    experience?: string;
+  jobType?: string;
+  experience?: string;
+  description: string;
 
-    education: string;
-    languages?: string[];
+  skills: string[];
+  tags?: string[];
 
-    shortDescription: string;
-    description: string;
+  salary?: string;
+  postedOn?: string;
 
-    skills: string[];
-    tags?: [string, string, string];
+  publishedTime: Date;
 
-    salary?: string;
-    postedOn?: string;
-    publishedTime?: string;
-
-    createdAt?: Date;
-    updatedAt?: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

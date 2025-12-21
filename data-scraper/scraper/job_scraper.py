@@ -10,7 +10,7 @@ from collections import Counter
 from dotenv import load_dotenv
 from keywords import JOB_TITLES, BUZZWORDS_TECH
 
-load_dotenv(".env.development")
+load_dotenv(".env.production")
 
 MAX_PAGES = 1
 # JOB_TITLES = ["Web developer"]
@@ -237,8 +237,9 @@ def extract_experience_level(job):
     full_text = f"{title} {highlights} {description}"
     
     year_patterns = [
-        r'(\d+)\+\s*(?:years?|yrs?)',       # 5+ years
-        r'(\d+)-(\d+)\s*(?:years?|yrs?)',   # 3-5 years
+        r'(\d+)\+\s*(?:years?|yrs?)',                    # 5+ years
+        r'(\d+)\s*(?:-|to)\s*(\d+)\s*(?:years?|yrs?)',   # 3-5 years, 7 to 10 years
+        r'(\d+)\s*(?:years?|yrs?)',                      # 5 years (standalone)
     ]
     
     years_found = []

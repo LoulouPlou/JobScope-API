@@ -123,6 +123,14 @@ config/
 | `npm run build` | Build TypeScript | Production |
 | `npm run start:prod` | Start production server | Production |
 
+- Linting & formatting:
+  - `npm run lint` / `npm run lint:fix` (ESLint)
+  - `npm run format` (Prettier)
+- Postman/Newman:
+  - Start the API in test mode: `npm run start:test`
+  - Run the collection: `npm run test:newman`
+  - Uses `postman/JobScope API.postman_collection.json` with `postman/local.postman_environment.json` (base_url `http://localhost:3001`)
+
 ---
 
 ## Testing & CI Policy
@@ -139,6 +147,11 @@ config/
   - have a green CI result (tests passing),
   - be reviewed and approved by at least one teammate before merging,
   - prefer “Squash and merge” for a clean history.
+- Postman/Newman (end-to-end API checks):
+  - Collection: `postman/JobScope API.postman_collection.json`
+  - Local environment: `postman/local.postman_environment.json` (base_url `http://localhost:3001`)
+  - Prereqs: MongoDB running locally (`mongodb://localhost:27017/jobscope_test`) then `npm run start:test`
+  - Run: `npm run test:newman` (uses the collection above with dynamic variables and status/error assertions)
 
 ## Load Testing (k6)
 
@@ -147,7 +160,8 @@ config/
 - Local run (test env, port 3001):
   1. Start Mongo (e.g., `docker run -p 27017:27017 mongo:6`) if needed.
   2. In one terminal: `npm run start:test`.
-  3. In another terminal: `BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js`.
+  3. In another terminal: `mkdir -p reports && BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js --summary-export=reports/k6-summary.json --out json=reports/k6-results.json`.
+- CI exports k6 reports as artifacts (`reports/k6-summary.json`, `reports/k6-results.json`).
 - Dedicated GitHub Actions workflow: `.github/workflows/load-test.yml` (manual trigger and weekly schedule). It is kept separate from the fast CI to avoid slowing down builds.
 
 ---

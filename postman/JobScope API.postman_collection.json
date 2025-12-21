@@ -1,1210 +1,1416 @@
 {
-	"info": {
-		"_postman_id": "023efcf6-489c-4197-91a1-7ee41583d3f6",
-		"name": "JobScope API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "48861879",
-		"_collection_link": "https://kristina-beneva-hristova-4924508.postman.co/workspace/Kristina-Beneva's-Workspace~a3a47dd7-452b-4c98-8313-de41e29f6ca6/collection/48861879-023efcf6-489c-4197-91a1-7ee41583d3f6?action=share&source=collection_link&creator=48861879"
-	},
-	"item": [
-		{
-			"name": "Authentication",
-			"item": [
-				{
-					"name": "Register New User",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"Password123\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/auth/register",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Register Duplicate Email (Should Fail)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"Password123\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/auth/register",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login Success",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"Password123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/auth/login",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login Wrong Password (Should Fail)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"WrongPassword\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/auth/login",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Logout",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/auth/logout",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"logout"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login Again",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"if (pm.response.code === 200) {\r",
-									"    const jsonData = pm.response.json();\r",
-									"    pm.environment.set('user_token', jsonData.token.token);\r",
-									"    console.log('User token saved:', jsonData.token.token);\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"Password123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/auth/login",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "User Profile",
-			"item": [
-				{
-					"name": "Get User Profile",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/users/profile",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"users",
-								"profile"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Profile Without Token (Should Fail)",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/users/profile",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"users",
-								"profile"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update User Profile",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"firstName\": \"Johnny\",\r\n  \"lastName\": \"Doe Jr\",\r\n  \"biography\": \"Full-stack developer passionate about web technologies\",\r\n  \"interest\": \"JavaScript, React, Node.js\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/users/profile",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"users",
-								"profile"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Job Search",
-			"item": [
-				{
-					"name": "Search All Jobs",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"if (pm.response.code === 200) {\r",
-									"    const jsonData = pm.response.json();\r",
-									"    \r",
-									"    if (jsonData.items && jsonData.items.length > 0) {\r",
-									"        pm.environment.set('job_id', jsonData.items[0]._id);\r",
-									"        console.log('First job ID saved: ' + jsonData.items[0]._id);\r",
-									"    } else {\r",
-									"        console.log('No jobs found in response.');\r",
-									"    }\r",
-									"} else {\r",
-									"    console.log('Response code is not 200. Cannot save job ID.');\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/jobs/search",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"jobs",
-								"search"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Recent Jobs",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/jobs/recent",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"jobs",
-								"recent"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Job by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/jobs/{{job_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"jobs",
-								"{{job_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Search - Authenticated",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/jobs/search",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"jobs",
-								"search"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Job by ID - Authenticated",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/jobs/{{job_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"jobs",
-								"{{job_id}}"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Favorites",
-			"item": [
-				{
-					"name": "Get User Favorites (Empty)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/favorites",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"favorites"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add Job to Favorites",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/favorites/{{job_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"favorites",
-								"{{job_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add Duplicate Favorite (Should Fail)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/favorites/{{job_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"favorites",
-								"{{job_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add Duplicate Favorite (Should Fail)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/favorites/invalid_job_id",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"favorites",
-								"invalid_job_id"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Favorites",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/favorites",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"favorites"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove Favorite",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/favorites/{{job_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"favorites",
-								"{{job_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove Non-existent Favorite (Should Fail)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/favorites/{{job_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"favorites",
-								"{{job_id}}"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Analytics",
-			"item": [
-				{
-					"name": "Get Dashboard by Domain - Web",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/analytics/dashboard/domain/Web",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"analytics",
-								"dashboard",
-								"domain",
-								"Web"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dashboard Overview",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/analytics/dashboard/overview",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"analytics",
-								"dashboard",
-								"overview"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Admin",
-			"item": [
-				{
-					"name": "Admin Login",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"if (pm.response.code === 200) {\r",
-									"    const jsonData = pm.response.json();\r",
-									"    pm.environment.set('admin_token', jsonData.token.token);\r",
-									"    console.log('Admin token saved:', jsonData.token.token);\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"admin@jobportal.com\",\r\n  \"password\": \"password\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/auth/login",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Users",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"if (pm.response.code === 200) {\r",
-									"    const jsonData = pm.response.json();\r",
-									"\r",
-									"    if (jsonData.items && jsonData.items.length > 0) {\r",
-									"        pm.environment.set('user_id', jsonData.items[0]._id);\r",
-									"        console.log('User ID saved: ' + jsonData.items[0]._id);\r",
-									"    } else {\r",
-									"        console.log('No users found in response.');\r",
-									"    }\r",
-									"} else {\r",
-									"    console.log('Response code is not 200. Cannot save user ID.');\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/admin/users?page=1&limit=10",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "limit",
-									"value": "10"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Users (Regular User) (Should Fail)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{user_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/admin/users?page=1&limit=10",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "limit",
-									"value": "10"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Users (No Token) (Should Fail)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/admin/users?page=1&limit=10",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "limit",
-									"value": "10"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Specific User Info",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/admin/users/{{user_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users",
-								"{{user_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Non-existent User (Should Fail)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/admin/users/non_existent_user",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users",
-								"non_existent_user"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update User",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"Updated\",\r\n  \"lastName\": \"ByAdmin\",\r\n  \"biography\": \"This was updated by admin\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/admin/users/{{user_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users",
-								"{{user_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Promote User to Admin",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"role\": \"admin\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/admin/users/{{user_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users",
-								"{{user_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Password (Should Fail)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"password\": \"newpassword123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/api/admin/users/{{user_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users",
-								"{{user_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete User",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/admin/users/{{user_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users",
-								"{{user_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Non-existent User (Should Fail)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/admin/users/non-existent_user",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users",
-								"non-existent_user"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"requests": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"requests": {},
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "base_url",
-			"value": "http://localhost:3000"
-		},
-		{
-			"key": "user_token",
-			"value": ""
-		},
-		{
-			"key": "admin_token",
-			"value": ""
-		},
-		{
-			"key": "user_id",
-			"value": ""
-		},
-		{
-			"key": "job_id",
-			"value": ""
-		}
-	]
+  "info": {
+    "_postman_id": "023efcf6-489c-4197-91a1-7ee41583d3f6",
+    "name": "JobScope API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48861879",
+    "_collection_link": "https://kristina-beneva-hristova-4924508.postman.co/workspace/Kristina-Beneva's-Workspace~a3a47dd7-452b-4c98-8313-de41e29f6ca6/collection/48861879-023efcf6-489c-4197-91a1-7ee41583d3f6?action=share&source=collection_link&creator=48861879"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register New User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {\n    pm.response.to.have.status(201);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Returns created user\", function () {\n    pm.expect(body.email).to.eql(pm.environment.get(\"test_email\"));\n    pm.expect(body.role).to.eql(\"user\");\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{test_email}}\",\n  \"password\": \"{{test_password}}\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register Duplicate Email (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {\n    pm.response.to.have.status(409);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Conflict error returned\", function () {\n    pm.expect(body.code).to.eql(\"USER_EXISTS\");\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{test_email}}\",\n  \"password\": \"{{test_password}}\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Success",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const jsonData = pm.response.json();",
+                  "const tokenValue = jsonData.token?.token || jsonData.token;\npm.test(\"Token is returned\", function () {\n    pm.expect(tokenValue).to.be.a(\"string\");\n});",
+                  "pm.environment.set('user_token', tokenValue);",
+                  "pm.environment.set('user_email', pm.environment.get('test_email'));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{test_email}}\",\n  \"password\": \"{{test_password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Wrong Password (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 401\", function () {\n    pm.response.to.have.status(401);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Invalid credentials error\", function () {\n    pm.expect(body.code).to.eql(\"INVALID_CREDENTIALS\");\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{test_email}}\",\n  \"password\": \"WrongPassword123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "pm.test(\"Logout message returned\", function () {\n    pm.expect(pm.response.json().message).to.include(\"Logged out\");\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/auth/logout",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "logout"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Again",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const jsonData = pm.response.json();",
+                  "const tokenValue = jsonData.token?.token || jsonData.token;\npm.environment.set('user_token', tokenValue);",
+                  "pm.test(\"Token refreshed\", function () {\n    pm.expect(tokenValue).to.be.a('string');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{test_email}}\",\n  \"password\": \"{{test_password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User Profile",
+      "item": [
+        {
+          "name": "Get User Profile",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Profile email matches\", function () {\n    pm.expect(body.email).to.eql(pm.environment.get('test_email'));\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/profile",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Profile Without Token (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 401\", function () {\n    pm.response.to.have.status(401);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Auth required\", function () {\n    pm.expect(body.code).to.eql(\"AUTH_REQUIRED\");\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/profile",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User Profile",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Profile updated\", function () {\n    pm.expect(body.biography).to.include(pm.environment.get('run_id'));\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{test_email}}\",\n  \"firstName\": \"Johnny\",\n  \"lastName\": \"Doe Jr\",\n  \"biography\": \"Updated biography run {{run_id}}\",\n  \"interest\": \"JavaScript, React, Node.js\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/profile",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "profile"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Job Search",
+      "item": [
+        {
+          "name": "Search All Jobs",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const jsonData = pm.response.json();",
+                  "pm.test(\"Returns at least one job\", function () {\n    pm.expect(jsonData.items.length).to.be.above(0);\n});",
+                  "pm.environment.set('job_id', jsonData.items[0]._id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/jobs/search",
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "search"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Recent Jobs",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "pm.test(\"Returns an array\", function () {\n    const body = pm.response.json();\n    pm.expect(body).to.be.an('array');\n    pm.expect(body.length).to.be.at.most(3);\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/jobs/recent",
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "recent"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Job by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const job = pm.response.json();",
+                  "pm.test(\"Job id matches\", function () {\n    pm.expect(job._id).to.eql(pm.environment.get('job_id'));\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/jobs/{{job_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "{{job_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search - Authenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const jsonData = pm.response.json();",
+                  "pm.test(\"Returns paginated result\", function () {\n    pm.expect(jsonData).to.have.property('items');\n    pm.expect(jsonData.items).to.be.an('array');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/jobs/search",
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "search"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Job by ID - Authenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const job = pm.response.json();",
+                  "pm.test(\"Job id matches\", function () {\n    pm.expect(job._id).to.eql(pm.environment.get('job_id'));\n});",
+                  "pm.test(\"Has isFavorite flag\", function () {\n    pm.expect(job).to.have.property('isFavorite');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/jobs/{{job_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "{{job_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Personalized Jobs",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "pm.test(\"Returns job list\", function () {\n    const body = pm.response.json();\n    pm.expect(body).to.be.an('array');\n    pm.expect(body.length).to.be.at.most(3);\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/jobs/personalized",
+              "host": ["{{base_url}}"],
+              "path": ["api", "jobs", "personalized"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Favorites",
+      "item": [
+        {
+          "name": "Get User Favorites (Empty)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Favorites list is empty\", function () {\n    pm.expect(body.total).to.eql(0);\n    pm.expect(body.items).to.be.an('array');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favorites",
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Job to Favorites",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {\n    pm.response.to.have.status(201);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Favorite saved for job\", function () {\n    pm.expect(body.jobId).to.eql(pm.environment.get('job_id'));\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favorites/{{job_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{job_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Duplicate Favorite (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {\n    pm.response.to.have.status(400);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Duplicate favorite blocked\", function () {\n    pm.expect(body.code).to.eql('FAVORITE_ALREADY_EXISTS');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favorites/{{job_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{job_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Invalid Favorite (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Invalid job rejected\", function () {\n    pm.expect(body.code).to.eql('JOB_NOT_FOUND');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favorites/{{invalid_job_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{invalid_job_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Favorites",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Favorite returned\", function () {\n    pm.expect(body.items.length).to.be.at.least(1);\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favorites",
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Favorite",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {\n    pm.response.to.have.status(204);\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favorites/{{job_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{job_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Non-existent Favorite (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Favorite not found\", function () {\n    pm.expect(body.code).to.eql('FAVORITE_NOT_FOUND');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favorites/{{job_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "favorites", "{{job_id}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        {
+          "name": "Get Dashboard by Domain - Web",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "pm.test(\"Charts returned\", function () {\n    const body = pm.response.json();\n    pm.expect(body.dashboard).to.eql('domain');\n    pm.expect(body.domain).to.eql('Web');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/analytics/dashboard/domain/Web",
+              "host": ["{{base_url}}"],
+              "path": ["api", "analytics", "dashboard", "domain", "Web"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Dashboard Overview",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "pm.test(\"Overview returned\", function () {\n    pm.expect(pm.response.json().dashboard).to.eql('overview');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/analytics/dashboard/overview",
+              "host": ["{{base_url}}"],
+              "path": ["api", "analytics", "dashboard", "overview"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Dashboard Invalid Domain (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {\n    pm.response.to.have.status(400);\n});",
+                  "pm.test(\"Validation error returned\", function () {\n    const body = pm.response.json();\n    pm.expect(body.code).to.eql('VALIDATION_ERROR');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/analytics/dashboard/domain/InvalidDomain",
+              "host": ["{{base_url}}"],
+              "path": ["api", "analytics", "dashboard", "domain", "InvalidDomain"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Admin Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const jsonData = pm.response.json();",
+                  "const adminToken = jsonData.token?.token || jsonData.token;",
+                  "pm.environment.set('admin_token', adminToken);",
+                  "pm.test(\"Admin token saved\", function () {\n    pm.expect(adminToken).to.be.a('string');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{admin_email}}\",\n  \"password\": \"{{admin_password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const jsonData = pm.response.json();",
+                  "pm.test(\"Users returned\", function () {\n    pm.expect(jsonData.items.length).to.be.above(0);\n});",
+                  "const nonAdmin = jsonData.items.find((u) => u.role !== 'admin');",
+                  "if (nonAdmin) {\n    pm.environment.set('user_id', nonAdmin._id);\n} else if (jsonData.items[0]) {\n    pm.environment.set('user_id', jsonData.items[0]._id);\n}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/admin/users?page=1&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users (Regular User) (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 403\", function () {\n    pm.response.to.have.status(403);\n});",
+                  "pm.test(\"Forbidden for non-admin\", function () {\n    pm.expect(pm.response.json().code).to.eql('FORBIDDEN');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/admin/users?page=1&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users (No Token) (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 401\", function () {\n    pm.response.to.have.status(401);\n});",
+                  "pm.test(\"Auth required\", function () {\n    pm.expect(pm.response.json().code).to.eql('AUTH_REQUIRED');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/admin/users?page=1&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Specific User Info",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "pm.test(\"Requested user returned\", function () {\n    pm.expect(pm.response.json()._id).to.eql(pm.environment.get('user_id'));\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/admin/users/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Non-existent User (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});",
+                  "pm.test(\"User not found\", function () {\n    pm.expect(pm.response.json().code).to.eql('USER_NOT_FOUND');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/admin/users/{{invalid_user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{invalid_user_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Admin updated user\", function () {\n    pm.expect(body.firstName).to.eql('Updated');\n    pm.expect(body.lastName).to.eql('ByAdmin');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Updated\",\n  \"lastName\": \"ByAdmin\",\n  \"biography\": \"This was updated by admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/admin/users/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Promote User to Admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+                  "pm.test(\"Role updated\", function () {\n    pm.expect(pm.response.json().role).to.eql('admin');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"role\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/admin/users/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Password (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {\n    pm.response.to.have.status(400);\n});",
+                  "pm.test(\"Password update blocked\", function () {\n    pm.expect(pm.response.json().code).to.eql('PASSWORD_UPDATE_FORBIDDEN');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"password\": \"newpassword123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/admin/users/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {\n    pm.response.to.have.status(204);\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/admin/users/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{user_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Non-existent User (Should Fail)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});",
+                  "pm.test(\"User not found\", function () {\n    pm.expect(pm.response.json().code).to.eql('USER_NOT_FOUND');\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/admin/users/{{invalid_user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "users", "{{invalid_user_id}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if (!pm.environment.get('run_id')) {\n    pm.environment.set('run_id', Date.now().toString());\n}",
+          "if (!pm.environment.get('test_email')) {\n    pm.environment.set('test_email', `john.doe+${pm.environment.get('run_id')}@example.com`);\n}",
+          "if (!pm.environment.get('test_password')) {\n    pm.environment.set('test_password', 'Password123!');\n}",
+          "if (!pm.environment.get('admin_email')) {\n    pm.environment.set('admin_email', 'admin@jobportal.com');\n}",
+          "if (!pm.environment.get('admin_password')) {\n    pm.environment.set('admin_password', 'password');\n}",
+          "if (!pm.environment.get('invalid_job_id')) {\n    pm.environment.set('invalid_job_id', '000000000000000000000000');\n}",
+          "if (!pm.environment.get('invalid_user_id')) {\n    pm.environment.set('invalid_user_id', '000000000000000000000000');\n}"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3001"
+    },
+    {
+      "key": "user_token",
+      "value": ""
+    },
+    {
+      "key": "admin_token",
+      "value": ""
+    },
+    {
+      "key": "user_id",
+      "value": ""
+    },
+    {
+      "key": "job_id",
+      "value": ""
+    },
+    {
+      "key": "invalid_job_id",
+      "value": ""
+    },
+    {
+      "key": "invalid_user_id",
+      "value": ""
+    }
+  ]
 }
