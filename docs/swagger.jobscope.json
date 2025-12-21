@@ -9,6 +9,10 @@
     {
       "url": "http://localhost:3000/api",
       "description": "Local development"
+    },
+    {
+      "url": "https://api.jobscope.com/api",
+      "description": "Production"
     }
   ],
   "security": [
@@ -19,27 +23,27 @@
   "tags": [
     {
       "name": "Auth",
-      "description": "Authentication"
+      "description": "Authentication endpoints"
     },
     {
       "name": "Users",
-      "description": "User profile"
+      "description": "User profile management"
     },
     {
       "name": "Jobs",
-      "description": "Job search"
+      "description": "Job listings and search"
     },
     {
       "name": "Favorites",
-      "description": "User favorites"
+      "description": "User favorite jobs"
     },
     {
       "name": "Analytics",
-      "description": "Dashboards"
+      "description": "Analytics dashboards"
     },
     {
       "name": "Admin",
-      "description": "Admin operations"
+      "description": "Admin operations (requires admin role)"
     }
   ],
   "components": {
@@ -48,66 +52,89 @@
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "JWT",
-        "description": "Click Authorize once and paste JWT token"
+        "description": "JWT token from /auth/login"
       }
     },
     "schemas": {
       "Error": {
         "type": "object",
+        "required": ["message", "code"],
         "properties": {
           "message": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable error message"
           },
           "code": {
-            "type": "string"
+            "type": "string",
+            "description": "Machine-readable error code",
+            "enum": [
+              "AUTH_REQUIRED",
+              "INVALID_TOKEN",
+              "FORBIDDEN",
+              "NOT_FOUND",
+              "VALIDATION_ERROR",
+              "USER_EXISTS",
+              "INVALID_CREDENTIALS",
+              "USER_NOT_FOUND",
+              "JOB_NOT_FOUND",
+              "FAVORITE_ALREADY_EXISTS",
+              "FAVORITE_NOT_FOUND",
+              "INTERNAL_SERVER_ERROR"
+            ]
+          },
+          "details": {
+            "type": "string",
+            "description": "Additional error details"
           }
         }
       },
       "AuthResponse": {
         "type": "object",
+        "required": ["token"],
         "properties": {
           "token": {
             "type": "string",
-            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+            "description": "JWT token for authentication"
           }
         }
       },
       "RegisterRequest": {
         "type": "object",
-        "required": [
-          "email",
-          "password",
-          "firstName",
-          "lastName"
-        ],
+        "required": ["email", "password", "firstName", "lastName"],
         "properties": {
           "email": {
             "type": "string",
-            "format": "email"
+            "format": "email",
+            "example": "john.doe@example.com"
           },
           "password": {
-            "type": "string"
+            "type": "string",
+            "minLength": 8,
+            "example": "SecurePass123!"
           },
           "firstName": {
-            "type": "string"
+            "type": "string",
+            "example": "John"
           },
           "lastName": {
-            "type": "string"
+            "type": "string",
+            "example": "Doe"
           }
         }
       },
       "LoginRequest": {
         "type": "object",
-        "required": [
-          "email",
-          "password"
-        ],
+        "required": ["email", "password"],
         "properties": {
           "email": {
-            "type": "string"
+            "type": "string",
+            "format": "email",
+            "example": "john.doe@example.com"
           },
           "password": {
-            "type": "string"
+            "type": "string",
+            "example": "SecurePass123!"
           }
         }
       },
@@ -119,23 +146,38 @@
             "example": "507f1f77bcf86cd799439011"
           },
           "email": {
-            "type": "string"
+            "type": "string",
+            "format": "email",
+            "example": "john.doe@example.com"
           },
           "firstName": {
-            "type": "string"
+            "type": "string",
+            "example": "John"
           },
           "lastName": {
-            "type": "string"
+            "type": "string",
+            "example": "Doe"
           },
           "role": {
             "type": "string",
+            "enum": ["user", "admin"],
             "example": "user"
           },
           "biography": {
-            "type": "string"
+            "type": "string",
+            "example": "Passionate software developer"
           },
           "interest": {
-            "type": "string"
+            "type": "string",
+            "example": "Web"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -143,7 +185,8 @@
         "type": "object",
         "properties": {
           "email": {
-            "type": "string"
+            "type": "string",
+            "format": "email"
           },
           "firstName": {
             "type": "string"
@@ -159,54 +202,339 @@
           }
         }
       },
-      "Job": {
+      "JobInfo": {
         "type": "object",
+        "description": "Job listing (list view)",
         "properties": {
           "_id": {
             "type": "string",
             "example": "64ac91cbbf9e3e001234abcd"
           },
           "title": {
-            "type": "string"
+            "type": "string",
+            "example": "Senior Full Stack Developer"
           },
           "company": {
-            "type": "string"
+            "type": "string",
+            "example": "Tech Corp Inc."
           },
           "location": {
-            "type": "string"
+            "type": "string",
+            "example": "Montreal, QC"
           },
-          "type": {
-            "type": "string"
+          "jobType": {
+            "type": "string",
+            "enum": ["Full-time", "Part-time", "Contract", "Internship"],
+            "example": "Full-time"
           },
-          "domain": {
-            "type": "string"
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 3,
+            "example": ["React", "Node.js", "TypeScript"]
+          },
+          "publishedTime": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-12-10T15:30:00.000Z"
+          },
+          "isFavorite": {
+            "type": "boolean",
+            "description": "True if user has favorited this job",
+            "example": false
+          }
+        }
+      },
+      "JobDetails": {
+        "type": "object",
+        "description": "Job full details (detail view)",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "64ac91cbbf9e3e001234abcd"
+          },
+          "title": {
+            "type": "string",
+            "example": "Senior Full Stack Developer"
+          },
+          "company": {
+            "type": "string",
+            "example": "Tech Corp Inc."
+          },
+          "location": {
+            "type": "string",
+            "example": "Montreal, QC"
+          },
+          "jobType": {
+            "type": "string",
+            "enum": ["Full-time", "Part-time", "Contract", "Internship"]
+          },
+          "experience": {
+            "type": "string",
+            "enum": ["Junior", "Mid", "Senior", "Lead"],
+            "example": "Senior"
+          },
+          "description": {
+            "type": "string",
+            "example": "We are seeking a talented Full Stack Developer..."
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": ["React", "Node.js", "TypeScript", "MongoDB"]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 3
           },
           "salary": {
-            "type": "string"
+            "type": "string",
+            "example": "$80K-$100K a year"
           },
-          "createdAt": {
+          "postedOn": {
+            "type": "string",
+            "example": "Indeed"
+          },
+          "publishedTime": {
             "type": "string",
             "format": "date-time"
+          },
+          "isFavorite": {
+            "type": "boolean"
           }
         }
       },
       "PaginatedJobs": {
         "type": "object",
+        "required": ["items", "total", "page", "pages", "limit"],
         "properties": {
           "items": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Job"
+              "$ref": "#/components/schemas/JobInfo"
             }
           },
           "total": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total number of jobs matching criteria",
+            "example": 150
           },
           "page": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Current page number",
+            "example": 1
+          },
+          "pages": {
+            "type": "integer",
+            "description": "Total number of pages",
+            "example": 15
           },
           "limit": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of items per page",
+            "example": 10
+          }
+        }
+      },
+      "AnalyticsChart": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "top_programming_languages"
+          },
+          "title": {
+            "type": "string",
+            "example": "Top 10 Programming Languages"
+          },
+          "chart_type": {
+            "type": "string",
+            "enum": ["pie", "bar", "horizontal_bar", "donut", "radar"],
+            "example": "horizontal_bar"
+          },
+          "domain": {
+            "type": "string",
+            "enum": [
+              "Web",
+              "Mobile",
+              "DevOps",
+              "Data",
+              "QA & Security",
+              "Design",
+              "Management"
+            ]
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "total_jobs": {
+                "type": "integer"
+              },
+              "total_mentions": {
+                "type": "integer"
+              },
+              "last_updated": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      },
+      "DashboardOverview": {
+        "type": "object",
+        "properties": {
+          "dashboard": {
+            "type": "string",
+            "enum": ["overview"],
+            "example": "overview"
+          },
+          "charts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsChart"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "example": 5
+          }
+        }
+      },
+      "DashboardDomain": {
+        "type": "object",
+        "properties": {
+          "dashboard": {
+            "type": "string",
+            "enum": ["domain"],
+            "example": "domain"
+          },
+          "domain": {
+            "type": "string",
+            "example": "Web"
+          },
+          "charts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsChart"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "example": 4
+          }
+        }
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Authentication required or invalid token",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "noToken": {
+                "value": {
+                  "message": "No token provided",
+                  "code": "AUTH_REQUIRED"
+                }
+              },
+              "invalidToken": {
+                "value": {
+                  "message": "Invalid or expired token",
+                  "code": "INVALID_TOKEN"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Insufficient permissions",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "message": "Insufficient permissions",
+              "code": "FORBIDDEN",
+              "details": "Required roles: admin"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Resource not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "routeNotFound": {
+                "value": {
+                  "message": "Route GET /api/invalid not found",
+                  "code": "NOT_FOUND"
+                }
+              },
+              "jobNotFound": {
+                "value": {
+                  "message": "Job not found",
+                  "code": "JOB_NOT_FOUND"
+                }
+              },
+              "userNotFound": {
+                "value": {
+                  "message": "User not found",
+                  "code": "USER_NOT_FOUND"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "description": "Validation error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "message": "Validation failed",
+              "code": "VALIDATION_ERROR",
+              "details": "Email is required"
+            }
+          }
+        }
+      },
+      "InternalError": {
+        "description": "Internal server error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "message": "An unexpected error occurred",
+              "code": "INTERNAL_SERVER_ERROR"
+            }
           }
         }
       }
@@ -215,10 +543,9 @@
   "paths": {
     "/auth/register": {
       "post": {
-        "tags": [
-          "Auth"
-        ],
+        "tags": ["Auth"],
         "summary": "Register new user",
+        "description": "Create a new user account",
         "security": [],
         "requestBody": {
           "required": true,
@@ -232,17 +559,57 @@
         },
         "responses": {
           "201": {
-            "description": "User registered"
+            "description": "User registered successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "User registered successfully"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Validation error or email already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "emailExists": {
+                    "value": {
+                      "message": "User with this email already exists",
+                      "code": "USER_EXISTS"
+                    }
+                  },
+                  "validation": {
+                    "value": {
+                      "message": "Validation failed",
+                      "code": "VALIDATION_ERROR",
+                      "details": "Password must be at least 8 characters"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       }
     },
     "/auth/login": {
       "post": {
-        "tags": [
-          "Auth"
-        ],
+        "tags": ["Auth"],
         "summary": "Login",
+        "description": "Authenticate user and receive JWT token",
         "security": [],
         "requestBody": {
           "required": true,
@@ -256,7 +623,7 @@
         },
         "responses": {
           "200": {
-            "description": "JWT token",
+            "description": "Login successful",
             "content": {
               "application/json": {
                 "schema": {
@@ -264,18 +631,35 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "message": "Invalid credentials",
+                  "code": "INVALID_CREDENTIALS"
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       }
     },
     "/users/profile": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get user profile",
+        "description": "Get authenticated user's profile",
         "responses": {
           "200": {
+            "description": "User profile",
             "content": {
               "application/json": {
                 "schema": {
@@ -283,15 +667,24 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       },
       "put": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Update profile",
+        "description": "Update authenticated user's profile",
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -302,6 +695,7 @@
         },
         "responses": {
           "200": {
+            "description": "Profile updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -309,19 +703,93 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       }
     },
     "/jobs/search": {
       "get": {
-        "tags": [
-          "Jobs"
-        ],
+        "tags": ["Jobs"],
         "summary": "Search jobs",
+        "description": "Search and filter jobs with pagination. Authentication optional (for isFavorite).",
         "security": [],
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by job title",
+            "example": "developer"
+          },
+          {
+            "name": "jobType",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["Full-time", "Part-time", "Contract", "Internship"]
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Filter by job type (multiple)",
+            "example": ["Full-time", "Contract"]
+          },
+          {
+            "name": "experience",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["Junior", "Mid", "Senior", "Lead"]
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Filter by experience level (multiple)",
+            "example": ["Mid", "Senior"]
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 1,
+              "minimum": 1
+            },
+            "description": "Page number"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 1,
+              "maximum": 100
+            },
+            "description": "Items per page"
+          }
+        ],
         "responses": {
           "200": {
+            "description": "Jobs list",
             "content": {
               "application/json": {
                 "schema": {
@@ -329,109 +797,385 @@
                 }
               }
             }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       }
     },
-    "/jobs/{jobId}": {
+    "/jobs/recent": {
       "get": {
-        "tags": [
-          "Jobs"
-        ],
+        "tags": ["Jobs"],
+        "summary": "Get recent jobs",
+        "description": "Get 3 most recent jobs",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Recent jobs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JobInfo"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          }
+        }
+      }
+    },
+    "/jobs/personalized": {
+      "get": {
+        "tags": ["Jobs"],
+        "summary": "Get personalized jobs",
+        "description": "Get jobs based on user interest (requires authentication). If no jobs found with interest, will fallback to /recent",
+        "responses": {
+          "200": {
+            "description": "Personalized jobs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JobInfo"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          }
+        }
+      }
+    },
+    "/jobs/{id}": {
+      "get": {
+        "tags": ["Jobs"],
         "summary": "Get job by ID",
+        "description": "Get full job details. Authentication optional (for isFavorite).",
+        "security": [],
         "parameters": [
           {
-            "name": "jobId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "example": "64ac91cbbf9e3e001234abcd"
-            }
+              "type": "string"
+            },
+            "description": "Job ID",
+            "example": "64ac91cbbf9e3e001234abcd"
           }
         ],
         "responses": {
           "200": {
+            "description": "Job details",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Job"
+                  "$ref": "#/components/schemas/JobDetails"
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid job ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "message": "Job ID is required",
+                  "code": "VALIDATION_ERROR"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          }
+        }
+      }
+    },
+    "/favorites": {
+      "get": {
+        "tags": ["Favorites"],
+        "summary": "Get user favorites",
+        "description": "Get all favorite jobs for authenticated user",
+        "responses": {
+          "200": {
+            "description": "Favorite jobs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JobInfo"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       }
     },
     "/favorites/{jobId}": {
       "post": {
-        "tags": [
-          "Favorites"
-        ],
+        "tags": ["Favorites"],
         "summary": "Add favorite",
+        "description": "Add job to user's favorites",
         "parameters": [
           {
             "name": "jobId",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "example": "64ac91cbbf9e3e001234abcd"
-            }
+              "type": "string"
+            },
+            "description": "Job ID",
+            "example": "64ac91cbbf9e3e001234abcd"
           }
         ],
         "responses": {
-          "200": {
-            "description": "Added"
+          "201": {
+            "description": "Favorite added",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string"
+                    },
+                    "jobId": {
+                      "type": "string"
+                    },
+                    "savedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Job already in favorites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "message": "Job already in favorites",
+                  "code": "FAVORITE_ALREADY_EXISTS"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "description": "Job not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "message": "Job not found",
+                  "code": "JOB_NOT_FOUND"
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       },
       "delete": {
-        "tags": [
-          "Favorites"
-        ],
+        "tags": ["Favorites"],
         "summary": "Remove favorite",
+        "description": "Remove job from user's favorites",
         "parameters": [
           {
             "name": "jobId",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "example": "64ac91cbbf9e3e001234abcd"
-            }
+              "type": "string"
+            },
+            "description": "Job ID",
+            "example": "64ac91cbbf9e3e001234abcd"
           }
         ],
         "responses": {
-          "200": {
-            "description": "Removed"
+          "204": {
+            "description": "Favorite removed (no content)"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "description": "Favorite not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "message": "Favorite not found",
+                  "code": "FAVORITE_NOT_FOUND"
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       }
     },
     "/analytics/dashboard/overview": {
       "get": {
-        "tags": [
-          "Analytics"
-        ],
+        "tags": ["Analytics"],
         "summary": "Dashboard overview",
+        "description": "Get global analytics dashboard (5 charts: languages, cities, hard skills, soft skills, job types)",
         "security": [],
         "responses": {
           "200": {
-            "description": "Overview data"
+            "description": "Overview dashboard data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardOverview"
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          }
+        }
+      }
+    },
+    "/analytics/dashboard/domain/{domain}": {
+      "get": {
+        "tags": ["Analytics"],
+        "summary": "Dashboard per domain",
+        "description": "Get domain-specific analytics (4 charts: cities, technologies, radar, seniority)",
+        "security": [],
+        "parameters": [
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Web",
+                "Mobile",
+                "DevOps",
+                "Data",
+                "QA & Security",
+                "Design",
+                "Management"
+              ]
+            },
+            "description": "Job domain",
+            "example": "Web"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Domain dashboard data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardDomain"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid domain",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": "VALIDATION_ERROR",
+                  "validDomains": [
+                    "Web",
+                    "Mobile",
+                    "DevOps",
+                    "Data",
+                    "QA & Security",
+                    "Design",
+                    "Management"
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       }
     },
     "/admin/users": {
       "get": {
-        "tags": [
-          "Admin"
-        ],
+        "tags": ["Admin"],
         "summary": "Get all users",
+        "description": "Get list of all users (admin only)",
         "responses": {
           "200": {
-            "description": "Users list"
+            "description": "Users list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserProfile"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
           }
         }
       }

@@ -27,6 +27,7 @@ export class AnalyticsController {
             if (!isValidDomain(domain)) {
                 res.status(400).json({
                     error: `Invalid domain: ${domain}`,
+                    code: "VALIDATION_ERROR",
                     validDomains: VALID_DOMAINS
                 });
                 return;
