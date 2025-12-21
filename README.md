@@ -139,6 +139,11 @@ config/
   - have a green CI result (tests passing),
   - be reviewed and approved by at least one teammate before merging,
   - prefer “Squash and merge” for a clean history.
+- Postman/Newman (tests API end-to-end) :
+  - Collection : `postman/JobScope API.postman_collection.json`
+  - Environnement local : `postman/local.postman_environment.json` (base_url `http://localhost:3001`).
+  - Pré-requis : MongoDB local en route (`mongodb://localhost:27017/jobscope_test`) puis `npm run start:test`.
+  - Lancement Newman : `npm run test:newman` (utilise la collection ci-dessus, variables dynamiques et assertions de statut/erreurs).
 
 ## Load Testing (k6)
 
