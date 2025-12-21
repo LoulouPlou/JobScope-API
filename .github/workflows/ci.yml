@@ -26,7 +26,6 @@ jobs:
       NODE_ENV: test
       MONGO_URI: mongodb://localhost:27017/jobscope_test
       # TODO: add lint script step when available (e.g., npm run lint)
-      # TODO: add Newman step when Postman collection + env are ready (npm run test:newman)
 
     outputs:
       coverage_status: ${{ steps.coverage.outputs.coverage_status }}
@@ -45,8 +44,38 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Start test server (background)
+        run: |
+          npm run start:test > server.log 2>&1 &
+          echo $! > server_pid.txt
+          for i in {1..30}; do
+            if nc -z localhost 3001; then
+              echo "Test server is up on port 3001"
+              break
+            fi
+            echo "Waiting for server (attempt $i)..."
+            sleep 2
+          done
+          if ! nc -z localhost 3001; then
+            echo "Server did not start on port 3001"
+            cat server.log || true
+            exit 1
+          fi
+
       - name: Run tests with coverage
         run: npm run test:cov
+
+      - name: Run Postman collection with Newman
+        run: npm run test:newman
+
+      - name: Stop test server and show logs
+        if: always()
+        run: |
+          if [ -f server_pid.txt ]; then
+            kill "$(cat server_pid.txt)" || true
+          fi
+          echo "--- server.log ---"
+          cat server.log || true
 
       - name: Determine coverage status
         id: coverage
