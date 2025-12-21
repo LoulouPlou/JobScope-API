@@ -71,7 +71,26 @@ jobs:
         uses: grafana/setup-k6-action@v1
 
       - name: Run k6 smoke load test
-        run: k6 run test/load/k6-smoke.js
+        run: |
+          mkdir -p reports
+          k6 run test/load/k6-smoke.js \
+            --summary-export=reports/k6-summary.json \
+            --out json=reports/k6-results.json
+
+      - name: Upload k6 reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-reports
+          path: reports
+
+      - name: Stop API and show logs
+        if: always()
+        run: |
+          pkill -f "ts-node src/server.ts" || true
+          pkill -f "node dist/server.js" || true
+          echo "=== server.log ==="
+          cat server.log || true
 
       - name: Notify Microsoft Teams on failure
         if: failure()
