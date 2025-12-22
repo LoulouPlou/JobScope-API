@@ -1,107 +1,309 @@
-# JobScope-API
+# JobScope API
 
-L'objectif de cette API RESTful est de fournir un système complet et performant de collecte, traitement, analyse et distribution de données d'offres d'emploi dans le domaine des technologies de l'information au Canada. 
+A comprehensive RESTful API providing IT job market data collection, processing, analysis, and distribution for Canada's technology sector. This API powers the JobScope mobile application with secure endpoints for job search, user management, favorites, and advanced labor market analytics.
 
-L'API alimente une application mobile en exposant des endpoints sécurisés permettant la recherche d'emplois filtrée, la gestion de profils utilisateurs, la sauvegarde de favoris, et l'accès à des analyses avancées du marché du travail.
+## Getting Started
 
----
+### Prerequisites
 
-## Installation
+- **Node.js** (v14 or higher)
+- **MongoDB** (v4.4 or higher)
+- **npm** or **yarn**
+- **MongoDB Compass** (recommended for database management)
 
-### 1. Clone the repository
+### Installation
 
+1. **Clone the repository**
 ```bash
 git clone https://github.com/LoulouPlou/JobScope-API.git
 cd JobScope-API
 ```
 
-### 2. Install dependencies
-
+2. **Install dependencies**
 ```bash
 npm install
 ```
 
-### 3. Create MongoDB Connections
+3. **Set up MongoDB connections**
 
-Before running the application, you **must create database connections in MongoDB Compass**:
+Create three separate database connections in MongoDB Compass:
 
-1. Open **MongoDB Compass**.
-2. Create **three separate connections**, one for each environment:
+- **Development**: `mongodb://localhost:27017/jobscope_dev`
+- **Test**: `mongodb://localhost:27017/jobscope_test`
+- **Production**: Use MongoDB Atlas connection string
 
-   - `mongodb://localhost:27017/jobscope_dev`
-   - `mongodb://localhost:27017/jobscope_test`
-
-For production, you need to **set up a MongoDB Atlas cluster**:
-
-   - Use the connection string provided to you
-
-### 4. Set up environment files
+4. **Configure environment variables**
 
 ```bash
-# Copy the example environment file
+# Create environment files from template
 cp .env.example .env.development
 cp .env.example .env.test
 cp .env.example .env.production
 ```
 
-Edit each environment file with your specific configuration.
+Edit each file with your configuration:
+
+```env
+# Environment
+NODE_ENV=development
+
+# Server Ports
+HTTP_PORT=3000
+HTTPS_PORT=3443
+ENABLE_HTTP=true
+ENABLE_HTTPS=true
+REDIRECT_HTTP_TO_HTTPS=false
+
+# HTTPS/SSL Configuration
+SSL_KEY_PATH=./ssl/key.pem
+SSL_CERT_PATH=./ssl/cert.pem
+
+# Database
+MONGO_URI=mongodb://localhost:27017/jobscope_dev
+
+# Security
+JWT_SECRET=your_secure_jwt_secret_here
+JWT_EXPIRES_IN=7d
+
+# Rate Limiting
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=1000
+
+# CORS
+ALLOWED_ORIGINS=*
+
+# Bcrypt
+BCRYPT_SALT_ROUNDS=10
+
+# ScrapingDog API Key
+SCRAPING_API_KEY=your_scrapingdog_api_key_here
+```
 
 **Generate secure JWT secrets:**
 ```bash
 openssl rand -hex 32
-
 ```
 
-### 5. Set up HTTPS/SSL certificates
+5. **Set up HTTPS/SSL certificates** (optional for local development)
 
 ```bash
 # Create SSL directory
 mkdir ssl
 
-# Generate self-signed certificate (for development/testing)
+# Generate self-signed certificate
 openssl req -x509 -newkey rsa:4096 -keyout ssl/key.pem -out ssl/cert.pem -days 365 -nodes
 ```
 
----
+### Running the Application
 
-## Running the Application
-
-### Development Environment
-
+#### Development Mode
 ```bash
 npm run start:dev
 ```
-
-**Access:**
 - HTTP: `http://localhost:3000`
 - HTTPS: `https://localhost:3443`
 
-### Test Environment
-
+#### Test Mode
 ```bash
 npm run start:test
 ```
-
-**Access:**
 - HTTP: `http://localhost:3001`
 
-### Production Environment
-
+#### Production Mode
 ```bash
 npm run build
 npm run start:prod
 ```
-
-**Access:**
 - HTTPS: `https://localhost:443`
 
----
+### Database Seeding
 
-## Configuration
+The application automatically seeds the database with sample data on first run. To manually seed:
 
-The application uses the `config` package for multi-environment configuration.
+```bash
+npm run seed
+```
 
-### Configuration Files Structure
+## Features Overview
+
+### Core Functionality
+- **Job Search & Filtering**: Advanced search with filters for job type, experience level, location, and keywords
+- **User Authentication**: Secure JWT-based authentication with role-based access control (user/admin)
+- **Favorites Management**: Save and organize job listings for later review
+- **Market Analytics**: Two comprehensive dashboards with interactive visualizations
+
+### Analytics Dashboards
+
+#### Dashboard 1: Market Overview
+- Top 10 programming languages in demand
+- Top 5 cities with most opportunities
+- Top 10 hard skills vs top 10 soft skills comparison
+- Job type distribution (full-time, part-time, contract, internship)
+
+#### Dashboard 2: Domain-Specific Analysis
+Available domains: Web Development, Data Science, DevOps, Mobile, QA & Security, Design, Management
+
+For each domain:
+- Skills distribution radar chart
+- Top 5 cities
+- Seniority level distribution
+- Top 5 technologies
+
+### Security Features
+- Password hashing with bcrypt
+- JWT token authentication
+- Rate limiting
+- Helmet.js security headers
+- CORS protection
+- Input validation and sanitization
+
+### Admin Panel
+- User management (view, edit, delete users)
+- Role assignment
+- User activity monitoring
+- Pagination support for large datasets
+
+## Tech Stack
+
+### Core Technologies
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Language**: TypeScript
+- **Database**: MongoDB with Mongoose ODM
+- **Authentication**: JWT (jsonwebtoken)
+- **Password Hashing**: bcryptjs
+
+### Security & Middleware
+- **Helmet**: Security headers
+- **CORS**: Cross-origin resource sharing
+- **express-rate-limit**: Rate limiting
+- **express-validator**: Input validation
+
+### Development Tools
+- **Testing**: Jest, Supertest, Artillery/k6
+- **Code Quality**: ESLint, Prettier
+- **API Testing**: Postman, Newman
+- **CI/CD**: GitHub Actions
+- **Documentation**: Swagger/OpenAPI
+
+## API Endpoints
+
+### Authentication (`/api/auth`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/api/auth/register` | Register new user | No |
+| POST | `/api/auth/login` | Login user | No |
+| POST | `/api/auth/logout` | Logout user | Yes |
+
+### User Profile (`/api/users`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/api/users/profile` | Get user profile | Yes |
+| PUT | `/api/users/profile` | Update user profile | Yes |
+
+### Jobs (`/api/jobs`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/api/jobs/search` | Search jobs with filters | Optional |
+| GET | `/api/jobs/recent` | Get 3 recent jobs | No |
+| GET | `/api/jobs/:id` | Get job details | Optional |
+| GET | `/api/jobs/personalized` | Get personalized recommendations | Yes |
+
+**Search Query Parameters:**
+- `title` (string): Job title keyword
+- `jobType` (array): Full-time, Part-time, Contract, Internship
+- `experience` (array): Junior, Mid, Senior, Lead
+- `page` (number): Page number (default: 1)
+- `limit` (number): Results per page (default: 10)
+
+### Favorites (`/api/favorites`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/api/favorites` | List user favorites | Yes |
+| POST | `/api/favorites/:jobId` | Add job to favorites | Yes |
+| DELETE | `/api/favorites/:jobId` | Remove from favorites | Yes |
+
+### Analytics (`/api/analytics`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/api/analytics/dashboard/overview` | Get overview dashboard | No |
+| GET | `/api/analytics/dashboard/domain/:domain` | Get domain-specific dashboard | No |
+
+**Valid domains:** Web, Mobile, DevOps, Data, QA & Security, Design, Management
+
+### Admin (`/api/admin`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/api/admin/users` | List all users (paginated) | Admin |
+| GET | `/api/admin/users/:id` | Get user details | Admin |
+| PUT | `/api/admin/users/:id` | Update user | Admin |
+| DELETE | `/api/admin/users/:id` | Delete user | Admin |
+
+## Testing
+
+### Test Coverage
+
+The project includes comprehensive test suites:
+- **Unit Tests**: Service layer logic
+- **Integration Tests**: API endpoints and database operations
+- **Load Tests**: Performance and stress testing with k6
+
+### Running Tests
+
+```bash
+# Run all tests with coverage
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run only unit tests
+npm run test:unit
+
+# Run only integration tests
+npm run test:integration
+
+# Generate coverage report
+npm run test:coverage
+```
+
+### API Testing with Postman/Newman
+
+```bash
+# Start test server
+npm run start:test
+
+# Run Postman collection
+npm run test:newman
+```
+
+### Load Testing with k6
+
+```bash
+# Install k6 (macOS)
+brew install k6
+
+# Run smoke test
+BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js
+```
+
+### CI/CD Pipeline
+
+All tests run automatically on:
+- Push to `main` or `develop` branches
+- Pull requests targeting `main` or `develop`
+
+## Documentation
+
+### Configuration Files
+
+The application uses the `config` package for multi-environment configuration:
 
 ```
 config/
@@ -112,68 +314,54 @@ config/
 └── custom-environment-variables.json # Environment variable mapping
 ```
 
----
+### Available Scripts
 
-## Available Scripts
-
-| Script | Description | Environment |
-|--------|-------------|-------------|
-| `npm run start:dev` | Run development server | Development |
-| `npm run start:test` | Run test server | Test |
-| `npm run build` | Build TypeScript | Production |
-| `npm run start:prod` | Start production server | Production |
-
-- Linting & formatting:
-  - `npm run lint` / `npm run lint:fix` (ESLint)
-  - `npm run format` (Prettier)
-- Postman/Newman:
-  - Start the API in test mode: `npm run start:test`
-  - Run the collection: `npm run test:newman`
-  - Uses `postman/JobScope API.postman_collection.json` with `postman/local.postman_environment.json` (base_url `http://localhost:3001`)
-
----
-
-## Testing & CI Policy
-
-- All new backend features must include tests (at least integration tests).
-- We use Jest + Supertest for testing.
-- The target global test coverage is **70% or higher**.
-- Locally, Jest enforces a 70% global coverage threshold. If coverage is below 70%, `npm test` fails.
-- In CI (GitHub Actions), the pipeline **does not fail** on low coverage, but logs a warning and marks the build as **UNSTABLE** if coverage is below 70%.
-- The CI workflow (`.github/workflows/ci.yml`) runs on:
-  - every push to `main` or `dev`
-  - every Pull Request targeting `main` or `dev`.
-- All Pull Requests must:
-  - have a green CI result (tests passing),
-  - be reviewed and approved by at least one teammate before merging,
-  - prefer “Squash and merge” for a clean history.
-- Postman/Newman (end-to-end API checks):
-  - Collection: `postman/JobScope API.postman_collection.json`
-  - Local environment: `postman/local.postman_environment.json` (base_url `http://localhost:3001`)
-  - Prereqs: MongoDB running locally (`mongodb://localhost:27017/jobscope_test`) then `npm run start:test`
-  - Run: `npm run test:newman` (uses the collection above with dynamic variables and status/error assertions)
-
-## Load Testing (k6)
-
-- Script: `test/load/k6-smoke.js` (light smoke/ramp on auth, jobs, analytics, favorites).
-- Local prerequisite: install `k6` (e.g., `brew install k6` or the official binary).
-- Local run (test env, port 3001):
-  1. Start Mongo (e.g., `docker run -p 27017:27017 mongo:6`) if needed.
-  2. In one terminal: `npm run start:test`.
-  3. In another terminal: `mkdir -p reports && BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js --summary-export=reports/k6-summary.json --out json=reports/k6-results.json`.
-- CI exports k6 reports as artifacts (`reports/k6-summary.json`, `reports/k6-results.json`).
-- Dedicated GitHub Actions workflow: `.github/workflows/load-test.yml` (manual trigger and weekly schedule). It is kept separate from the fast CI to avoid slowing down builds.
-
----
+| Script | Description |
+|--------|-------------|
+| `npm run start:dev` | Start development server |
+| `npm run start:test` | Start test server |
+| `npm run start:prod` | Start production server |
+| `npm run build` | Compile TypeScript to JavaScript |
+| `npm test` | Run all tests with coverage |
+| `npm run lint` | Check code style |
+| `npm run lint:fix` | Fix code style issues |
+| `npm run format` | Format code with Prettier |
+| `npm run test:newman` | Run Postman collection tests |
 
 ## Collaborators
 
-- **Kristina Hristova Beneva**
+### Development Team
 
-- **Aya Issa**
+| Name | Role | Responsibilities |
+|------|------|-----------------|
+| **Kristina Hristova Beneva** | Infrastructure & Security Lead | Node.js/Express/TypeScript setup, MongoDB configuration, JWT authentication, security (rate limiting, HTTPS, Helmet, CORS), documentation, Routes CRUD |
+| **Leïa Plourde** | Data Integration Lead | External API integration, data collection scripts, data cleaning, normalization, validation, complex aggregations |
+| **Aya Issa** | Backend Developer | TypeScript interfaces, Mongoose models, CRUD routes, middleware, error handling, pagination |
+| **Juba Redjradj** | Backend Developer | Routes & endpoints, authentication middleware, data validation, standardized error handling, unit tests |
+| **Karolann Mauger** | QA & DevOps Engineer | Integration tests, security tests, load tests (Artillery/k6), Postman collections, CI/CD pipeline, deployment |
 
-- **Karolann Mauger**
 
-- **Leïa Plourde**
+## Related Projects
 
-- **Juba Redjradj**
+- **Figma Design**: [JobScope UI](https://www.figma.com/design/2DlADMSS6JSM79s7wyOxq6/JobScope?node-id=0-1&p=f&t=5HtndrcXqvOW7RfS-0)
+- **Trello Board**: [Project Management](https://trello.com/b/nHx9785o/jobscope-api)
+- **Mobile App Repository**: [JobScope-Frontend](https://github.com/kbeneva/JobScope-Frontend)
+- **API Documentation**: [Deployed API](https://jobscope-api.onrender.com)
+
+## External API
+
+The project uses **Scrapingdog Google Jobs API** for data collection:
+- Returns 10 results per request
+- Requires keyword-based search strategy
+- Focused on Canadian IT job market
+- Data extraction via regex and keywords for structured information
+
+Before running **data-scraper**, create an account on [ScrapingDog](https://www.scrapingdog.com/) to obtain an API key and add it to your `.env` file.  
+If you don’t have a key, comment out lines 45 to 56.
+
+```bash
+# Run Data Scraper Job
+npm run scrape
+```
+
+**Note**: The automated job scraper (cron job) was planned for Render deployment but encountered API availability issues during final testing. Historical logs available as proof of concept. Also note that this script uploads data directly to production, as it was intended to be deployed.
