@@ -257,20 +257,11 @@ The project includes comprehensive test suites:
 ### Running Tests
 
 ```bash
-# Run all tests with coverage
+# Run all tests
 npm test
 
-# Run tests in watch mode
-npm run test:watch
-
-# Run only unit tests
-npm run test:unit
-
-# Run only integration tests
-npm run test:integration
-
-# Generate coverage report
-npm run test:coverage
+# Run all test with coverage reports
+npm run test:cov
 ```
 
 ### API Testing with Postman/Newman
