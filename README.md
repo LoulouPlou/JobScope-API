@@ -280,14 +280,14 @@ npm run test:newman
 # Install k6 (macOS)
 brew install k6
 
-# Install k6 windows via bash cmd
+# Install k6 (windows via bash cmd)
 choco install k6
 
 # Create reports folder and run smoke test
-mkdir -p reports && BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js
+mkdir -p reports && BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js --summary-export=reports/k6-summary.json --out json=reports/k6-results.json
 
 # Run smoke test if you already have reports folder
-BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js
+BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js --summary-export=reports/k6-summary.json --out json=reports/k6-results.json
 ```
 
 ### CI/CD Pipeline
