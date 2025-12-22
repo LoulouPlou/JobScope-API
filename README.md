@@ -399,7 +399,7 @@ config/
 | **Leïa Plourde** | Data Integration Lead | External API integration, data collection scripts, data cleaning, normalization, validation, complex aggregations |
 | **Aya Issa** | Backend Developer | TypeScript interfaces, Mongoose models, CRUD routes, middleware, error handling, pagination |
 | **Juba Redjradj** | Backend Developer | Routes & endpoints, authentication middleware, data validation, standardized error handling, unit tests |
-| **Karolann Mauger** | QA & DevOps Engineer | Integration tests, security tests, load tests (Artillery/k6), Postman collections, CI/CD pipeline, deployment |
+| **[@KarolannMauger](https://www.github.com/KarolannMauger)** | QA & DevOps Engineer | Integration tests, security tests, load tests (Artillery/k6), Postman collections, CI/CD pipeline, deployment |
 
 
 ## Related Projects
