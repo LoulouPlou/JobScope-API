@@ -253,6 +253,7 @@ The project includes comprehensive test suites:
 - **Unit Tests**: Service layer logic
 - **Integration Tests**: API endpoints and database operations
 - **Load Tests**: Performance and stress testing with k6
+- **Security Tests**: Security test with audit ans semgrep
 
 ### Running Tests
 
@@ -289,6 +290,48 @@ mkdir -p reports && BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js 
 # Run smoke test if you already have reports folder
 BASE_URL=http://localhost:3001 k6 run test/load/k6-smoke.js --summary-export=reports/k6-summary.json --out json=reports/k6-results.json
 ```
+
+### Security Testing with audit and semgrep
+
+```bash
+# Install semgrep (macOS brew)
+
+# Install semgrep (macOS pipx)
+brew install pipx
+pipx install semgrep
+
+# Install semgrep (windows via bash cmd)
+# You need to install Python before https://www.python.org/downloads/windows/
+# You need to check Add Python to PATH
+
+# Install pipx (windows via bash cmd)
+python -m pip install --user pipx
+python -m pipx ensurepath
+
+# You need to close and re-open your bash cmd
+
+# Install semgrep (windows via bash cmd)
+pipx install semgrep
+
+# check
+semgrep --version
+```
+
+#### NPM Audit
+```bash
+# Run audit dependencies check
+npm audit
+```
+
+#### SEMGREP Test
+```bash
+# Start test server
+npm run start:test
+
+# Run semgrep test check
+semgrep scan --config auto
+```
+
 
 ### CI/CD Pipeline
 
